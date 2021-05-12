@@ -58,31 +58,6 @@
 
         chart.draw(data, options);
       }
-	    
-	    
-	 //for line chart   
-	    google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-        ]);
-
-        var options = {
-          title: 'Company Performance',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-      }
     </script>
 
 
@@ -91,8 +66,8 @@
 	        <marquee bgcolor="red">DEEPAK KUMAR</marquee>
 
 		<img src="https://chart.apis.google.com/chart?cht=qr&chs=250x250&chl=http://google.com">
-                <div id="piechart" style="width: 900px; height: 500px;"></div>
 	        <div id="regions_div" style="width: 900px; height: 500px;"></div>
-	        <div id="curve_chart" style="width: 900px; height: 500px"></div>
+	        <div id="piechart" style="width: 900px; height: 500px;"></div>
+	   
 </body>
 </html>
