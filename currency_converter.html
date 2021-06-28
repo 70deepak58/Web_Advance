@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>How to create currency converter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+<style>
+/*Start Currency Converter*/
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.currency-row-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.currency-converter {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+input,
+select {
+    color: #363636;
+    font-size: 1rem;
+    height: 2.3em;
+    border-radius: 4px;
+    max-width: 100%;
+    width: calc(100% - 15px);
+    margin: auto;
+    outline: 0;
+    background: #fff;
+    border-color: #dbdbdb;
+    padding-left: 15px;
+    border: 1px solid #00000057;
+    box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+    -webkit-appearance: none;
+}
+
+.field.grid-50-50 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.currency-converter .colmun {
+    margin-bottom: 15px;
+}
+
+select.currency {
+    border-color: #3273dc;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    font-size: 1em;
+    max-width: 100%;
+    outline: 0;
+    display: block;
+}
+
+.currency-converter .select {
+    position: relative;
+    height: 100%;
+}
+
+h2 {
+    padding-bottom: 30px;
+}
+
+.currency-converter .select:after {
+    transform: rotate(-45deg);
+    transform-origin: center;
+    content: "";
+    border: 3px solid rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    border-top: 0;
+    border-right: 0;
+    display: block;
+    height: 0.525em;
+    width: 0.525em;
+    z-index: 4;
+    position: absolute;
+    top: 50%;
+    right: 1.125em;
+    margin-top: -0.4375em;
+}
+
+.select:not(:hover)::after {
+    border-color: #3273dc;
+}
+
+.select:hover::after {
+    border-color: #363636;
+}
+</style>
+  <div class="currency-row-outer">
+    <div class="currency-converter">
+      <h2>Currency Converter</h2>
+
+      <div class="field grid-50-50">
+        <div class="colmun col-left">
+          <input type="number" class="form-input" id="number" placeholder="00000">
+        </div>
+        <div class="colmun col-right">
+          <div class="select">
+            <select name="currency" class="currency" onchange="updatevalue()"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field grid-50-50">
+        <div class="colmun col-left">
+          <input type="text" class="form-input" id="output" placeholder="00000" disabled>
+        </div>
+        <div class="colmun col-right">
+          <div class="select">
+            <select name="currency" class="currency" onchange="updatevalue()"></select>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+    const select = document.querySelectorAll('.currency');
+    const number = document.getElementById("number");
+    const output = document.getElementById("output");
+
+
+    fetch('https://api.frankfurter.app/currencies').then((data) => data.json())
+      .then((data) => {
+        display(data);
+      });
+
+
+    function display(data) {
+      const entries = Object.entries(data);
+      for (var i = 0; i < entries.length; i++) {
+        select[0].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]} : ${entries[i][1]}</option>`;
+        select[1].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]} : ${entries[i][1]}</option>`;
+      }
+    }
+
+
+
+    function updatevalue() {
+      let currency1 = select[0].value;
+      let currency2 = select[1].value;
+
+      let value = number.value;
+
+
+      if (currency1 != currency2) {
+        convert(currency1, currency2, value);
+      } else {
+        alert("Choose Diffrent Currency");
+      }
+    }
+
+
+    function convert(currency1, currency2, value) {
+      const host = "api.frankfurter.app";
+
+      fetch(`https://${host}/latest?amount=${value}&from=${currency1}&to=${currency2}`)
+        .then((val) => val.json())
+        .then((val) => {
+          console.log(Object.values(val.rates)[0]);
+          output.value = Object.values(val.rates)[0];
+        });
+
+    }
+  </script>
+</body>
+
+</html>
