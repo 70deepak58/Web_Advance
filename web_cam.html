@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>How to Integrate Webcam using JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta https-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  background: #f2f4f6;
+  overflow: hidden;
+}
+.webcam-start-stop {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 5px 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.webcam-start-stop > a {
+  text-decoration: unset;
+  color: #000;
+  background: #fff;
+  padding: 10px 20px;
+}
+</style>
+    <div class="webcam">
+        <div class="video-outer">
+            <video id="video" height="100%" width="100%" autoplay></video>
+        </div>
+
+        <div class="webcam-start-stop">
+            <a href="#!" class="btn-start" onclick="start()">Start</a>
+            <a href="#!" class="btn-stop" onclick="StopWebCam()">Stop</a>
+        </div>
+    </div>
+
+
+    <script>
+        var StopWebCam = function () {
+            var stream = video.srcObject;
+            var tracks = stream.getTracks();
+
+            for (var i = 0; i < tracks.length; i++) {
+                var track = tracks[i];
+                track.stop();
+            }
+            video.srcObject = null;
+        }
+
+        var start = function () {
+            var video = document.getElementById("video"),
+                vendorURL = window.URL || window.webkitURL;
+
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function (stream) {
+                        video.srcObject = stream;
+                    }).catch(function (error) {
+                        console.log("Something went wrong");
+                    });
+            }
+        }
+        $(function () { start(); });
+    </script>
+</body>
+
+</html>
