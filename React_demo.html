@@ -5,12 +5,17 @@
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
   <body>
   
-    <div id="root"></div>
+    <div id="mydiv"></div>
 
     <script type="text/babel">
-const myfirstelement = <h1>Hello React!</h1> ;
+class Hello extends React.Component {
+        render() {
+          return <h1>Hello World!</h1>
+        }
+      }
 
-ReactDOM.render(myfirstelement, document.getElementById('root'));
+      ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+ 
 
          </script>
   </body>
