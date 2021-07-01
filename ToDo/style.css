@@ -1,0 +1,233 @@
+:root {
+    --primary-color: white;
+    --secondary-color: #1E1E1E;
+    --text-color: black;
+    --task-color: white;
+    --footer-color: #1E1E1E;
+    --theme-btn: url('assets/Dark-theme-btn.svg');
+    --container-bg: url('./assets/Light-empty.svg');
+    --complete-icon: url('assets/complete.svg');
+    --filter: none;
+    --theme-transition: 0s;
+
+}
+
+* {
+    font-family: "Times New Roman";
+    outline: none;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.container {
+    position: relative;
+    border: 4px var(--footer-color) solid;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 80vh;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--primary-color);
+    transition: var(--theme-transition);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    font-weight: 900;
+    color: var(--text-color);
+}
+
+.theme_toogle {
+    text-align: right;
+    margin-right: -15px;
+
+}
+
+.theme_toogle_btn {
+    min-width: 30px;
+    min-height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    background-image: var(--theme-btn);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.theme_toogle_btn:hover {
+    background-size: 85%;
+    transition: 0.5s;
+    transform: rotate(90deg);
+}
+
+.heading {
+    font-size: 30px;
+}
+
+.tasks {
+    margin: 20px 0px;
+    overflow: hidden;
+    padding-right: 15p;
+}
+
+#tasksList {
+    padding: 0px;
+}
+
+.task_list_empty {
+    transition: 0s;
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-image: var(--container-bg);
+
+}
+
+.task_item {
+    list-style-type: none;
+    border: 1px var(--secondary-color) solid;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    background-color: var(--task-color);
+    color: var(--text-color);
+}
+
+.task_item:hover {
+    transition: 0.5s;
+    /* border: 1px rgba(148, 148, 148, 0.63) solid; */
+    cursor: pointer;
+    background-color:rgba(226, 226, 226, 0.192);
+
+}
+
+.task_check_btn {
+    width: 10px;
+    height: 10px;
+    margin-right: 16px;
+    padding: 3px;
+    border: 2px var(--secondary-color) solid;
+    /* color: var(--primary-color); */
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    border: 2px grey solid;
+    cursor: pointer;
+}
+
+.task_check_btn:hover {
+    background-image: url('assets/complete.svg');
+    /* opacity: 0.5; */
+    filter: var(--filter);
+
+}
+
+.task_bio {
+    font-size: 18px;
+}
+
+
+
+.task-completed {
+    transition: 0.5s;
+    transform: scale(90%);
+    text-decoration: line-through;
+    color: rgb(150, 150, 150);
+    opacity: 0;
+
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    padding: 15px 10px;
+    min-width: 100%;
+    background-color: var(--footer-color);
+    left: 0px;
+    border: 5px var(--footer-color) solid;
+}
+
+footer form {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+#new_task_input {
+    min-width: 250px;
+    margin-right: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px rgba(255, 255, 255, 0.267) solid;
+}
+
+#new_task_input::placeholder {
+    color: rgba(255, 255, 255, 0.589);
+    font-size: 20px;
+    font-family: "Times New Roman";
+}
+
+#new_task_input_btn {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    background-image: url('./assets/new.svg');
+    background-repeat: no-repeat;
+    background-size: 80%;
+    cursor: pointer;
+}
+
+.taskCompleted {
+    visibility: hidden;
+}
+
+@media screen and (max-width : 600px) {
+
+    body {
+        margin: 0px;
+        padding: 0px;
+        align-items: flex-start;
+        height: 100vh;
+        background-color: var(--bg-color);
+
+    }
+
+    .theme_toogle {
+        margin-top: 30px;
+
+    }
+
+    .container {
+        border: none;
+        border-radius: 0px;
+        width: 100%;
+        height: 93vh;
+        padding: 0px 20px;
+    }
+
+    #new_task_input {
+        margin-right: 20px;
+    }
+}
