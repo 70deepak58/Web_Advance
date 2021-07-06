@@ -16,7 +16,13 @@ I used file app.js
 
 
 import React from 'react';
-import "./App.css";
+import "./Tic_tac_toe_react.css";
+
+
+class Oar extends React.Component {
+        render() {
+          
+     
 
 function Board() {
   const [squares, setSquares] = React.useState(Array(9).fill(null))
@@ -116,6 +122,8 @@ function calculateWinner(squares) {
 function App() {
   return <Game />
 }
+
+}}
          ReactDOM.render(<Oar />, document.getElementById('root'));
 //export default App
          </script>
