@@ -1,0 +1,163 @@
+<!-- Design By foolishdeveloper.com -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+* , html, body, p {
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin-top: 10%;
+}
+ 
+
+/* Grid */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* height: 100vh; */
+}
+ 
+
+.calc-container {
+    display: grid;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.dot {
+    grid-column: span 2;
+}
+
+.equal {
+    grid-row: span 2;
+}
+
+#buttons-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    text-align: center;
+    
+}
+
+/* Input */
+#input {
+    width: 100%;
+    padding-right: 10px;
+    font-size: 3em;
+    text-align: right;
+    height: 2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #FDFEFE;
+    background-color: #223850;
+    transition: all 0.3s ease-in
+}
+
+/* Btn's */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    border: 0.3px solid rgba(251, 253, 255, 0.171);
+    
+}
+
+.btn-num {
+    background-color: #223850;
+    color: #6885A7;
+}
+
+.btn-num:hover {
+    background-color: #233B55;
+}
+
+.btn-operator {
+ 
+    background-color: #128094;
+    color: #ffffff;
+}
+
+.btn-operator:hover {
+    background-color: rgb(52, 155, 196) !important
+}
+ 
+.equal{
+    background-color: #e77c18;
+}
+    </style>
+    
+</head>
+<body>
+  
+          <div class="main-container">
+            <div class="calc-container">
+                <div id="input" class="">
+                </div>
+                <div id='buttons-container'>
+                    <div class="btn btn-operator " onclick="clearInput()">C</div>
+                    <div class="btn btn-operator " onclick="eraseNum()">⌦</div>
+                    <div class="btn btn-operator " onclick="insertNum('/')">/</div>
+                    <div class="btn btn-operator " onclick="insertNum('*')">x</div>
+    
+                    <div class="btn btn-num" onclick="insertNum(7)">7</div>
+                    <div class="btn btn-num" onclick="insertNum(8)">8</div>
+                    <div class="btn btn-num" onclick="insertNum(9)">9</div>
+                    <div class="btn btn-operator " onclick="insertNum('-')">-</div>
+    
+                    <div class="btn btn-num" onclick="insertNum(4)">4</div>
+                    <div class="btn btn-num" onclick="insertNum(5)">5</div>
+                    <div class="btn btn-num" onclick="insertNum(6)">6</div>
+                    <div class="btn btn-operator " onclick="insertNum('+')">+</div>
+    
+                    <div class="btn btn-num" onclick="insertNum(1)">1</div>
+                    <div class="btn btn-num" onclick="insertNum(2)">2</div>
+                    <div class="btn btn-num" onclick="insertNum(3)">3</div>
+                    <div class="btn btn-operator equal " onclick="equalTo()">=</div>
+                    <div class="btn btn-num dot" onclick="insertNum(0)">0</div>
+                    <div class="btn btn-num" onclick="insertNum('.')">.</div>
+    
+                </div>
+            </div>
+        </div>
+     
+        <script>
+            // Value input variable
+const inputField = document.getElementById('input');
+
+// Insert number on input fied
+const insertNum = num => inputField.textContent += num;
+
+// Do operation using eval()
+const equalTo = () => (inputField.textContent) ? inputField.textContent = eval(inputField.textContent) : false;
+
+// Remove 1 val at time
+const eraseNum = () => inputField.textContent = inputField.textContent.substring(0, inputField.textContent.length - 1);
+
+// Clear all the input
+const clearInput = () => inputField.textContent = '';
+
+ 
+        </script>
+</body>
+</html>
+
+
