@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+<button onclick="myFunction3()">Replace document</button>
 <button onclick="myFunction2()">reload document</button>
-
 <button onclick="myFunction()">Load new document</button>
 
 <script>
@@ -13,7 +12,9 @@ function myFunction() {
 function myFunction2() {
  location.reload();
 }
-
+function myFunction3() {
+  location.replace("https://www.w3schools.com");
+}
 </script>
 
 </body>
