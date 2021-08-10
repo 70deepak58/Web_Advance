@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<style>
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3df49;
+}
+.circle {
+  position: absolute;
+  background-color: #238643;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.mouse-position {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+  height: 100px;
+  background-color: black;
+  border-radius: 4px;
+  padding: 4px 16px;
+  color: white;
+}
+
+.mouse-position h4 {
+  color: white;
+  margin: 10px 0;
+}
+</style>
+<script>
+const mousePositionObservable = new MousePositionObservable();
+
+mousePositionObservable.subscribe((x, y) => {
+  const circle = document.querySelector('.circle');
+   window.setTimeout(() => {
+     circle.style.transform = `translate(${x}px, ${y}px)`;
+   }, 1000);
+});
+
+// Update the mouse positon container to show the mouse position values
+mousePositionObservable.subscribe((x, y) => {
+  const board = document.querySelector('.mouse-position .position');
+  board.innerHTML = `
+    <div>
+       <div>ClientX: ${x}</div>
+       <div>ClientY: ${y}</div>
+    </div>
+  `
+})
+</script>
+<div class="container">
+  <div class="circle" ></div>
+  <div class="mouse-position">
+  <h4>Mouse Position</h4>
+  <div class="position"></div>
+</div>
+</div>
+</body>
+</html>
