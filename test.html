@@ -4,15 +4,132 @@
 <title>Page Title</title>
 </head>
 <body>
-<style>var text = document.querySelector('p'),
-    colorPick = document.querySelector('input');
+<style>
+* {
+  box-sizing: border-box;
+}
 
-colorPick.addEventListener('input',watchColorPicker , false);
+body {
+  font-family: system-ui;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px;
+  min-height: 100vh;
+  background: #eee;    
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  color: #333;
+  padding: 4em 2em;
+  outline: 20px groove #f99090;
+}
+
+select {
+  display: block;
+  width: 200px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #333;
+  padding: 16px;
+  outline: 0;
+}
+
+option {
+  display: block;
+  padding: 16px;
+  color: #333;
+}
+
+input {
+  width: 200px;
+}
+
+output {
+  display: block;
+}
+
+.code-container {
+  width: 375px;
+  max-width: 100%;
+  overflow-x: auto;
+  text-align: initial;
+  background-color: #272822;
+  padding: 1.5em 0;
+  border-radius: 3px;
+  color: #F8F8F2;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+.token-property {
+  color: #F92672;
+}
+
+.token-function {
+  color: #E6DB74;
+}
+
+.token-selector {
+  color: #a6e22e;
+}
+ </style>
+<script>
+var text = document.querySelector('h1'),
+    slider = document.querySelector('input');
+
+slider.addEventListener('input', function () {
+  text.style.outlineWidth = this.value + 'px';
+  document.querySelector('.width').textContent = this.value + 'px';
+}, false);
+
+var select = document.querySelector('#select');
+
+select.addEventListener("change", function (e) {
+  text.style.outlineStyle = e.target.value;  
+  document.querySelector('.style').textContent = e.target.value;  
+});  
+
+
+var colorPicker = document.querySelector('#color');
+
+colorPicker.addEventListener("input", watchColorPicker, false);
+colorPicker.addEventListener("change", watchColorPicker, false);
+
 function watchColorPicker(e) {  
-  text.style.color = e.target.value; </style>
-<script></script>
-<input id="color" type="color" value="#f99090" />
+  text.style.outlineColor = e.target.value; 
+  document.querySelector('.color').textContent = e.target.value;
+}
+</script>
+<h1>Change my outline</h1>
+
 <input type="range" max="40" step="1" value="20">
-<p>test on this</p>
+
+<select name="" id="select">
+  <option value="none">none</option>
+  <option value="dotted">dotted</option>
+  <option value="dashed">dashed</option>
+  <option value="solid">solid</option>
+  <option value="double">double</option>
+  <option value="groove" selected>groove</option>
+  <option value="ridge">ridge</option>
+  <option value="inset">inset</option>
+  <option value="outset">outset</option>
+</select>
+
+<input id="color" type="color" value="#f99090" />
+
+<pre class="code-container">
+  <span class="token-selector">h1</span> {
+    <span class="token-property">outline-width</span>: <span class="token-function width">20px</span>;
+    <span class="token-property">outline-style</span>: <span class="token-function style">solid</span>;
+    <span class="token-property">outline-color</span>: <span class="token-function color">#f99090</span>;
+  }
+</pre>
 </body>
 </html>
