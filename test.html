@@ -4,7 +4,12 @@
 <title>Page Title</title>
 </head>
 <body>
-<style></style>
+<style>var text = document.querySelector('p'),
+    colorPick = document.querySelector('input');
+
+colorPick.addEventListener('input',watchColorPicker , false);
+function watchColorPicker(e) {  
+  text.style.color = e.target.value; </style>
 <script></script>
 <input id="color" type="color" value="#f99090" />
 <input type="range" max="40" step="1" value="20">
