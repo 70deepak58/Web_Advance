@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>Tic Tac Toe game</h1>
+        <div id="a1" onclick="fu(this.id)">
+1
+        </div>
+        <div id="a2" onclick="fu(this.id)">
+2
+        </div>
+        <div id="a3" onclick="fu(this.id)">
+3
+        </div>
+        <div id="a4" onclick="fu(this.id)">
+4
+        </div>
+        <div id="a5" onclick="fu(this.id)">
+5
+        </div>
+        <div id="a6" onclick="fu(this.id)">
+6
+        </div>
+        <div id="a7" onclick="fu(this.id)">
+7
+        </div>
+        <div id="a8" onclick="fu(this.id)">
+8
+        </div>
+        <div id="a9" onclick="fu(this.id)">
+9
+        </div>
+        <style>
+            #a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9{
+                height: 40px;
+                width: 40px;
+                background-color: beige;
+            }
+            #a2{
+                position: relative;
+                left :40px;
+                bottom: 40px;
+            }
+            #a3{
+                position: relative;
+                left :80px;
+                bottom: 80px;
+            }
+            #a4{
+                position: relative;
+                bottom: 80px;
+            }
+            #a5{
+                position: relative;
+                left :40px;
+                bottom: 120px;
+            }
+            #a6{
+                position: relative;
+                left :80px;
+                bottom: 160px;
+            }
+            #a7{
+                position: relative;
+                bottom: 160px;
+            }
+            #a8{
+                position: relative;
+                left :40px;
+                bottom: 200px;
+            }
+            #a9{
+                position: relative;
+                left :80px;
+                bottom: 240px;
+            }
+        </style>
+        <script>
+            var t=0;
+            var i=0;
+            let p1="X"
+            let p2="O"
+            var arr=[" "," "," "," "," "," "," "," "," "];
+            function won(){
+               if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="X")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="X")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="X")){
+                   window.prompt("won P1");
+               }
+               if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="O")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="O")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="O")){
+                   window.prompt("won P2");
+               }
+
+
+
+               if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="X")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="X")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="X")){
+                   window.prompt("won P1");
+               }
+               if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="O")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="O")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="O")){
+                   window.prompt("won P2");
+               }
+
+       
+               if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="X")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="X")){
+                   window.prompt("won P1");
+               }
+               if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="O")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="O")){
+                   window.prompt("won P2");
+               }
+
+        
+
+
+            }
+            function fu(c_id){
+                t=c_id[1]-1;
+                if(arr[t]==" "){
+
+
+                    if(i%2==0)
+                          {arr[t]=p1;}
+                     else{
+                    arr[t]=p2;
+                         }
+                
+                document.getElementById(c_id).innerHTML=arr[t];
+                won();
+                
+               console.log(i);
+                console.log(t);
+                console.log(arr[i]);
+                console.log(arr);
+                i++;
+
+            }
+                    
+                
+
+                else{
+                    window.prompt("already selected");}
+               
+
+            }
+        </script>
+    </body>
+</html>
