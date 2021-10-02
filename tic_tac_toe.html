@@ -121,6 +121,7 @@ Here is status
             }
         </style>
         <script>
+            var ExIt=0;
             var t=0;
             var i=0;
             let p1="X";
@@ -145,29 +146,58 @@ document.getElementById(p_name_id).innerHTML=p;
 }
 
 
+function flush_all(){
+                var f=0;
+                turn=0;
+                
+                
+for(f=0;f<9;f++){
+    document.getElementById("a"+(f+1)).innerHTML="-";
+    arr[f]=" ";
+    
+}
+
+
+ExIt=0;
+                document.getElementById("p1").innerHTML="Player 1 enter your name";
+                document.getElementById("p2").innerHTML="Player 2 enter your name";
+                document.getElementById("got").innerHTML="Here is status";
+
+
+           }
+
+
+
             function won(){
+                //Player
                if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="X")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="X")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="X")){
                    window.prompt("won "+p1_name);
+                   ExIt=1;
                }
-               if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="O")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="O")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="O")){
-                   window.prompt("won "+p2_name);
-               }
-
-
-
                if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="X")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="X")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="X")){
                    window.prompt("won "+p1_name);
+                   ExIt=1;
+               }
+               if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="X")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="X")){
+                   window.prompt("won "+p1_name);
+                   ExIt=1;
+               }
+
+
+
+
+                //System
+               if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="O")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="O")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="O")){
+                   window.prompt("won "+p2_name);
+                   ExIt=2;
                }
                if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="O")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="O")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="O")){
                    window.prompt("won "+p2_name);
-               }
-
-       
-               if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="X")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="X")){
-                   window.prompt("won "+p1_name);
+                   ExIt=2;
                }
                if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="O")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="O")){
                    window.prompt("won "+p2_name);
+                   ExIt=2;
                }
 
         
@@ -193,13 +223,27 @@ function update(i){
 
 
                     if(i%2==0)
-                          {arr[t]=p1;}
+                          {arr[t]=p1;
+                        
+                            won();
+                            if(ExIt!=0){
+                                //flush_all();
+                                setTimeout(flush_all,3000);
+                            }
+
+
+}
                      else{
                     arr[t]=p2;
+                    won();
+                    if(ExIt!=0){
+                        //flush_all();
+                        setTimeout(flush_all,3000);
+                    }
                          }
                 
                 document.getElementById(c_id).innerHTML=arr[t];
-                won();
+                
                 
                console.log(i);
                 console.log(t);
@@ -210,6 +254,22 @@ function update(i){
             }
                     else{
                     window.prompt("already selected");}
+
+
+
+                      //reset everything on draw
+           var l;        
+        var full=1;
+        for(l=0;l<9;l++){
+if(arr[l]==" "){
+    full=0;
+    break;
+}
+        }
+        if(full==1){
+            window.prompt("DRAW!!");
+            flush_all();
+        }
                
 
             }
