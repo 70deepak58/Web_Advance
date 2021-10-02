@@ -116,6 +116,7 @@
             
         </style>
         <script>
+            var flush_full=0;
             var p_point=0;
             var s_point=0;
             var ExIt=0;
@@ -195,9 +196,10 @@ ExIt=0;
 
 
 function system_turn(){
+    var rand=0;
     if(turn%2==1)
     {
-        for(sys=0;sys<9;sys++){
+       /* for(sys=0;sys<9;sys++){
         if(arr[sys]==" ")
         {
             system_turn_id="a"+(sys+1);
@@ -209,6 +211,26 @@ function system_turn(){
             break;
         }
     }
+    */
+
+    //uncomment above comment code and comment below before turn++
+   while(arr[rand]!=" "){
+      rand=(Math.floor(Math.random()*10))%9;
+      
+    }
+    system_turn_id="a"+(rand+1);
+            arr[rand]=p2;
+            document.getElementById(system_turn_id).innerHTML=arr[rand];
+            document.getElementById("player").innerHTML="player";
+            document.getElementById("status").innerHTML="continue";
+            console.log(arr);
+            won();
+            if(ExIt!=0){
+            flush_all();
+            exit;
+        }
+
+
     turn++;
 
 }
@@ -229,6 +251,12 @@ function system_turn(){
                         document.getElementById("player").innerHTML="system";
                         document.getElementById("status").innerHTML="wait";
                         console.log(arr);
+                        won();
+                        if(ExIt!=0){
+            flush_all();
+            exit;
+        }
+
                         turn++;
                         console.log("player");
                     }
@@ -244,7 +272,7 @@ function system_turn(){
                          
                 
                 
-                won();
+                
                 
                //console.log(i);
                 //console.log(t);
@@ -257,13 +285,22 @@ function system_turn(){
                     window.prompt("already selected");}
 
                     //reset everything
-                    if(ExIt!=0){
+           var l;        
+        var full=1;
+        for(l=0;l<9;l++){
+if(arr[l]==" "){
+    full=0;
+    break;
+}
+        }
+        if(full==1){
+            window.prompt("DRAW!!");
             flush_all();
-            exit;
         }
                
 
-            }
+            
+    }
         </script>
     </body>
 </html>
