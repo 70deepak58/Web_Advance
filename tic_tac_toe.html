@@ -32,88 +32,158 @@
         <div id="a9" onclick="fu(this.id)">
 9
         </div>
+
+        <h1 id="heading">Enter player name first than play</h1>
+        <div id="p1" onclick="name(this.id)">
+Player 1 enter your name
+        </div>
+        <div id="p2" onclick="name(this.id)">
+Player 2 enter your name
+        </div>
+
+        <div id="got">
+Here is status
+        </div>
+        <div id="status">
+            Start game now<br>
+            Player 1 have X<br>
+            Player 2 have O<br>
+        </div>
         <style>
+            #heading{
+                position: relative;
+                bottom: 400px;
+            }
+            #got{
+                background-color: rgb(226, 226, 173);
+                position: relative;
+                bottom: 395px;
+                width: 405px;
+            }
+            #status{
+                background-color: aqua;
+                position: relative;
+                bottom: 350px;
+            }
+            #p1,#p2{
+                background-color: rgb(169, 199, 224);
+                position: relative;
+                bottom: 400px;
+                display: inline-block;
+                width:200px;
+            }
             #a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9{
-                height: 40px;
-                width: 40px;
+                height: 80px;
+                width: 80px;
                 background-color: beige;
             }
             #a2{
                 position: relative;
-                left :40px;
-                bottom: 40px;
+                left :80px;
+                bottom: 80px;
             }
             #a3{
                 position: relative;
-                left :80px;
-                bottom: 80px;
+                left :160px;
+                bottom: 160px;
             }
             #a4{
                 position: relative;
-                bottom: 80px;
+                bottom: 160px;
             }
             #a5{
                 position: relative;
-                left :40px;
-                bottom: 120px;
+                left :80px;
+                bottom: 240px;
             }
             #a6{
                 position: relative;
-                left :80px;
-                bottom: 160px;
+                left :160px;
+                bottom: 320px;
             }
             #a7{
                 position: relative;
-                bottom: 160px;
+                bottom: 320px;
             }
             #a8{
                 position: relative;
-                left :40px;
-                bottom: 200px;
+                left :80px;
+                bottom: 400px;
             }
             #a9{
                 position: relative;
-                left :80px;
-                bottom: 240px;
+                left :160px;
+                bottom: 480px;
             }
         </style>
         <script>
             var t=0;
             var i=0;
-            let p1="X"
-            let p2="O"
+            let p1="X";
+            let p2="O";
             var arr=[" "," "," "," "," "," "," "," "," "];
+
+            var p1_name="";
+            var p2_name="";
+            var p="";
+function name(p_name_id){
+    p=window.prompt("enter name");
+    if(p_name_id[1]==1&&p1_name==""){
+p1_name=p;
+document.getElementById("got").innerHTML=p +" turn choice is "+"X";
+    }
+    if(p_name_id[1]==2&&p2_name==""){
+p2_name=p;
+    }
+    
+  
+document.getElementById(p_name_id).innerHTML=p;
+}
+
+
             function won(){
                if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="X")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="X")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="X")){
-                   window.prompt("won P1");
+                   window.prompt("won "+p1_name);
                }
                if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="O")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="O")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="O")){
-                   window.prompt("won P2");
+                   window.prompt("won "+p2_name);
                }
 
 
 
                if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="X")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="X")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="X")){
-                   window.prompt("won P1");
+                   window.prompt("won "+p1_name);
                }
                if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="O")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="O")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="O")){
-                   window.prompt("won P2");
+                   window.prompt("won "+p2_name);
                }
 
        
                if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="X")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="X")){
-                   window.prompt("won P1");
+                   window.prompt("won "+p1_name);
                }
                if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="O")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="O")){
-                   window.prompt("won P2");
+                   window.prompt("won "+p2_name);
                }
 
         
 
 
             }
+
+function update(i){
+    if(i%2==1){
+        document.getElementById("got").innerHTML=p1_name+" turn choice is "+p1;
+    }
+    else{
+        document.getElementById("got").innerHTML=p2_name+" turn choice is "+p2;
+    }
+}
+
             function fu(c_id){
                 t=c_id[1]-1;
+update(i);
+
                 if(arr[t]==" "){
 
 
@@ -133,10 +203,7 @@
                 i++;
 
             }
-                    
-                
-
-                else{
+                    else{
                     window.prompt("already selected");}
                
 
