@@ -49,6 +49,10 @@ Here is status
             Player 1 have X<br>
             Player 2 have O<br>
         </div>
+        <div id="score">
+            Player1:0<br>
+            Player2:0
+        </div>
         <style>
             #heading{
                 position: relative;
@@ -119,8 +123,14 @@ Here is status
                 left :160px;
                 bottom: 480px;
             }
+            #score{
+                position: relative;
+                bottom: 450px;
+            }
         </style>
         <script>
+            var p1_point=0;
+            var p2_point=0;
             var ExIt=0;
             var t=0;
             var i=0;
@@ -148,7 +158,7 @@ document.getElementById(p_name_id).innerHTML=p;
 
 function flush_all(){
                 var f=0;
-                turn=0;
+                i=0;
                 
                 
 for(f=0;f<9;f++){
@@ -162,6 +172,7 @@ ExIt=0;
                 document.getElementById("p1").innerHTML="Player 1 enter your name";
                 document.getElementById("p2").innerHTML="Player 2 enter your name";
                 document.getElementById("got").innerHTML="Here is status";
+                document.getElementById("score").innerHTML="Player1:"+p1_point+"\nPlayer2:"+p2_point;
 
 
            }
@@ -169,34 +180,41 @@ ExIt=0;
 
 
             function won(){
-                //Player
+                //Player1
                if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="X")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="X")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="X")){
                    window.prompt("won "+p1_name);
+                   p1_point++;
                    ExIt=1;
+
                }
                if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="X")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="X")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="X")){
                    window.prompt("won "+p1_name);
+                   p1_point++;
                    ExIt=1;
                }
                if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="X")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="X")){
                    window.prompt("won "+p1_name);
+                   p1_point++;
                    ExIt=1;
                }
 
 
 
 
-                //System
+                //Player2
                if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="O")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="O")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="O")){
                    window.prompt("won "+p2_name);
+                   p2_point++;
                    ExIt=2;
                }
                if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="O")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="O")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="O")){
                    window.prompt("won "+p2_name);
+                   p2_point++;
                    ExIt=2;
                }
                if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="O")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="O")){
                    window.prompt("won "+p2_name);
+                   p2_point++;
                    ExIt=2;
                }
 
