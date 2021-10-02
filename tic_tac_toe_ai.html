@@ -132,9 +132,19 @@
             var p2_name="System";
             var p="";
 
+
+
+function fake(){
+    console.log("wait");
+}
+
+
+
             function flush_all(){
+                setTimeout(fake,5000);
                 var f=0;
                 turn=0;
+                
                 
 for(f=0;f<9;f++){
     document.getElementById("a"+(f+1)).innerHTML="-";
@@ -153,17 +163,20 @@ ExIt=0;
             function won(){
                 //player
                if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="X")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="X")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="X")){
-                   window.prompt("won "+p1_name);
+                   //window.prompt("won "+p1_name);
+                   console.log("won "+p1_name);
                    ExIt=1;
                    p_point++;
                }
                if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="X")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="X")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="X")){
-                   window.prompt("won "+p1_name);
+                   //window.prompt("won "+p1_name);
+                   console.log("won "+p1_name);
                    ExIt=1;
                    p_point++;
                }
                if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="X")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="X")){
-                   window.prompt("won "+p1_name);
+                   //window.prompt("won "+p1_name);
+                   console.log("won "+p1_name);
                    ExIt=1;
                    p_point++;
                }
@@ -173,22 +186,25 @@ ExIt=0;
 
                //system
                if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="O")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="O")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="O")){
-                   window.prompt("won "+p2_name);
+                  // window.prompt("won "+p2_name);
+                  console.log("won "+p2_name);
                    ExIt=2;
                    s_point++;
                }
                if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="O")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="O")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="O")){
-                   window.prompt("won "+p2_name);
+                  // window.prompt("won "+p2_name);
+                  console.log("won "+p2_name);
                    ExIt=2;
                    s_point++;
                }
                if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="O")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="O")){
-                   window.prompt("won "+p2_name);
+                  // window.prompt("won "+p2_name);
+                  console.log("won "+p2_name);
                    ExIt=2;
                    s_point++;
                }
 
-      
+               setTimeout(fake,5000);
 
 
             }
@@ -226,8 +242,9 @@ function system_turn(){
             console.log(arr);
             won();
             if(ExIt!=0){
-            flush_all();
-            exit;
+                
+                setTimeout(flush_all,5000);
+            //flush_all();
         }
 
 
@@ -253,8 +270,10 @@ function system_turn(){
                         console.log(arr);
                         won();
                         if(ExIt!=0){
-            flush_all();
-            exit;
+                        
+                            setTimeout(flush_all,5000);
+            //flush_all();
+        
         }
 
                         turn++;
