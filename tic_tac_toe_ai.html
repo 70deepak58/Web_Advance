@@ -44,6 +44,12 @@
       Player 0<br>
       System 0
         </div>
+
+
+        <!--level-->
+        <div id="l_n" onclick="f_level(this.id)">-</div>
+        <div id="level">level:0</div>
+        <div id="l_p" onclick="f_level(this.id)">+</div>
     
         <style>
            #point{
@@ -112,6 +118,17 @@
                 width: 200px;
                 font-size: 50px;
                 margin:10px;
+            }
+
+
+            /*level*/
+            #l_n,#level,#l_p{
+                position: relative;
+                display: inline;
+                background-color: rgb(223, 201, 243);
+                bottom: 850px;
+                left: 300px;
+                font-size: 40px;
             }
             
         </style>
@@ -206,21 +223,25 @@ function system_turn(){
     var rand=0;
     if(turn%2==1)
     {
-       /* for(sys=0;sys<9;sys++){
-        if(arr[sys]==" ")
-        {
-            system_turn_id="a"+(sys+1);
-            arr[sys]=p2;
-            document.getElementById(system_turn_id).innerHTML=arr[sys];
-            document.getElementById("player").innerHTML="player";
-            document.getElementById("status").innerHTML="continue";
-            console.log(arr);
-            break;
-        }
-    }
-    */
+       //level 0
+        if(level==0){
+              for(sys=0;sys<9;sys++){
+                   if(arr[sys]==" "){
+                             system_turn_id="a"+(sys+1);
+                             arr[sys]=p2;
+                             document.getElementById(system_turn_id).innerHTML=arr[sys];
+                             document.getElementById("player").innerHTML="player";
+                             document.getElementById("status").innerHTML="continue";
+                             console.log(arr);
+                             break;
+                           }
+                         }
+         }
 
     //uncomment above comment code and comment below before turn++
+
+    //level 1
+    if(level==1){
    while(arr[rand]!=" "){
       rand=(Math.floor(Math.random()*10))%9;
       
@@ -237,7 +258,12 @@ function system_turn(){
                 setTimeout(flush_all,3000);
             //flush_all();
         }
+    }
 
+    //level 2
+    if(level==2){
+        
+    }
 
     turn++;
 
@@ -294,7 +320,7 @@ function system_turn(){
                     else{
                     window.prompt("already selected");}
 
-                    //reset everything
+                    //reset everything on draw
            var l;        
         var full=1;
         for(l=0;l<9;l++){
@@ -311,6 +337,26 @@ if(arr[l]==" "){
 
             
     }
+
+//level
+var level=0;
+function f_level(ch_l){
+     if(ch_l=="l_p"){
+         level++;
+     }
+
+     if(ch_l=="l_n"){
+         level--;
+     }
+     if(level<0){
+         level=0;
+     }
+     if(level>4){
+         level=4;
+     }
+     document.getElementById("level").innerHTML="level:"+level;
+}
+
         </script>
     </body>
 </html>
