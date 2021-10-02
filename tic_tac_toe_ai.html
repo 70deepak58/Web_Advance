@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>Tic Tac Toe game using ai</h1>
+        <div id="a1" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a2" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a3" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a4" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a5" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a6" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a7" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a8" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a9" onclick="fu(this.id)">
+-
+        </div>
+
+
+        <div id="player">
+            player
+        </div>
+        <div id="status">
+            continue
+        </div>
+    
+        <style>
+           
+           
+            #p1,#p2{
+                background-color: rgb(169, 199, 224);
+                position: relative;
+                bottom: 400px;
+                display: inline-block;
+                width:200px;
+                font-size: 30px;
+            }
+            #a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9{
+                height: 80px;
+                width: 80px;
+                background-color: beige;
+                font-size: 80px;
+                text-align: center;
+            }
+            #a2{
+                position: relative;
+                left :80px;
+                bottom: 80px;
+            }
+            #a3{
+                position: relative;
+                left :160px;
+                bottom: 160px;
+            }
+            #a4{
+                position: relative;
+                bottom: 160px;
+            }
+            #a5{
+                position: relative;
+                left :80px;
+                bottom: 240px;
+            }
+            #a6{
+                position: relative;
+                left :160px;
+                bottom: 320px;
+            }
+            #a7{
+                position: relative;
+                bottom: 320px;
+            }
+            #a8{
+                position: relative;
+                left :80px;
+                bottom: 400px;
+            }
+            #a9{
+                position: relative;
+                left :160px;
+                bottom: 480px;
+            }
+            #player,#status{
+                position: relative;
+                bottom: 400px;
+                background-color: rgb(247, 206, 206);
+                width: 200px;
+                font-size: 50px;
+                margin:10px;
+            }
+            
+        </style>
+        <script>
+            var sys=0;
+            var system_turn_id="lo";
+            var t=0;
+            var turn=0;
+            let p1="X";
+            let p2="O";
+            var arr=[" "," "," "," "," "," "," "," "," "];
+
+            var p1_name="Player";
+            var p2_name="System";
+            var p="";
+
+
+            function won(){
+                //player
+               if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="X")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="X")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="X")){
+                   window.prompt("won "+p1_name);
+               }
+               if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="X")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="X")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="X")){
+                   window.prompt("won "+p1_name);
+               }
+               if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="X")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="X")){
+                   window.prompt("won "+p1_name);
+               }
+
+
+
+
+               //system
+               if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="O")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="O")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="O")){
+                   window.prompt("won "+p2_name);
+               }
+               if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="O")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="O")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="O")){
+                   window.prompt("won "+p2_name);
+               }
+               if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="O")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="O")){
+                   window.prompt("won "+p2_name);
+               }
+
+        
+
+
+            }
+function system_turn(){
+    if(turn%2==1)
+    {
+        for(sys=0;sys<9;sys++){
+        if(arr[sys]==" ")
+        {
+            system_turn_id="a"+(sys+1);
+            arr[sys]=p2;
+            document.getElementById(system_turn_id).innerHTML=arr[sys];
+            document.getElementById("player").innerHTML="player";
+            document.getElementById("status").innerHTML="continue";
+            console.log(arr);
+            break;
+        }
+    }
+    turn++;
+
+}
+    
+}
+
+
+            function fu(c_id){
+                t=c_id[1]-1;
+
+                if(arr[t]==" "){
+
+
+                    if(turn%2==0){
+                        //player turn
+                        arr[t]=p1;
+                        document.getElementById(c_id).innerHTML=arr[t];
+                        document.getElementById("player").innerHTML="system";
+                        document.getElementById("status").innerHTML="wait";
+                        console.log(arr);
+                        turn++;
+                        console.log("player");
+                    }
+                     
+                         //system turn
+                         if(turn<=7)
+                         {
+                             setTimeout(system_turn,3000)
+
+                             
+                        console.log("system");}
+                    
+                         
+                
+                
+                won();
+                
+               //console.log(i);
+                //console.log(t);
+               // console.log(arr[i]);
+               // console.log(arr);
+               
+
+            }
+                    else{
+                    window.prompt("already selected");}
+               
+
+            }
+        </script>
+    </body>
+</html>
