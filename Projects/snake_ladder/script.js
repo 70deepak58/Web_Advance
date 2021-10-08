@@ -53,11 +53,26 @@ function snake_bite(flag,l){
         //Goti_P1_Left=0;
         console.log("odd"+p1_score/10);
                 }
+                //bug 20 40 60
+     if((Math.floor((p1_score/10)%2==0))&&(p1_score%10==0)){
+         Goti_P1_Left=0;
+         Goti_P1_Top=900-90*Math.floor(p1_score/10);
+        prompt("bug here");
+
+    }
+    //bug2 10 20 30
+    if((Math.floor((p1_score/10)%2!=0))&&(p1_score%10==0)){
+        Goti_P1_Left=800;
+        Goti_P1_Top=900-90*Math.floor(p1_score/10);
+       prompt("bug here");
+
+   }
      document.getElementById("Goti_P1").style.top=Goti_P1_Top+"px";
      document.getElementById("Goti_P1").style.left=Goti_P1_Left+"px";
      document.getElementById("P1").innerHTML="P1 SCORE:"+p1_score;
      console.log(Goti_P1_Top);
      console.log(Goti_P1_Left);
+     
 if(bite==1){
     window.prompt("kat liya p1 ko");
 }
@@ -107,6 +122,20 @@ else{
          //Goti_P1_Left=0;
          console.log("odd"+p2_score/10);
                  }
+                            //bug 20 40 60
+     if((Math.floor((p2_score/10)%2==0))&&(p2_score%10==0)){
+        Goti_P2_Left=0;
+        Goti_P2_Top=900-90*Math.floor(p2_score/10);
+       prompt("bug here");
+
+   }
+      //bug2 10 20 30
+      if((Math.floor((p2_score/10)%2!=0))&&(p2_score%10==0)){
+        Goti_P2_Left=800;
+        Goti_P2_Top=900-90*Math.floor(p2_score/10);
+       prompt("bug here");
+
+   }
       document.getElementById("Goti_P2").style.top=Goti_P2_Top+"px";
       document.getElementById("Goti_P2").style.left=Goti_P2_Left+"px";
       
@@ -114,6 +143,11 @@ else{
       if(bite==1){
           window.prompt("kat liya p2 ko");
       }
+      //bug here
+      if((Math.floor((p1_score/10)%2==0))&&(p1_score%10==0)){
+        prompt("bug here");
+
+    }
       bite=0;
       //console.log(p2_score);
 }
@@ -160,10 +194,30 @@ Goti_P1_Left=900-(90*Math.floor(p1_score%10));
 console.log("odd"+p1_score/10);
 //Goti_P1_Left=0;
         }
+
+         //bug here 20 40 60
+         if((Math.floor((p1_score/10)%2==0))&&(p1_score%10==0)){
+             Goti_P1_Left=0;
+             Goti_P1_Top=900-90*Math.floor(p1_score/10);
+            prompt("bug here");
+   
+        }
+
+        //bug2 10 20 30
+        //bug2 10 20 30
+    if((Math.floor((p1_score/10)%2!=0))&&(p1_score%10==0)){
+        Goti_P1_Left=800;
+        Goti_P1_Top=900-90*Math.floor(p1_score/10);
+       prompt("bug here");
+
+   }
           document.getElementById("Goti_P1").style.top=Goti_P1_Top+"px";
           document.getElementById("Goti_P1").style.left=Goti_P1_Left+"px";
           //document.getElementById("P1").innerHTML="P1 SCORE:"+p1_score;
           document.getElementById("P1").innerHTML="P1 SCORE:"+p1_score;
+
+
+         
           if(up==1){
               window.prompt("ladder p1");
 
@@ -211,9 +265,29 @@ console.log("odd"+p1_score/10);
          //Goti_P1_Left=0;
          console.log("odd"+p2_score/10);
                  }
+
+                                         //bug 20 40 60
+     if((Math.floor((p2_score/10)%2==0))&&(p2_score%10==0)){
+        Goti_P2_Left=0;
+        Goti_P2_Top=900-90*Math.floor(p2_score/10);
+       prompt("bug here");
+
+   }
+       //bug2 10 20 30
+       if((Math.floor((p2_score/10)%2!=0))&&(p2_score%10==0)){
+        Goti_P2_Left=800;
+        Goti_P2_Top=900-90*Math.floor(p2_score/10);
+       prompt("bug here");
+
+   }
       document.getElementById("Goti_P2").style.top=Goti_P2_Top+"px";
       document.getElementById("Goti_P2").style.left=Goti_P2_Left+"px";
           document.getElementById("P2").innerHTML="P2 SCORE:"+p2_score;
+          //bug here
+          if((Math.floor((p1_score/10)%2==0))&&(p1_score%10==0)){
+            prompt("bug here");
+   
+        }
           if(up==1){
               window.prompt("ladder p2");
           }
