@@ -39,6 +39,7 @@ function snake_bite(flag,l){
         bite=1;
      }
      //console.log(p1_score);
+     document.getElementById("P1").innerHTML="P1 SCORE:"+p1_score;
 if(bite==1){
     window.prompt("kat liya p1 ko");
 }
@@ -78,6 +79,7 @@ else{
          p2_score-=19; 
          bite=1;
       }
+      document.getElementById("P2").innerHTML="P2 SCORE:"+p2_score;
       if(bite==1){
           window.prompt("kat liya p2 ko");
       }
@@ -96,12 +98,14 @@ function dice_roll(){
         console.log("p1");
         console.log(p1_score);
         snake_bite(1,p1_score);
+        document.getElementById("btn1").innerHTML="P2 CLICK";
     }
     else{
         p2_score+=no;
         console.log("p2");
         console.log(p2_score);
         snake_bite(2,p2_score);
+        document.getElementById("btn1").innerHTML="P1 CLICK";
     }
     img=no+".png";
     console.log(img);

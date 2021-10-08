@@ -14,3 +14,11 @@
     width:900px;
     height: 900px;
 }
+#P1{
+    display: inline;
+    padding-left: 25px;
+}
+#P2{
+    padding-left: 25px;
+    display: inline;
+}
