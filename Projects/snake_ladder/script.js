@@ -7,4 +7,5 @@ function dice_roll(){
     img=no+".png";
     console.log(img);
     document.getElementById("dice").style.backgroundImage="url("+img+")";
+    document.getElementById("dice1").style.img="url("+img+")";
 }
