@@ -5,6 +5,10 @@ var p2_score=0;
 var turn=0;
 var bite=0;
 var up=0;
+var Goti_P1_Top;
+var Goti_P1_Left;
+var Goti_P2_Top;
+var Goti_P2_Left;
 function snake_bite(flag,l){
 
     if(flag==1){
@@ -34,7 +38,7 @@ function snake_bite(flag,l){
         bite=1;
      }
      if(l==95){
-        p1_score-=20; 
+        p1_score-=20;
         bite=1;
      }
      if(l==98){
@@ -42,7 +46,18 @@ function snake_bite(flag,l){
         bite=1;
      }
      //console.log(p1_score);
+     Goti_P1_Top=900-90*Math.floor(p1_score/10)-90;
+     Goti_P1_Left=90*Math.floor(p1_score%10)-90;
+     if(((Math.floor(p1_score/10))%2!=0)&&(p1_score/10)!=0){
+        Goti_P1_Left=900-(90*Math.floor(p1_score%10));
+        //Goti_P1_Left=0;
+        console.log("odd"+p1_score/10);
+                }
+     document.getElementById("Goti_P1").style.top=Goti_P1_Top+"px";
+     document.getElementById("Goti_P1").style.left=Goti_P1_Left+"px";
      document.getElementById("P1").innerHTML="P1 SCORE:"+p1_score;
+     console.log(Goti_P1_Top);
+     console.log(Goti_P1_Left);
 if(bite==1){
     window.prompt("kat liya p1 ko");
 }
@@ -83,6 +98,18 @@ else{
          p2_score-=19; 
          bite=1;
       }
+
+
+      Goti_P2_Top=900-90*Math.floor(p2_score/10)-90;
+      Goti_P2_Left=90*Math.floor(p2_score%10)-90;
+      if(((Math.floor(p2_score/10))%2!=0)&&(p2_score/10)!=0){
+         Goti_P2_Left=900-(90*Math.floor(p2_score%10));
+         //Goti_P1_Left=0;
+         console.log("odd"+p2_score/10);
+                 }
+      document.getElementById("Goti_P2").style.top=Goti_P2_Top+"px";
+      document.getElementById("Goti_P2").style.left=Goti_P2_Left+"px";
+      
       document.getElementById("P2").innerHTML="P2 SCORE:"+p2_score;
       if(bite==1){
           window.prompt("kat liya p2 ko");
@@ -126,6 +153,16 @@ function ladder_up(flag2,m){
              p1_score+=19; 
              up=1;
           }
+          Goti_P1_Top=900-90*Math.floor(p1_score/10)-90;
+          Goti_P1_Left=90*Math.floor(p1_score%10)-90;
+          if(((Math.floor(p1_score/10))%2!=0)&&(p1_score/10)!=0){
+Goti_P1_Left=900-(90*Math.floor(p1_score%10));
+console.log("odd"+p1_score/10);
+//Goti_P1_Left=0;
+        }
+          document.getElementById("Goti_P1").style.top=Goti_P1_Top+"px";
+          document.getElementById("Goti_P1").style.left=Goti_P1_Left+"px";
+          //document.getElementById("P1").innerHTML="P1 SCORE:"+p1_score;
           document.getElementById("P1").innerHTML="P1 SCORE:"+p1_score;
           if(up==1){
               window.prompt("ladder p1");
@@ -163,6 +200,19 @@ function ladder_up(flag2,m){
              p2_score+=19; 
              up=1;
           }
+
+
+
+          
+      Goti_P2_Top=900-90*Math.floor(p2_score/10)-90;
+      Goti_P2_Left=90*Math.floor(p2_score%10)-90;
+      if(((Math.floor(p2_score/10))%2!=0)&&(p2_score/10)!=0){
+         Goti_P2_Left=900-(90*Math.floor(p2_score%10));
+         //Goti_P1_Left=0;
+         console.log("odd"+p2_score/10);
+                 }
+      document.getElementById("Goti_P2").style.top=Goti_P2_Top+"px";
+      document.getElementById("Goti_P2").style.left=Goti_P2_Left+"px";
           document.getElementById("P2").innerHTML="P2 SCORE:"+p2_score;
           if(up==1){
               window.prompt("ladder p2");
