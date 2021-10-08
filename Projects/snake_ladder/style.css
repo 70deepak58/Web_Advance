@@ -31,7 +31,7 @@ width: 80px;
 height: 80px;
 text-align: center;
 z-index: 2;
-top: 0px;
+top: 800px;
 left:0px;
 }
 #Goti_P2{
@@ -43,4 +43,6 @@ width: 90px;
 height: 90px;
 text-align: center;
 z-index: 1;
+top: 800px;
+left: 0px;
 }
