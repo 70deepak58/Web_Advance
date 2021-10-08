@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>Tic Tac Toe game using ai</h1>
+        <div id="a1" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a2" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a3" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a4" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a5" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a6" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a7" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a8" onclick="fu(this.id)">
+-
+        </div>
+        <div id="a9" onclick="fu(this.id)">
+-
+        </div>
+
+
+        <div id="player">
+            player
+        </div>
+        <div id="status">
+            continue
+        </div>
+        <div id="point">
+      Player 0<br>
+      System 0
+        </div>
+
+
+        <!--level-->
+        <div id="l_n" onclick="f_level(this.id)">-</div>
+        <div id="level">level:0</div>
+        <div id="l_p" onclick="f_level(this.id)">+</div>
+    
+        <style>
+           #point{
+               position: relative;
+               display: block;
+               bottom: 400px;
+           }
+           
+            #p1,#p2{
+                background-color: rgb(169, 199, 224);
+                position: relative;
+                bottom: 400px;
+                display: inline-block;
+                width:200px;
+                font-size: 30px;
+            }
+            #a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9{
+                height: 80px;
+                width: 80px;
+                background-color: beige;
+                font-size: 80px;
+                text-align: center;
+            }
+            #a2{
+                position: relative;
+                left :80px;
+                bottom: 80px;
+            }
+            #a3{
+                position: relative;
+                left :160px;
+                bottom: 160px;
+            }
+            #a4{
+                position: relative;
+                bottom: 160px;
+            }
+            #a5{
+                position: relative;
+                left :80px;
+                bottom: 240px;
+            }
+            #a6{
+                position: relative;
+                left :160px;
+                bottom: 320px;
+            }
+            #a7{
+                position: relative;
+                bottom: 320px;
+            }
+            #a8{
+                position: relative;
+                left :80px;
+                bottom: 400px;
+            }
+            #a9{
+                position: relative;
+                left :160px;
+                bottom: 480px;
+            }
+            #player,#status{
+                position: relative;
+                bottom: 400px;
+                background-color: rgb(247, 206, 206);
+                width: 200px;
+                font-size: 50px;
+                margin:10px;
+            }
+
+
+            /*level*/
+            #l_n,#level,#l_p{
+                position: relative;
+                display: inline;
+                background-color: rgb(223, 201, 243);
+                bottom: 850px;
+                left: 300px;
+                font-size: 40px;
+            }
+            
+        </style>
+        <script>
+            var flush_full=0;
+            var p_point=0;
+            var s_point=0;
+            var ExIt=0;
+            var sys=0;
+            var system_turn_id="lo";
+            var t=0;
+            var turn=0;
+            let p1="X";
+            let p2="O";
+            var arr=[" "," "," "," "," "," "," "," "," "];
+
+            var p1_name="Player";
+            var p2_name="System";
+            var p="";
+
+
+
+            function flush_all(){
+                var f=0;
+                turn=0;
+                
+                
+for(f=0;f<9;f++){
+    document.getElementById("a"+(f+1)).innerHTML="-";
+    arr[f]=" ";
+    
+}
+
+
+ExIt=0;
+                document.getElementById("player").innerHTML="player";
+                document.getElementById("status").innerHTML="continue";
+                document.getElementById("point").innerHTML="Player:"+p_point+" Syatem:"+s_point;
+
+           }
+
+            function won(){
+                //player
+               if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="X")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="X")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="X")){
+                   window.prompt("won "+p1_name);
+                   //console.log("won "+p1_name);
+                   ExIt=1;
+                   p_point++;
+               }
+               if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="X")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="X")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="X")){
+                   window.prompt("won "+p1_name);
+                   //console.log("won "+p1_name);
+                   ExIt=1;
+                   p_point++;
+               }
+               if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="X")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="X")){
+                   window.prompt("won "+p1_name);
+                   //console.log("won "+p1_name);
+                   ExIt=1;
+                   p_point++;
+               }
+
+
+
+
+               //system
+               if((arr[0]==arr[1]&&arr[1]==arr[2]&&arr[2]==arr[0]&&arr[0]=="O")||(arr[3]==arr[4]&&arr[4]==arr[5]&&arr[5]==arr[3]&&arr[3]=="O")||(arr[6]==arr[7]&&arr[7]==arr[8]&&arr[8]==arr[6]&&arr[6]=="O")){
+                  window.prompt("won "+p2_name);
+                  //console.log("won "+p2_name);
+                   ExIt=2;
+                   s_point++;
+               }
+               if((arr[0]==arr[3]&&arr[3]==arr[6]&&arr[6]==arr[0]&&arr[0]=="O")||(arr[1]==arr[4]&&arr[4]==arr[7]&&arr[7]==arr[1]&&arr[1]=="O")||(arr[2]==arr[5]&&arr[5]==arr[8]&&arr[8]==arr[2]&&arr[2]=="O")){
+                  window.prompt("won "+p2_name);
+                  //console.log("won "+p2_name);
+                   ExIt=2;
+                   s_point++;
+               }
+               if((arr[0]==arr[4]&&arr[4]==arr[8]&&arr[8]==arr[0]&&arr[0]=="O")||(arr[2]==arr[4]&&arr[4]==arr[6]&&arr[6]==arr[2]&&arr[2]=="O")){
+                  window.prompt("won "+p2_name);
+                  //console.log("won "+p2_name);
+                   ExIt=2;
+                   s_point++;
+               }
+
+
+            }
+
+
+
+function system_turn(){
+    var rand=0;
+    if(turn%2==1)
+    {
+       //level 0
+        if(level==0){
+              for(sys=0;sys<9;sys++){
+                   if(arr[sys]==" "){
+                             system_turn_id="a"+(sys+1);
+                             arr[sys]=p2;
+                             document.getElementById(system_turn_id).innerHTML=arr[sys];
+                             document.getElementById("player").innerHTML="player";
+                             document.getElementById("status").innerHTML="continue";
+                             console.log(arr);
+                             break;
+                           }
+                         }
+         }
+
+    //uncomment above comment code and comment below before turn++
+
+    //level 1
+    if(level==1){
+   while(arr[rand]!=" "){
+      rand=(Math.floor(Math.random()*10))%9;
+      
+    }
+    system_turn_id="a"+(rand+1);
+            arr[rand]=p2;
+            document.getElementById(system_turn_id).innerHTML=arr[rand];
+            document.getElementById("player").innerHTML="player";
+            document.getElementById("status").innerHTML="continue";
+            console.log(arr);
+            won();
+            if(ExIt!=0){
+                
+                setTimeout(flush_all,3000);
+            //flush_all();
+        }
+    }
+
+    //level 2
+    var ext=0;
+    var row=0;
+    var row_t=0;
+    var col=0;
+    var row_element=0;
+    var trace_x=0;
+                 //defend
+    if(level==2){
+   for(row=0;row<3;row++){
+    row_element=0;
+       for(col=0;col<3;col++){
+           
+           if(arr[row_t+col]=="X"){
+             row_element++;
+            
+           }
+          //hjjuhjkhj jhjj hjhujhuj j hujyh     
+       }
+//djhfuj ed fjiedidr 
+
+if(row_element==2){
+               trace_x=row_element;
+           for(ext=row_t;ext<row_t+3;ext++){
+               if(arr[ext]==" "){
+                   arr[ext]=p2;
+                   
+
+                   console.log(arr[ext]);
+                   console.log(row_element);
+                   console.log("found!!!!!!");
+                   document.getElementById("a"+(ext+1)).innerHTML=arr[ext];
+                   
+               }
+           }
+           break;
+           }
+           else{
+               trace_x=0;
+           }
+
+// dfjio fidi fieie fd ue fiedfi ed e df
+       row_t+=3;
+   }
+   //hfhfgj jufiur 
+
+   
+
+   //ydyufgyh udifuvuifd gdiffu 
+if(trace_x!=2){
+    while(arr[rand]!=" "){
+      rand=(Math.floor(Math.random()*10))%9;
+      
+    }
+    system_turn_id="a"+(rand+1);
+            arr[rand]=p2;
+            document.getElementById(system_turn_id).innerHTML=arr[rand];
+            document.getElementById("player").innerHTML="player";
+            document.getElementById("status").innerHTML="continue";
+            console.log(arr);
+            won();
+            if(ExIt!=0){
+                
+                setTimeout(flush_all,3000);
+            //flush_all();
+        }
+
+}
+
+    }
+    
+
+    turn++;
+
+}
+}
+
+
+            function fu(c_id){
+                t=c_id[1]-1;
+
+                if(arr[t]==" "){
+
+
+                    if(turn%2==0){
+                        //player turn
+                        arr[t]=p1;
+                        document.getElementById(c_id).innerHTML=arr[t];
+                        document.getElementById("player").innerHTML="system";
+                        document.getElementById("status").innerHTML="wait";
+                        console.log(arr);
+                        won();
+                        if(ExIt!=0){
+                        
+                            setTimeout(flush_all,3000);
+            //flush_all();
+        
+        }
+
+                        turn++;
+                        console.log("player");
+                    }
+                     
+                         //system turn
+                         if(turn<=7&&ExIt==0)
+                         {  
+                           /* if(turn<3){
+                                 level=1;
+                             }
+                             else{
+                                 level=2
+                             }*/
+                             setTimeout(system_turn,3000)
+
+                             
+                        console.log("system");}
+                    
+                         
+                
+                
+                
+                
+               //console.log(i);
+                //console.log(t);
+               // console.log(arr[i]);
+               // console.log(arr);
+               
+
+            }
+                    else{
+                    window.prompt("already selected");}
+
+                    //reset everything on draw
+           var l;        
+        var full=1;
+        for(l=0;l<9;l++){
+if(arr[l]==" "){
+    full=0;
+    break;
+}
+        }
+        if(full==1){
+            window.prompt("DRAW!!");
+            flush_all();
+        }
+               
+
+            
+    }
+
+//level
+var level=0;
+function f_level(ch_l){
+     if(ch_l=="l_p"){
+         level++;
+     }
+
+     if(ch_l=="l_n"){
+         level--;
+     }
+     if(level<0){
+         level=0;
+     }
+     if(level>4){
+         level=4;
+     }
+     document.getElementById("level").innerHTML="level:"+level;
+}
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+.header{
+    display:flex;
+    position: sticky;
+    background-color: rgb(255, 188, 2);
+    flex-wrap: nowrap;
+    text-align: center;
+
+}
+li{ display:inline;}

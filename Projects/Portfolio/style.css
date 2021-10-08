@@ -1,0 +1,32 @@
+#header{
+    display:flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    align-items: center;
+    background-color: aliceblue;
+    justify-content: space-between;
+
+}
+#opti li{
+    display: inline;
+}
+#opti a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+}
+#scroll{
+    width:20px;
+    position: fixed;
+    bottom: 3%;
+    right: 2%;
+    z-index: 1;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+}
+h1{
+    padding-left: 20px;
+}
