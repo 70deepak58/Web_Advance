@@ -57,14 +57,16 @@ function snake_bite(flag,l){
      if((Math.floor((p1_score/10)%2==0))&&(p1_score%10==0)){
          Goti_P1_Left=0;
          Goti_P1_Top=900-90*Math.floor(p1_score/10);
-        prompt("bug here");
+       // prompt("bug here");
+       console.log("bug there");
 
     }
     //bug2 10 20 30
     if((Math.floor((p1_score/10)%2!=0))&&(p1_score%10==0)){
         Goti_P1_Left=800;
         Goti_P1_Top=900-90*Math.floor(p1_score/10);
-       prompt("bug here");
+      // prompt("bug here");
+      console.log("bug there");
 
    }
      document.getElementById("Goti_P1").style.top=Goti_P1_Top+"px";
@@ -74,7 +76,8 @@ function snake_bite(flag,l){
      console.log(Goti_P1_Left);
      
 if(bite==1){
-    window.prompt("kat liya p1 ko");
+    //window.prompt("kat liya p1 ko");
+    console.log("kat liya");
 }
      bite=0;
     
@@ -126,14 +129,16 @@ else{
      if((Math.floor((p2_score/10)%2==0))&&(p2_score%10==0)){
         Goti_P2_Left=0;
         Goti_P2_Top=900-90*Math.floor(p2_score/10);
-       prompt("bug here");
+      // prompt("bug here");
+      console.log("bug there");
 
    }
       //bug2 10 20 30
       if((Math.floor((p2_score/10)%2!=0))&&(p2_score%10==0)){
         Goti_P2_Left=800;
         Goti_P2_Top=900-90*Math.floor(p2_score/10);
-       prompt("bug here");
+      // prompt("bug here");
+      console.log("bug there");
 
    }
       document.getElementById("Goti_P2").style.top=Goti_P2_Top+"px";
@@ -141,11 +146,13 @@ else{
       
       document.getElementById("P2").innerHTML="P2 SCORE:"+p2_score;
       if(bite==1){
-          window.prompt("kat liya p2 ko");
+         // window.prompt("kat liya p2 ko");
+         console.log("kat liya p2 ko");
       }
       //bug here
       if((Math.floor((p1_score/10)%2==0))&&(p1_score%10==0)){
-        prompt("bug here");
+       // prompt("bug here");
+       console.log("bug there");
 
     }
       bite=0;
@@ -199,7 +206,8 @@ console.log("odd"+p1_score/10);
          if((Math.floor((p1_score/10)%2==0))&&(p1_score%10==0)){
              Goti_P1_Left=0;
              Goti_P1_Top=900-90*Math.floor(p1_score/10);
-            prompt("bug here");
+           // prompt("bug here");
+           console.log("bug there");
    
         }
 
@@ -208,7 +216,8 @@ console.log("odd"+p1_score/10);
     if((Math.floor((p1_score/10)%2!=0))&&(p1_score%10==0)){
         Goti_P1_Left=800;
         Goti_P1_Top=900-90*Math.floor(p1_score/10);
-       prompt("bug here");
+      // prompt("bug here");
+      console.log("bug there");
 
    }
           document.getElementById("Goti_P1").style.top=Goti_P1_Top+"px";
@@ -219,7 +228,8 @@ console.log("odd"+p1_score/10);
 
          
           if(up==1){
-              window.prompt("ladder p1");
+             // window.prompt("ladder p1");
+             console.log("laddaer P1");
 
           }
           up=0;
@@ -270,14 +280,16 @@ console.log("odd"+p1_score/10);
      if((Math.floor((p2_score/10)%2==0))&&(p2_score%10==0)){
         Goti_P2_Left=0;
         Goti_P2_Top=900-90*Math.floor(p2_score/10);
-       prompt("bug here");
+      // prompt("bug here");
+      console.log("bug there");
 
    }
        //bug2 10 20 30
        if((Math.floor((p2_score/10)%2!=0))&&(p2_score%10==0)){
         Goti_P2_Left=800;
         Goti_P2_Top=900-90*Math.floor(p2_score/10);
-       prompt("bug here");
+      // prompt("bug here");
+      console.log("bug there");
 
    }
       document.getElementById("Goti_P2").style.top=Goti_P2_Top+"px";
@@ -285,19 +297,45 @@ console.log("odd"+p1_score/10);
           document.getElementById("P2").innerHTML="P2 SCORE:"+p2_score;
           //bug here
           if((Math.floor((p1_score/10)%2==0))&&(p1_score%10==0)){
-            prompt("bug here");
+           // prompt("bug here");
+           console.log("bug there");
    
         }
           if(up==1){
-              window.prompt("ladder p2");
+             // window.prompt("ladder p2");
+             console.log("ladder p2");
           }
           up=0;
     }
 
 }
 
+
+
+function win_check(){
+   if(p1_score>=100){
+window.alert("P1 won");
+p1_score=0;
+p2_score=0;
+document.getElementById("Goti_P1").style.top=800+"px";
+document.getElementById("Goti_P1").style.left=0+"px";
+document.getElementById("Goti_P2").style.top=800+"px";
+document.getElementById("Goti_P2").style.left=0+"px";
+   }
+   if(p2_score>=100){
+      window.alert("P2 won");
+      p1_score=0;
+      p2_score=0;
+      document.getElementById("Goti_P1").style.top=800+"px";
+      document.getElementById("Goti_P1").style.left=0+"px";
+      document.getElementById("Goti_P2").style.top=800+"px";
+      document.getElementById("Goti_P2").style.left=0+"px";
+   }
+}
+
+
+
 function dice_roll(){
-    
     no=1+Math.floor(6*Math.random());
     console.log(no);
     if(turn%2==0){
@@ -306,6 +344,7 @@ function dice_roll(){
         console.log(p1_score);
         snake_bite(1,p1_score);
         ladder_up(1,p1_score);
+        win_check();
         document.getElementById("btn1").innerHTML="P2 CLICK";
     }
     else{
@@ -314,6 +353,7 @@ function dice_roll(){
         console.log(p2_score);
         snake_bite(2,p2_score);
         ladder_up(2,p2_score);
+        win_check();
         document.getElementById("btn1").innerHTML="P1 CLICK";
     }
     img=no+".png";
