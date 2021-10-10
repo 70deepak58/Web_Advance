@@ -186,6 +186,9 @@ function snake_bite(flag,l){
 if(bite==1){
     //window.prompt("kat liya p1 ko");
     console.log("kat liya");
+    //snake audio
+    var x=document.getElementById("myAudio_snake");
+   x.play();
 }
      bite=0;
     
@@ -356,6 +359,9 @@ if(snake_no==3){
       if(bite==1){
          // window.prompt("kat liya p2 ko");
          console.log("kat liya p2 ko");
+         //snake sound
+         var x=document.getElementById("myAudio_snake");
+   x.play();
       }
       //bug here
       if((Math.floor((p1_score/10)%2==0))&&(p1_score%10==0)){
@@ -528,6 +534,9 @@ console.log("odd"+p1_score/10);
           if(up==1){
              // window.prompt("ladder p1");
              console.log("laddaer P1");
+             //ladder sound
+             var x=document.getElementById("myAudio_ladder");
+   x.play();
 
           }
           up=0;
@@ -688,6 +697,9 @@ if(snake_no==4){
           if(up==1){
              // window.prompt("ladder p2");
              console.log("ladder p2");
+             //ladder sound
+             var x=document.getElementById("myAudio_ladder");
+   x.play();
           }
           up=0;
     }
@@ -728,6 +740,9 @@ function dice_roll(){
     no=1+Math.floor(6*Math.random());
     console.log(no);
     if(turn%2==0){
+       //dice roll sound
+       var x=document.getElementById("myAudio_dice");
+   x.play();
         p1_score+=no;
         console.log("p1");
         console.log(p1_score);
@@ -735,8 +750,12 @@ function dice_roll(){
         ladder_up(1,p1_score);
         win_check();
         document.getElementById("btn1").innerHTML="P2 CLICK";
+
     }
     else{
+       //dice  roll sound
+      var x=document.getElementById("myAudio_dice");
+      x.play();
         p2_score+=no;
         console.log("p2");
         console.log(p2_score);
