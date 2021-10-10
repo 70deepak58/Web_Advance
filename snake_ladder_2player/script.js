@@ -13,6 +13,8 @@ var Goti_P2_Left;
 //image change background
 var snake_no=1;
 var Stop_snake_img_chg=0;
+
+//snake function
 function snake_bite(flag,l){
     if(flag==1){
         //player 1 bite
@@ -87,6 +89,70 @@ function snake_bite(flag,l){
           p1_score-=21; 
           bite=1;
        }}
+       //snake no=3
+       if(snake_no==3){
+         if(l==43){
+            p1_score-=26;
+            bite=1; 
+         }
+         if(l==50){
+             p1_score-=45;
+             bite=1; 
+          }
+          if(l==56){
+             p1_score-=48; 
+             bite=1;
+          }
+          if(l==73){
+             p1_score-=58;
+             bite=1; 
+          }
+          if(l==84){
+             p1_score-=26;
+             bite=1;
+          }
+          if(l==87){
+             p1_score-=38; 
+             bite=1;
+          }
+          if(l==98){
+             p1_score-=58;
+             bite=1;
+          }}
+          //snake no=4
+          if(snake_no==4){
+            if(l==27){
+               p1_score-=22;
+               bite=1; 
+            }
+            if(l==40){
+                p1_score-=37;
+                bite=1; 
+             }
+             if(l==43){
+                p1_score-=25; 
+                bite=1;
+             }
+             if(l==54){
+                p1_score-=23;
+                bite=1; 
+             }
+             if(l==66){
+                p1_score-=21;
+                bite=1;
+             }
+             if(l==76){
+                p1_score-=18; 
+                bite=1;
+             }
+             if(l==89){
+                p1_score-=36;
+                bite=1;
+             }
+             if(l==99){
+               p1_score-=58;
+               bite=1;
+            }}
      //console.log(p1_score);
      Goti_P1_Top=900-90*Math.floor(p1_score/10)-90;
      Goti_P1_Left=90*Math.floor(p1_score%10)-90;
@@ -195,7 +261,70 @@ else{
            p2_score-=21; 
            bite=1;
         }}
-
+//snake no=3
+if(snake_no==3){
+   if(l==43){
+       p2_score-=26; 
+       bite=1;
+    }
+    if(l==50){
+        p2_score-=45; 
+        bite=1;
+     }
+     if(l==56){
+        p2_score-=48; 
+        bite=1;
+     }
+     if(l==73){
+        p2_score-=58; 
+        bite=1;
+     }
+     if(l==84){
+        p2_score-=26; 
+        bite=1;
+     }
+     if(l==87){
+        p2_score-=38; 
+        bite=1;
+     }
+     if(l==98){
+        p2_score-=58; 
+        bite=1;
+     }}
+     //snake no=4
+     if(snake_no==4){
+      if(l==27){
+          p2_score-=22; 
+          bite=1;
+       }
+       if(l==40){
+           p2_score-=37; 
+           bite=1;
+        }
+        if(l==43){
+           p2_score-=25; 
+           bite=1;
+        }
+        if(l==54){
+           p2_score-=23; 
+           bite=1;
+        }
+        if(l==66){
+           p2_score-=21; 
+           bite=1;
+        }
+        if(l==76){
+           p2_score-=18; 
+           bite=1;
+        }
+        if(l==89){
+           p2_score-=36; 
+           bite=1;
+        }
+        if(l==99){
+         p2_score-=58; 
+         bite=1;
+      }}
 
       Goti_P2_Top=900-90*Math.floor(p2_score/10)-90;
       Goti_P2_Left=90*Math.floor(p2_score%10)-90;
@@ -310,6 +439,59 @@ function ladder_up(flag2,m){
                p1_score+=91; 
                up=1;
             }}
+            //snake no=3
+            if(snake_no==3){
+               if(m==2){
+                   p1_score+=21;
+                   up=1; 
+                }
+                if(m==6){
+                    p1_score+=39;
+                    up=1; 
+                 }
+                 if(m==20){
+                    p1_score+=39; 
+                    up=1;
+                 }
+                 if(m==52){
+                    p1_score+=20;
+                    up=1; 
+                 }
+                 if(m==57){
+                    p1_score+=39;
+                    up=1;
+                 }
+                 if(m==71){
+                    p1_score+=21; 
+                    up=1;
+                 }}
+                 //snake no=4
+                 if(snake_no==4){
+                  if(m==4){
+                      p1_score+=21;
+                      up=1; 
+                   }
+                   if(m==33){
+                       p1_score+=16;
+                       up=1; 
+                    }
+                    if(m==42){
+                       p1_score+=21; 
+                       up=1;
+                    }
+                    if(m==50){
+                       p1_score+=19;
+                       up=1; 
+                    }
+                    if(m==62){
+                       p1_score+=19;
+                       up=1;
+                    }
+                    if(m==74){
+                       p1_score+=18; 
+                       up=1;
+                    }}
+                 
           Goti_P1_Top=900-90*Math.floor(p1_score/10)-90;
           Goti_P1_Left=90*Math.floor(p1_score%10)-90;
           if(((Math.floor(p1_score/10))%2!=0)&&(p1_score/10)!=0){
@@ -417,8 +599,58 @@ if(snake_no==2){
       p2_score+=20; 
       up=1;
    }}
-
-
+//snake no=3
+if(snake_no==3){
+   if(m==2){
+       p2_score+=21;
+       up=1; 
+    }
+    if(m==6){
+        p2_score+=39;
+        up=1; 
+     }
+     if(m==20){
+      p2_score+=39;
+      up=1; 
+   }
+     if(m==52){
+        p2_score+=20; 
+        up=1;
+     }
+     if(m==57){
+        p2_score+=39;
+        up=1; 
+     }
+     if(m==71){
+        p2_score+=21;
+        up=1;
+     }}
+//snake no=4
+if(snake_no==4){
+   if(m==4){
+       p2_score+=21;
+       up=1; 
+    }
+    if(m==33){
+        p2_score+=16;
+        up=1; 
+     }
+     if(m==42){
+      p2_score+=21;
+      up=1; 
+   }
+     if(m==50){
+        p2_score+=19; 
+        up=1;
+     }
+     if(m==62){
+        p2_score+=19;
+        up=1; 
+     }
+     if(m==74){
+        p2_score+=18;
+        up=1;
+     }}
           
       Goti_P2_Top=900-90*Math.floor(p2_score/10)-90;
       Goti_P2_Left=90*Math.floor(p2_score%10)-90;
