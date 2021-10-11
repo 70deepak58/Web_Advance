@@ -186,6 +186,7 @@ function snake_bite(flag,l){
 if(bite==1){
     //window.prompt("kat liya p1 ko");
     console.log("kat liya");
+    document.getElementById("status").innerHTML="Bite P1";
     //snake audio
     var x=document.getElementById("myAudio_snake");
    x.play();
@@ -358,7 +359,8 @@ if(snake_no==3){
       document.getElementById("P2").innerHTML="P2 SCORE:"+p2_score;
       if(bite==1){
          // window.prompt("kat liya p2 ko");
-         console.log("kat liya p2 ko");
+    console.log("kat liya");
+    document.getElementById("status").innerHTML="Bite P2";
          //snake sound
          var x=document.getElementById("myAudio_snake");
    x.play();
@@ -538,6 +540,7 @@ console.log("odd"+p1_score/10);
           if(up==1){
              // window.prompt("ladder p1");
              console.log("laddaer P1");
+             document.getElementById("status").innerHTML="Ladder P1";
              //ladder sound
              var x=document.getElementById("myAudio_ladder");
    x.play();
@@ -704,7 +707,8 @@ if(snake_no==4){
         }
           if(up==1){
              // window.prompt("ladder p2");
-             console.log("ladder p2");
+             console.log("laddaer P2");
+             document.getElementById("status").innerHTML="Ladder P2";
              //ladder sound
              var x=document.getElementById("myAudio_ladder");
    x.play();
@@ -730,6 +734,8 @@ document.getElementById("Goti_P1").style.top=800+"px";
 document.getElementById("Goti_P1").style.left=0+"px";
 document.getElementById("Goti_P2").style.top=800+"px";
 document.getElementById("Goti_P2").style.left=0+"px";
+
+document.getElementById("status").innerHTML="Playing";
    }
    if(p2_score>=100){
       //win sound
@@ -744,6 +750,8 @@ x.play();
       document.getElementById("Goti_P1").style.left=0+"px";
       document.getElementById("Goti_P2").style.top=800+"px";
       document.getElementById("Goti_P2").style.left=0+"px";
+
+      document.getElementById("status").innerHTML="Playing";
    }
 }
 

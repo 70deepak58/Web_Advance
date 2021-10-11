@@ -17,6 +17,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+#status{
+    display: inline-block;
+    padding-left: 30px;
+    }
 #P1{
     display: inline;
     padding-left: 25px;
