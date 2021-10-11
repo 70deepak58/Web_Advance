@@ -13,6 +13,9 @@
 #snake_img{
     width:900px;
     height: 900px;
+   background-image: url("snakes1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #P1{
     display: inline;
@@ -53,3 +56,17 @@ padding-left: 30px;
     display: inline-block;
     
 }
+#plus,#minus,#s_b_i_chg{
+    position: relative;
+    bottom: 100px;
+    left:320px;
+    background-color: rgb(42, 99, 165);
+    display:inline-block;
+    text-align: center;
+    font-size: 30px;
+}
+#minus,#plus{
+    width: 25px;
+    background-color: rgb(19, 228, 47);
+}
+
