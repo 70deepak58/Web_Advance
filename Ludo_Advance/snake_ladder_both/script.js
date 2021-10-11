@@ -721,6 +721,7 @@ function win_check(){
 window.alert("P1 won");
 p1_score=0;
 p2_score=0;
+turn=0;
 //win sound
 var x=document.getElementById("myAudio_win");
 x.play();
@@ -735,6 +736,7 @@ document.getElementById("status").innerHTML="Playing";
       window.alert("P2 won");
       p1_score=0;
       p2_score=0;
+      turn=0;
       //loose sound
    var x=document.getElementById("myAudio_loose");
    x.play();
