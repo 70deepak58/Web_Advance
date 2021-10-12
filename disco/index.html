@@ -8,10 +8,16 @@
     <script>
         let a=["violet","indigo","blue","green","yellow","orange","red"];
         var c=0;
+        function test(){
+            
+            c=Math.floor(Math.random()*10)%7;
+            document.getElementById("test").style.backgroundColor=a[c];
+
+        }
         function he(){
             c=Math.floor(Math.random()*10)%7;
             document.getElementById("test").style.backgroundColor=a[c];
-            setInterval(he,200);
+            setInterval(test,200);
 console.log("hello");
 console.log(a);
         }

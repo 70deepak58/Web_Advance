@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Document</title>
+</head>
+<body onload="dym()">
+<div id="a1" ></div>
+<div id="a2" ></div>
+<div id="a3" ></div>
+<div id="a4" ></div>
+<div id="a5" ></div>
+<div id="a6" ></div>
+<div id="a7" ></div>
+<div id="a8" ></div>
+<div id="a9" ></div>
+<div id="a10" ></div>
+    
+</body>
+<style>
+    div{
+        padding: 10px;
+        width: 300px;
+        height: 300px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("1.jpeg");
+    
+        
+    }
+</style>
+<script>
+    let a=[1,2,3,4,5,6,7,8,9,10];
+    var c=0;
+    var k=0;
+    var l="ho";
+    function test(){
+        for(i=0;i<10;i++){
+            // for(j=0;j<i;j++){
+
+            // }
+            a[i]=Math.floor(Math.random()*10)+1;
+            console.log(a);
+
+            document.getElementById("a"+(i+1)).style.backgroundImage="url("+a[i]+".jpeg)";
+        }
+    }
+    function dym(){
+        for(i=0;i<10;i++){
+            // for(j=0;j<i;j++){
+
+            // }
+            a[i]=Math.floor(Math.random()*10)+1;
+            console.log(a);
+
+            document.getElementById("a"+(i+1)).style.backgroundImage="url("+a[i]+".jpeg)";
+        }
+        setInterval(test,1000);
+    }
+</script>
+</html>
