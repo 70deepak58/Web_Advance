@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body id="test" onload="he()">
+    <h1>Disco Light</h1>
+    <script>
+        let a=["violet","indigo","blue","green","yellow","orange","red"];
+        var c=0;
+        function he(){
+            c=Math.floor(Math.random()*10)%7;
+            document.getElementById("test").style.backgroundColor=a[c];
+            setInterval(he,200);
+console.log("hello");
+console.log(a);
+        }
+    </script>
+    
+</body>
+</html>
