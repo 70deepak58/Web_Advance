@@ -44,7 +44,7 @@
     border-radius: 50%;
     z-index: -1;
 }
-#pro{
+#pro,#pro1{
     position: relative;
     font-size: 30px;
     left: 20px;

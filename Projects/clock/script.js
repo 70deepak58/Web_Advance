@@ -41,8 +41,18 @@ function rev(){
     degH=hours*2*(Math.PI)/12+(minutes*2*(Math.PI)/60)/12;
     document.getElementById("hour").style.left=160+80*Math.cos(degH+flag)+"px";
     document.getElementById("hour").style.top=300+80*Math.sin(degH+flag)+"px";
-}
 
+
+    //alarm match
+    if(((hours==hourAlarm)||(hours==hourAlarm+12))&&seconds==minAlarm){
+        console.log("play music");
+        setInterval(music_time,2000);
+    }
+}
+function music_time(){
+    var x=document.getElementById("srced");
+   x.play();
+}
 
 function arrange(){
     for(i=1;i<=12;i++){
@@ -50,8 +60,38 @@ function arrange(){
         document.getElementById("a"+i).style.left=160+160*Math.cos(numPos+flag)+"px";
     document.getElementById("a"+i).style.top=300+160*Math.sin(numPos+flag)+"px";
     }
-    console.log("boom");
+   // console.log("boom");
 }
 function play(){
+
+}
+function set(adi){
+    if(adi=="h0"){
+        hourAlarm--;
+        if(hourAlarm==0){
+            hourAlarm=1;
+        }
+    }
+    if(adi=="h1"){
+        hourAlarm++;
+        if(hourAlarm==13){
+            hourAlarm=12;
+        }
+    }
+    if(adi=="m0"){
+        minAlarm--;
+        if(minAlarm==-1){
+            minAlarm=0;
+        }
+    }
+    if(adi=="m1"){
+        minAlarm++;
+        if(minAlarm==60){
+            minAlarm=59;
+        }
+    }
+
+    document.getElementById("Ah").innerHTML=hourAlarm;
+    document.getElementById("Am").innerHTML=minAlarm;
 
 }
