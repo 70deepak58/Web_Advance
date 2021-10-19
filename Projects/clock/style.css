@@ -49,3 +49,8 @@
     font-size: 30px;
     left: 20px;
 }
+#greetings{
+position: relative;
+bottom:15px;
+left:30px;
+}
