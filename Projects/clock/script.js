@@ -56,12 +56,12 @@ function rev(){
     }
     if(hours>11&& hours<15){
         document.getElementById("greetings").innerHTML="Noon";
-        document.getElementById("theme").style.backgroundColor="red";
+        document.getElementById("theme").style.backgroundColor="white";
     }
     if(hours>15&&hours<22){
         document.getElementById("greetings").innerHTML="Good Evening";
-        document.getElementById("theme").style.backgroundColor="white";
-        //"rgb(226, 142, 181)"
+        document.getElementById("theme").style.backgroundColor="rgb(226, 142, 181)";
+        //
     }
     if(hours>21){
         document.getElementById("greetings").innerHTML="Good Night";
