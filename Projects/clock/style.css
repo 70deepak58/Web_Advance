@@ -5,14 +5,41 @@
     background-color: red;
     left: 160px;
     top: 300px;
+    border-radius: 50%;
 }
 
 
-#mov{
+#sec{
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: rgb(0, 255, 55);
+    background-color: rgba(255, 0, 0,0.6);
     left: 320px;
     top: 300px;
+    font-size: 40px;
+}
+#min{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    left: 280px;
+    top: 300px;
+    font-size: 40px;
+}
+#hour{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color:yellow;
+    left: 240px;
+    top: 300px;
+    font-size: 40px;
+}
+#a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9,#a10,#a11,#a12{
+    position: absolute;
+    font-size: 40px;
+    background-color: aqua;
+    border-radius: 50%;
+    z-index: -1;
 }
