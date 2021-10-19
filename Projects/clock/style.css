@@ -7,7 +7,12 @@
     top: 300px;
     border-radius: 50%;
 }
-
+#digital{
+    color: red;
+}
+#Ah,#Am{
+    color: red;
+}
 
 #sec{
     position: absolute;
@@ -50,7 +55,9 @@
     left: 20px;
 }
 #greetings{
-position: relative;
-bottom:15px;
-left:30px;
+    position: absolute;
+    bottom:15px;
+    left:30px;
+    color: red;
+    font-size: 40px;
 }

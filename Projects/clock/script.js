@@ -48,18 +48,25 @@ function rev(){
         console.log("play music");
         setInterval(music_time,2000);
     }
-if(hours<12){
-document.getElementById("greetings").innerHTML="Good Morning";
-}
-if(hours>11&& hours<15){
-document.getElementById("greetings").innerHTML="Noon";
-}
-if(hours>15&&hours<22){
-document.getElementById("greetings").innerHTML="Good Evening";
-}
-if(hours>21){
-document.getElementById("greetings").innerHTML="Good Night";
-}
+
+    //greetings and themes
+    if(hours<12){
+        document.getElementById("greetings").innerHTML="Good Morning";
+        document.getElementById("theme").style.backgroundColor="orange";
+    }
+    if(hours>11&& hours<15){
+        document.getElementById("greetings").innerHTML="Noon";
+        document.getElementById("theme").style.backgroundColor="red";
+    }
+    if(hours>15&&hours<22){
+        document.getElementById("greetings").innerHTML="Good Evening";
+        document.getElementById("theme").style.backgroundColor="white";
+        //"rgb(226, 142, 181)"
+    }
+    if(hours>21){
+        document.getElementById("greetings").innerHTML="Good Night";
+        document.getElementById("theme").style.backgroundColor="rgb(59, 23, 23)";
+    }
 }
 function music_time(){
     var x=document.getElementById("srced");
