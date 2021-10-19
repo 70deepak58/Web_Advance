@@ -11,6 +11,9 @@ let hours;
 let degM;
 let minutes;
 
+let hourAlarm=4;
+let minAlarm=30;
+
 
 
 setInterval(rev,1000);
@@ -48,4 +51,7 @@ function arrange(){
     document.getElementById("a"+i).style.top=300+160*Math.sin(numPos+flag)+"px";
     }
     console.log("boom");
+}
+function play(){
+
 }

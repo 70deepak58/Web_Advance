@@ -40,6 +40,12 @@
     position: absolute;
     font-size: 40px;
     background-color: aqua;
+    color: brown;
     border-radius: 50%;
     z-index: -1;
+}
+#pro{
+    position: relative;
+    font-size: 30px;
+    left: 20px;
 }
