@@ -55,7 +55,7 @@ function rev(){
         document.getElementById("theme").style.backgroundColor="orange";
     }
     if(hours>11&& hours<15){
-        document.getElementById("greetings").innerHTML="Noon";
+        document.getElementById("greetings").innerHTML="Good Afternoon";
         document.getElementById("theme").style.backgroundColor="white";
     }
     if(hours>14&&hours<22){
