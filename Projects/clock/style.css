@@ -1,0 +1,18 @@
+#fix{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    left: 200px;
+    top: 300px;
+}
+
+
+#mov{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(0, 255, 55);
+    left: 400px;
+    top: 300px;
+}
