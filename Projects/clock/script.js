@@ -12,6 +12,6 @@ function rev(){
     seconds=d.getSeconds();
     document.getElementById("digital").innerHTML=d.toLocaleTimeString();
     deg=seconds*2*(Math.PI)/60;
-    document.getElementById("mov").style.left=200+160*Math.cos(deg+flag)+"px";
+    document.getElementById("mov").style.left=160+160*Math.cos(deg+flag)+"px";
     document.getElementById("mov").style.top=300+160*Math.sin(deg+flag)+"px";
 }
