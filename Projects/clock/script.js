@@ -48,6 +48,18 @@ function rev(){
         console.log("play music");
         setInterval(music_time,2000);
     }
+if(hours<12){
+document.getElementById("greetings").innerHTML="Good Morning";
+}
+if(hours>11&& hours<15){
+document.getElementById("greetings").innerHTML="Noon";
+}
+if(hours>15&&hours<22){
+document.getElementById("greetings").innerHTML="Good Evening";
+}
+if(hours>21){
+document.getElementById("greetings").innerHTML="Good Night";
+}
 }
 function music_time(){
     var x=document.getElementById("srced");
