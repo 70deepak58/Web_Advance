@@ -44,7 +44,7 @@ function rev(){
 
 
     //alarm match
-    if(((hours==hourAlarm)||(hours==hourAlarm+12))&&seconds==minAlarm){
+    if(((hours==hourAlarm)||(hours==hourAlarm+12))&&minutes==minAlarm){
         console.log("play music");
         setInterval(music_time,2000);
     }
