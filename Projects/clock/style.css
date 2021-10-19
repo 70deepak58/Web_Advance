@@ -10,8 +10,8 @@
 
 #mov{
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 15px;
+    height: 15px;
     background-color: rgb(0, 255, 55);
     left: 400px;
     top: 300px;
