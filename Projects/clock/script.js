@@ -50,7 +50,7 @@ function rev(){
     }
 
     //greetings and themes
-    if(hours<12){
+    if(hours<12&& hours>3){
         document.getElementById("greetings").innerHTML="Good Morning";
         document.getElementById("theme").style.backgroundColor="orange";
     }
@@ -63,7 +63,7 @@ function rev(){
         document.getElementById("theme").style.backgroundColor="rgb(226, 142, 181)";
         //
     }
-    if(hours>21){
+    if(hours>21||hours<4){
         document.getElementById("greetings").innerHTML="Good Night";
         document.getElementById("theme").style.backgroundColor="rgb(59, 23, 23)";
     }
