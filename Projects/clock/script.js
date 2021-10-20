@@ -54,11 +54,11 @@ function rev(){
         document.getElementById("greetings").innerHTML="Good Morning";
         document.getElementById("theme").style.backgroundColor="orange";
     }
-    if(hours>11&& hours<15){
+    if(hours>11&& hours<16){
         document.getElementById("greetings").innerHTML="Good Afternoon";
         document.getElementById("theme").style.backgroundColor="white";
     }
-    if(hours>14&&hours<22){
+    if(hours>15&&hours<22){
         document.getElementById("greetings").innerHTML="Good Evening";
         document.getElementById("theme").style.backgroundColor="rgb(226, 142, 181)";
         //
