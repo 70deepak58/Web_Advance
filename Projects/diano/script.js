@@ -7,7 +7,7 @@ function motion(){
     count=1;
     collisin_flag=0;
     
-     gg =setInterval(start,1000);
+     gg =setInterval(start,200);
     
     
 }
@@ -21,7 +21,7 @@ function run(){
 }
 
 function start(){
-    x_obst-=30;
+    x_obst-=13;
 document.getElementById("obstacle").style.left=x_obst+"px";
 boom();
 if(x_obst<=5){
@@ -36,7 +36,7 @@ if(collisin_flag==1){
 function boom(){
 if(y_dino==450&&x_obst<=80){
     var x=document.getElementById("collide_audio");
-x.play();
+//x.play();
     collisin_flag=1;
     count=0;
 console.log("collide");
@@ -54,9 +54,9 @@ collisin_flag=0;
 function jump(){
 y_dino=390;
 var x=document.getElementById("click_audio");
-x.play();
+//x.play();
 document.getElementById("diano").style.top=y_dino+"px";
-setTimeout(adjust,3000);
+setTimeout(adjust,1400);
 count=0;
 
 }
