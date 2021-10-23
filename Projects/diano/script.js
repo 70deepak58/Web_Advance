@@ -36,7 +36,7 @@ if(collisin_flag==1){
 function boom(){
 if(y_dino==450&&x_obst<=80){
     var x=document.getElementById("collide_audio");
-//x.play();
+    x.play();
     collisin_flag=1;
     count=0;
 console.log("collide");
@@ -54,7 +54,7 @@ collisin_flag=0;
 function jump(){
 y_dino=390;
 var x=document.getElementById("click_audio");
-//x.play();
+x.play();
 document.getElementById("diano").style.top=y_dino+"px";
 setTimeout(adjust,1400);
 count=0;
