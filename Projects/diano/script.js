@@ -3,6 +3,7 @@ var y_dino=450;
 var count=0;
 var collisin_flag=0;
 var score=0;
+var hi=0;
 function motion(){
     count=1;
     collisin_flag=0;
@@ -34,6 +35,7 @@ if(collisin_flag==1){
 }
 }
 function boom(){
+    //collisin condition
 if((y_dino==450&&(x_obst<=80&&x_obst>=10))&&collisin_flag==0){
     var x=document.getElementById("collide_audio");
 x.play();
@@ -43,10 +45,20 @@ console.log("collide");
 clearInterval(gg);
 setTimeout(d_adj,400);
 }
+if(x_obst<=5){
+    score+=1;
+    document.getElementById("point").innerHTML="P:"+score;
+}
 }
 function d_adj(){
     x_obst=360;
 document.getElementById("obstacle").style.left=x_obst+"px";
+if(score>hi){
+    hi=score;
+}
+score=0;
+document.getElementById("point").innerHTML="P:"+score;
+document.getElementById("hi").innerHTML="HI:"+hi;
 count=0;
 collisin_flag=0;
 }

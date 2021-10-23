@@ -1,7 +1,7 @@
 #bdy{
     width: 360px;
     height: 480px;
-    background-color: red;
+    background-color:rgb(141, 31, 31);
 }
 #diano{
     position: relative;
@@ -9,7 +9,7 @@
     height: 30px;
     left: 55px;
     top: 450px;
-    background-color: green;
+    background-color:black;
 }
 #obstacle{
     position: relative;
@@ -17,7 +17,7 @@
     height: 30px;
     left: 300px;
     top: 420px;
-    background-color: black;
+    background-color:yellow;
 }
 #btn{
     position: absolute;
