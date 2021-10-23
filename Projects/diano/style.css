@@ -1,0 +1,21 @@
+#bdy{
+    width: 360px;
+    height: 480px;
+    background-color: red;
+}
+#diano{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left: 55px;
+    top: 450px;
+    background-color: green;
+}
+#obstacle{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left: 300px;
+    top: 420px;
+    background-color: black;
+}
