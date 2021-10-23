@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body onload="run()">
+<body >
     <div id="bdy" onclick="jump()">
 <div id="diano" ></div>
 <div id="obstacle"></div>
-<button >START</button>
+
     </div>
+    <button onclick="run()" id="btn">START</button>
+    <audio id="click_audio">
+        <source src="jump.wav" type="audio/wav">
+    </audio>
+
+    <audio id="collide_audio">
+        <source src="collide.wav" type="audio/wav">
+    </audio>
 </body>
 </html>
