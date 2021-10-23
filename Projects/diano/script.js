@@ -1,4 +1,4 @@
-var x_obst=330
+var x_obst=360;
 var y_dino=450;
 var count=0;
 var collisin_flag=0;
@@ -25,7 +25,7 @@ function start(){
 document.getElementById("obstacle").style.left=x_obst+"px";
 boom();
 if(x_obst<=5){
-    x_obst=330;
+    x_obst=360;
     y_dino=450;
 }
 if(collisin_flag==1){
@@ -34,18 +34,18 @@ if(collisin_flag==1){
 }
 }
 function boom(){
-if(y_dino==450&&x_obst<=80){
+if((y_dino==450&&(x_obst<=80&&x_obst>=10))&&collisin_flag==0){
     var x=document.getElementById("collide_audio");
-    x.play();
+x.play();
     collisin_flag=1;
     count=0;
 console.log("collide");
-//clearInterval(gg);
-setTimeout(d_adj,1000);
+clearInterval(gg);
+setTimeout(d_adj,400);
 }
 }
 function d_adj(){
-    x_obst=330;
+    x_obst=360;
 document.getElementById("obstacle").style.left=x_obst+"px";
 count=0;
 collisin_flag=0;
