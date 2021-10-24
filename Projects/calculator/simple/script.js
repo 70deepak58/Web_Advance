@@ -14,6 +14,7 @@ function operation(ids){
     if(ids=="a1"){
         input_result="";
         result=0;
+        document.getElementById("result").innerHTML=result;
        }
        if(ids=="a2"){
         input_result+="%";
@@ -161,6 +162,7 @@ function operation(ids){
         document.getElementById("result").innerHTML=result;
         num1=0;
         num2=0;
+        flag=0;
        }
 //operations
 document.getElementById("input").innerHTML=input_result;
