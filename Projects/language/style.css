@@ -1,0 +1,12 @@
+#scroll{
+    z-index: 1;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+#l5{
+    z-index: 1;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
