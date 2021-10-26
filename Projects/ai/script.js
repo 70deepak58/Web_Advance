@@ -2,6 +2,11 @@ var input_str;
 var action="";
 var address="";
 var flag=0;
+var dict_open={"google":"https://www.google.com",
+            "flipkart":"https://www.flipkart.com",
+            "amazon":"https://www.amazon.in",
+            "netflix":"https://www.netflix.com",
+            "youtube":"https://www.youtube.com"};
 function operation(){
     if(action=="call"){
         window.open('tel:'+address);
@@ -12,6 +17,7 @@ function operation(){
         console.log("mail");
     }
     if(action=="open"){
+        window.open(dict_open[address]);
         console.log("open");
     }
     if(action=="play"){
