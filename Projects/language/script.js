@@ -1,11 +1,16 @@
-flag=1;
+var flag=1;
+var flag2=flag;
+var theme_flag=1;
+//localStorage.clickcount=1;
 var a=[
     "WIKIPEDIA",
     "The English Wikipedia is the English-language edition of the free online encyclopedia Wikipedia. It was founded on 15 January 2001 as Wikipedia's first edition and, as of October 2021, has the most articles of any edition, at 6,399,692. As of October 2021, 11% of articles in all Wikipedias belong to the English-language edition. This share has gradually declined from more than 50 percent in 2003, due to the growth of Wikipedias in other languages. The edition's one-billionth edit was made on 13 January 2021. The English Wikipedia has received praise for its enablement of democratization of knowledge and extent of coverage.",
     "ENCYCLOPEDIA",
     "An encyclopedia (American English), encyclopædia, or encyclopaedia (British English) is a reference work or compendium providing summaries of knowledge either from all branches or from a particular field or discipline.[1] Encyclopedias are divided into articles or entries that are often arranged alphabetically by article name[2] and sometimes by thematic categories. Encyclopedia entries are longer and more detailed than those in most dictionaries.[2] Generally speaking, encyclopedia articles focus on factual information concerning the subject named in the article's title; this is unlike dictionary entries, which focus on linguistic information about words, such as their etymology, meaning, pronunciation, use, and grammatical forms.Encyclopedias have existed for around 2,000 years and have evolved considerably during that time as regards language (written in a major international or a vernacular language), size (few or many volumes), intent (presentation of a global or a limited range of knowledge), cultural perspective (authoritative, ideological, didactic, utilitarian), authorship (qualifications, style), readership (education level, background, interests, capabilities), and the technologies available for their production and distribution (hand-written manuscripts, small or large print runs, Internet). As a valued source of reliable information compiled by experts, printed versions found a prominent place in libraries, schools and other educational institutions.",
     "हिन्दी",
-    "Go Up"
+    "Go Up",
+    "DARK",
+    "LIGHT"
 ];
 var b=[
     "विकिपीडिया",
@@ -13,9 +18,12 @@ var b=[
     "विश्वज्ञानकोश",
     "विश्वज्ञानकोश, विश्वकोश या ज्ञानकोश (अंग्रेज़ी: Encyclopedia) ऐसी पुस्तक को कहते हैं जिसमें विश्वभर की तरह तरह की जानने लायक बातों को समावेश होता है। विश्वकोश का अर्थ है विश्व के समस्त ज्ञान का भंडार। अत: विश्वकोश वह कृति है जिसमें ज्ञान की सभी शाखाओं का सन्निवेश होता है। इसमें वर्णानुक्रमिक रूप में व्यवस्थित अन्यान्य विषयों पर संक्षिप्त किंतु तथ्यपूर्ण निबंधों का संकलन रहता है[1]। यह संसार के समस्त सिद्धांतों की पाठ्यसामग्री है। विश्वकोश अंग्रेजी शब्द इनसाइक्लोपीडिया का समानार्थी है, जो ग्रीक शब्द इनसाइक्लियॉस (एन = ए सर्किल तथा पीडिया = एजुकेशन) से निर्मित हुआ है। इसका अर्थ शिक्षा की परिधि अर्थात् निर्देश का सामान्य पाठ्यविषय है। इस किस्म की बातें अनंत है, इस लिये किसी भी विश्वज्ञानकोश को कभी 'पूरा हुआ' घोषित नहीं किया जा सकता। विश्वज्ञानकोश में सभी विषयों के लेख हो सकते हैं किन्तु एक विषय वाले विश्वकोश भी होते हैं। विश्वकोष में उपविषय (टापिक), उस भाषा के वर्णक्रम के अनुसार व्यवस्थित किये गये होते हैं[2]।पहले विश्वकोष एक या अनेक खण्डों में पुस्तक के रूप में ही आते थे। कम्प्यूटर के प्रादुर्भाव से अब सीडी आदि के रूप में भी तरह-तरह के विश्वकोष उपलब्ध हैं। अनेक विश्वकोश अन्तरजाल (इंटरनेट) पर 'ऑनलाइन' भी उपलब्ध हैं। ऐतिहासिक दृष्टि से विश्वकोषों का विकास शब्दकोषों (डिकशनरी) से हुआ है। ज्ञान के विकास के साथ ऐसा अनुभव हुआ कि शब्दों का अर्थ एवं उनकी परिभाषा दे देने मात्र से उन विषयों के बारे में पर्याप्त जानकारी नहीं मिलती, तो विश्वकोषों का आविर्भाव हुआ। आज भी किसी विषय को समर्पित विश्वकोष को शब्दकोश [3]भी कहा जाता है; जैसे 'सूक्ष्मजीवविज्ञान का शब्दकोश' आदि।",
     "ENGLISH",
-    "ऊपर जाना"
+    "ऊपर जाना",
+    "काला",
+    "सफेद"
 ];
 function change(){
+    //english
     if(flag==1){
         document.getElementById("l1").innerHTML=a[0];
         document.getElementById("l2").innerHTML=a[1];
@@ -24,8 +32,19 @@ function change(){
         document.getElementById("l5").innerHTML=a[4];
         document.getElementById("scroll").innerHTML=a[5];
         flag=0;
+        localStorage.setItem("flag2",0);
+        console.log(localStorage.getItem("flag2")+3);
+        flag2=parseInt(localStorage.getItem("flag2"));
+        localStorage.clickcount=0;
+        if(theme_flag==1){
+            document.getElementById("theme").innerHTML=a[6];
+        }
+        else{
+            document.getElementById("theme").innerHTML=a[7];
+        }
     }
     else{
+        //hindi
         document.getElementById("l1").innerHTML=b[0];
         document.getElementById("l2").innerHTML=b[1];
         document.getElementById("l3").innerHTML=b[2];
@@ -33,6 +52,16 @@ function change(){
         document.getElementById("l5").innerHTML=b[4];
         document.getElementById("scroll").innerHTML=b[5];
         flag=1;
+        localStorage.setItem("flag2",1);
+        console.log(localStorage.getItem("flag2")+3);
+        flag2=parseInt(localStorage.getItem("flag2"));
+        localStorage.clickcount=1;
+        if(theme_flag==1){
+            document.getElementById("theme").innerHTML=b[6];
+        }
+        else{
+            document.getElementById("theme").innerHTML=b[7];
+        }
     }
 
 }
@@ -40,4 +69,38 @@ function goUp(){
     document.body.scrollTop=0;
     document.documentElement.scrollTop=0;
 
+}
+function setTheme(){
+    //light
+    if(theme_flag==0){
+        document.getElementById("bdy").style.backgroundColor="white";
+        document.getElementById("l1").style.color="black";
+        document.getElementById("l2").style.color="black";
+        document.getElementById("l3").style.color="black";
+        document.getElementById("l4").style.color="black";
+        document.getElementById("theme").innerHTML="DARK";
+        theme_flag=1;
+       if(flag==0){
+            document.getElementById("theme").innerHTML=a[6];
+        }
+        else{
+            document.getElementById("theme").innerHTML=b[6];
+        }
+    }
+    else{
+        //dark
+        document.getElementById("bdy").style.backgroundColor="black";
+        document.getElementById("l1").style.color="white";
+        document.getElementById("l2").style.color="white";
+        document.getElementById("l3").style.color="white";
+        document.getElementById("l4").style.color="white";
+        document.getElementById("theme").innerHTML="LIGHT";
+        theme_flag=0;
+        if(flag==0){
+            document.getElementById("theme").innerHTML=a[7];
+        }
+        else{
+            document.getElementById("theme").innerHTML=b[7];
+        }
+    }
 }

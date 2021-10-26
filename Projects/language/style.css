@@ -10,3 +10,9 @@
     top: 30px;
     right: 30px;
 }
+#theme{
+    position: fixed;
+    z-index: 1;
+    top: 60px;
+    right: 30px;
+}
