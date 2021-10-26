@@ -15,6 +15,13 @@ function operation(){
         console.log("open");
     }
     if(action=="play"){
+        x=document.getElementById("music");
+        x.play();
+        console.log("play");
+    }
+    if(action=="pause"){
+        x=document.getElementById("music");
+        x.pause();
         console.log("play");
     }
 
