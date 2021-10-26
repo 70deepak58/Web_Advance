@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assistant</title>
     <script src="script.js"></script>
 </head>
 <body>
-    <input type="text" id="chat">
-    <button onclick="run()">click</button>
-    <audio id="music"><source src="ludo.mp3"></audio>
-    <p>play</p>
-    <p>pause</p>
-    <p>mail  abc@gmail.com</p>
-    <p>call 99999999</p>
-    <p>open google</p>
-    
+    <form onsubmit="run()">
+        <input type="text" id="chat"></input>
+        <input value="click" type="submit" />
+    </form>
+    <audio id="music"><source src="ludo.mp3" /></audio>
+    <p>Play</p>
+    <p>Pause</p>
+    <p>Mail  abc@gmail.com</p>
+    <p>Call 99999999</p>
+    <p>Open google</p>
+    <br/>
+    <p><i>Default action is a search, you can use <a
+            href="https://duckduckgo.com/bang">duckduckgo !Bang shortcuts</a>
+        also :D</i></p>
 </body>
 </html>

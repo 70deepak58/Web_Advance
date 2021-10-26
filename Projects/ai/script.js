@@ -2,37 +2,39 @@ var input_str;
 var action="";
 var address="";
 var flag=0;
-var dict_open={"google":"https://www.google.com",
-            "flipkart":"https://www.flipkart.com",
-            "amazon":"https://www.amazon.in",
-            "netflix":"https://www.netflix.com",
-            "youtube":"https://www.youtube.com"};
-function operation(){
-    if(action=="call"){
+var dict_open={
+    "google":"https://www.google.com",
+    "flipkart":"https://www.flipkart.com",
+    "amazon":"https://www.amazon.in",
+    "netflix":"https://www.netflix.com",
+    "youtube":"https://www.youtube.com"
+};
+
+function operation() {
+    if(action=="call") {
         window.open('tel:'+address);
         console.log("call");
-    }
-    if(action=="mail"){
+    } else if(action=="mail") {
         window.open('mailto:'+address);
         console.log("mail");
-    }
-    if(action=="open"){
+    } else if(action=="open") {
         window.open(dict_open[address]);
         console.log("open");
-    }
-    if(action=="play"){
+    } else if(action=="play") {
         x=document.getElementById("music");
         x.play();
         console.log("play");
-    }
-    if(action=="pause"){
+    } else if(action=="pause") {
         x=document.getElementById("music");
         x.pause();
         console.log("play");
+    } else {
+        window.open("https://duckduckgo.com/?q=" + input_str);
     }
 
 }
-function a(){
+
+function a() {
     var i=0;
     var length=input_str.length;
 while(i<length){
@@ -56,7 +58,6 @@ action="";
 address="";
 }
 function run(){
-    
     var x=document.getElementById("chat");
     input_str=x.value;
     input_str=input_str.toLowerCase();
