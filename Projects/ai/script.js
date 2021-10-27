@@ -44,7 +44,7 @@ function operation(){
     }
     //to whatsapp
     if(action=="whatsapp"){
-        window.open('https://wa.me/'+address);
+        window.open('https://wa.me/91'+address);
         console.log("whatsapp");
     }
     //to telegram
