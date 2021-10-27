@@ -21,10 +21,10 @@ function replydo(){
 function create(){
     var x=document.getElementById("ipt");
     question=x.value;
-    l=question[0];
     console.log(question[0]);
     question_flag=question;
     question=question.toLowerCase();
+    l=question[0];
     if(turn%2==0){
         //create element
     const par=document.createElement("p");
