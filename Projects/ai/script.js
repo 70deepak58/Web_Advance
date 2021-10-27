@@ -16,6 +16,19 @@ var dict_open={"google":"https://www.google.com",
             "netflix":"https://www.netflix.com",
             "youtube":"https://www.youtube.com"};
 
+var project_dict={
+    "snake":"http://70deepak58.github.io/Web_Advance/Ludo_Advance/snake_ladder_2player/index.html",
+    "snake_ai":"http://70deepak58.github.io/Web_Advance/Ludo_Advance/snake_ladder_both/index.html",
+    "tictactoe":"http://70deepak58.github.io/Web_Advance/Projects/Portfolio/TicTacToe/tic_tac_toe.html",
+    "tictactoe_ai":"http://70deepak58.github.io/Web_Advance/Projects/Portfolio/TicTacToe/tic_tac_toe_ai.html",
+    "alarm":"http://70deepak58.github.io/Web_Advance/Projects/clock/index.html",
+    "diano":"http://70deepak58.github.io/Web_Advance/Projects/diano/index.html",
+    "language":"http://70deepak58.github.io/Web_Advance/Projects/language/index.html",
+    "portfolio":"http://70deepak58.github.io/Web_Advance/Projects/Portfolio/index.html",
+    "gun":"http://70deepak58.github.io/Web_Advance/Projects/gun_soot_auto/index.html",
+    "calculator":"http://70deepak58.github.io/Web_Advance/Projects/calculator/simple/index.html"
+};
+
             //action 
 function operation(){
     //to call any number
@@ -119,10 +132,16 @@ function operation(){
         }
         document.getElementById("bdy").style.backgroundColor=theme_bg[theme_flag];
         //here i have to hard code every id
-        for(tf=1;tf<=15;tf++){
+        for(tf=1;tf<=16;tf++){
             document.getElementById("x"+tf).style.color=theme_fg[theme_flag];
         }
         tf=1;
+
+    }
+    //here i will use my project
+    if(action=="project"){
+        window.open(project_dict[address]);
+        console.log("open");
 
     }
 
