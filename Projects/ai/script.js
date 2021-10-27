@@ -26,7 +26,8 @@ var project_dict={
     "language":"http://70deepak58.github.io/Web_Advance/Projects/language/index.html",
     "portfolio":"http://70deepak58.github.io/Web_Advance/Projects/Portfolio/index.html",
     "gun":"http://70deepak58.github.io/Web_Advance/Projects/gun_soot_auto/index.html",
-    "calculator":"http://70deepak58.github.io/Web_Advance/Projects/calculator/simple/index.html"
+    "calculator":"http://70deepak58.github.io/Web_Advance/Projects/calculator/simple/index.html",
+    "theme":"http://70deepak58.github.io/Web_Advance/Projects/Theme/index.html"
 };
 
             //action 
