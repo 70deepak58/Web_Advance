@@ -150,8 +150,9 @@ function operation(){
      //here using google search
     window.open("https://www.google.com/search?q="+);
      console.log("google");
-     token="";
+     
     }
+    token="";
 
 }
 
