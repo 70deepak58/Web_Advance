@@ -5,11 +5,18 @@ var flag=0;
 var music_flag=1;
 var image_flag=1;
 var x;
+let tf=1;
+var theme_flag=0;
+var theme_bg=["yellow","red","black","blue","black","orange","green"];
+var theme_fg=["red","blue","yellow","green","white","pink","violet"];
+
 var dict_open={"google":"https://www.google.com",
             "flipkart":"https://www.flipkart.com",
             "amazon":"https://www.amazon.in",
             "netflix":"https://www.netflix.com",
             "youtube":"https://www.youtube.com"};
+
+            //action 
 function operation(){
     //to call any number
     if(action=="call"){
@@ -100,8 +107,28 @@ function operation(){
         console.log("prev image");
 
     }
+    //to change background
+    if((action=="background")){
+        document.getElementById("bdy").style.backgroundColor=address;
+        console.log("changed background");
+    }
+    if((action=="theme")&&(address=="next")){
+        theme_flag++;
+        if(theme_flag>=7){
+            theme_flag=0;
+        }
+        document.getElementById("bdy").style.backgroundColor=theme_bg[theme_flag];
+        //here i have to hard code every id
+        for(tf=1;tf<=15;tf++){
+            document.getElementById("x"+tf).style.color=theme_fg[theme_flag];
+        }
+        tf=1;
+
+    }
 
 }
+
+//string processing
 function a(){
     var i=0;
     var length=input_str.length;
@@ -126,6 +153,7 @@ action="";
 address="";
 flag=0;
 }
+//initial action
 function run(){
     
     var x=document.getElementById("chat");
