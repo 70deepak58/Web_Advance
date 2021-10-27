@@ -10,6 +10,7 @@ var token="";
 var theme_flag=0;
 var theme_bg=["yellow","red","black","blue","black","orange","green"];
 var theme_fg=["red","blue","yellow","green","white","pink","violet"];
+var loca="";
 
 var dict_open={"google":"https://www.google.com",
             "flipkart":"https://www.flipkart.com",
@@ -153,6 +154,13 @@ function operation(){
         navigator.vibrate(1000);
         console.log("vibrate");
     }
+    //show location
+    else if(action=="location"){
+        loca=document.getElementById("location");
+        getLocation();
+        console.log("location");
+
+    }
     else{
         window.open("https://www.google.com/search?q="+token);
         console.log("google search");
@@ -197,3 +205,21 @@ function run(){
     a();
    // window.open('mailto:abc.gmail.com');
 }
+
+
+//location
+//const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    loca.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  loca.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+//end location
