@@ -148,7 +148,7 @@ function operation(){
     }
     else{
      //here using google search
-    window.open("https://www.google.com/search?q="+token);
+   // window.open("https://www.google.com/search?q="+token);
      console.log("google");
      
     }
