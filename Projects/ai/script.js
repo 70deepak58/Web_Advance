@@ -4,6 +4,7 @@ var address="";
 var flag=0;
 var music_flag=1;
 var image_flag=1;
+var token="";
 var x;
 let tf=1;
 var theme_flag=0;
@@ -145,6 +146,12 @@ function operation(){
         console.log("open");
 
     }
+    else{
+     //here using google search
+    window.open("https://www.google.com/search?q="+);
+     console.log("google");
+     token="";
+    }
 
 }
 
@@ -179,6 +186,7 @@ function run(){
     var x=document.getElementById("chat");
     input_str=x.value;
     input_str=input_str.toLowerCase();
+    token=input_str;
     console.log(input_str);
     x.value="";
     a();
