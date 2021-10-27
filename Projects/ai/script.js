@@ -4,9 +4,9 @@ var address="";
 var flag=0;
 var music_flag=1;
 var image_flag=1;
-var token="";
 var x;
 let tf=1;
+var token="";
 var theme_flag=0;
 var theme_bg=["yellow","red","black","blue","black","orange","green"];
 var theme_fg=["red","blue","yellow","green","white","pink","violet"];
@@ -39,37 +39,37 @@ function operation(){
         console.log("call");
     }
     //to mail any mailid
-    if(action=="mail"){
+    else if(action=="mail"){
         window.open('mailto:'+address);
         console.log("mail");
     }
     //to whatsapp
-    if(action=="whatsapp"){
-        window.open('https://wa.me/91'+address);
+    else if(action=="whatsapp"){
+        window.open('https://wa.me/'+address);
         console.log("whatsapp");
     }
     //to telegram
-    if(action=="telegram"){
+    else if(action=="telegram"){
         window.open('https://t.me/'+address);
         console.log("telegram");
     }
     //to open url
-    if(action=="open"){
+    else if(action=="open"){
         window.open(dict_open[address]);
         console.log("open");
     }
     //all music function
-    if((action=="music")&&(address=="play")){
+    else if((action=="music")&&(address=="play")){
         x=document.getElementById("music");
         x.play();
         console.log("music play");
     }
-    if((action=="music")&&(address=="pause")){
+    else if((action=="music")&&(address=="pause")){
         x=document.getElementById("music");
         x.pause();
         console.log("music pause");
     }
-    if((action=="music")&&(address=="next")){
+    else if((action=="music")&&(address=="next")){
         music_flag++;
         if(music_flag>=4){
             music_flag=1;
@@ -81,7 +81,7 @@ function operation(){
        x.play();
        console.log("music next");
     }
-    if((action=="music")&&(address=="prev")){
+    else if((action=="music")&&(address=="prev")){
         music_flag--;
         if(music_flag<=-0){
             music_flag=3;
@@ -94,13 +94,13 @@ function operation(){
        console.log("music prev");
     }
     //image functon
-    if((action=="image")&&(address=="show")){
+    else if((action=="image")&&(address=="show")){
        x=document.getElementById("image").style.display="inherit";
     }
-    if((action=="image")&&(address=="hide")){
+    else if((action=="image")&&(address=="hide")){
         x=document.getElementById("image").style.display="none";
     }
-    if((action=="image")&&(address=="next")){
+    else if((action=="image")&&(address=="next")){
         image_flag++;
         if(image_flag>=18){
             image_flag=1;
@@ -111,7 +111,7 @@ function operation(){
       console.log("next image");
 
     }
-    if((action=="image")&&(address=="prev")){
+    else if((action=="image")&&(address=="prev")){
         image_flag--;
         if(image_flag<=0){
             image_flag=17;
@@ -123,37 +123,41 @@ function operation(){
 
     }
     //to change background
-    if((action=="background")){
+    else if((action=="background")){
         document.getElementById("bdy").style.backgroundColor=address;
         console.log("changed background");
     }
-    if((action=="theme")&&(address=="next")){
+    // change theme
+    else if((action=="theme")&&(address=="next")){
         theme_flag++;
         if(theme_flag>=7){
             theme_flag=0;
         }
         document.getElementById("bdy").style.backgroundColor=theme_bg[theme_flag];
         //here i have to hard code every id
-        for(tf=1;tf<=16;tf++){
+        for(tf=1;tf<=18;tf++){
             document.getElementById("x"+tf).style.color=theme_fg[theme_flag];
         }
+        console.log("theme change");
         tf=1;
 
     }
     //here i will use my project
-    if(action=="project"){
+    else if(action=="project"){
         window.open(project_dict[address]);
         console.log("open");
 
     }
-    else{
-     //here using google search
-   // window.open("https://www.google.com/search?q="+token);
-     console.log("google");
-     
+    //to vibrate
+    else if(action=="vibrate"){
+        navigator.vibrate(1000);
+        console.log("vibrate");
     }
-    token="";
-
+    else{
+        window.open("https://www.google.com/search?q="+token);
+        console.log("google search");
+    }
+token="";
 }
 
 //string processing
