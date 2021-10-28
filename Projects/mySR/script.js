@@ -1,13 +1,16 @@
-let text="pm";
+let text="";
 let flag="";
 let n=0;
 let p=0;
 var intv="";
 var x="";
+let y="";
 function test(){
+    y=document.getElementById("txt");
+    text=y.value;
     n=text.length;
     pick();
-    intv=setInterval(pick,200);
+    intv=setInterval(pick,500);
     //pick();
 
 }
@@ -125,7 +128,10 @@ function pick(){
     x.play();
 
     p++;
-    if(p==n){
+    if(p>=n){
         clearInterval(intv);
+        p=0;
+        text="";
+        y.value="";
     }
 }
