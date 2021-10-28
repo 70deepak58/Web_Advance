@@ -180,7 +180,7 @@ while(i<length){
         i++;
         flag=1;
     }
-    if(flag==1){
+    if((flag==1)&&(input_str[i]!='.')){
         address+=input_str[i];
     }
     console.log(input_str[i]);
