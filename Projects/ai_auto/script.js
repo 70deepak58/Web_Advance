@@ -65,10 +65,10 @@ function operation(){
         x.play();
         console.log("music play");
     }
-    else if((action=="music")&&(address=="pause")){
+    else if((action=="music")&&(address=="stop")){
         x=document.getElementById("music");
         x.pause();
-        console.log("music pause");
+        console.log("music stop");
     }
     else if((action=="music")&&(address=="next")){
         music_flag++;
@@ -82,7 +82,7 @@ function operation(){
        x.play();
        console.log("music next");
     }
-    else if((action=="music")&&(address=="prev")){
+    else if((action=="music")&&(address=="previous")){
         music_flag--;
         if(music_flag<=-0){
             music_flag=3;
@@ -92,10 +92,10 @@ function operation(){
        sour.setAttribute("src",music_flag+".mp3");
        x.load();
        x.play();
-       console.log("music prev");
+       console.log("music previous");
     }
     //image functon
-    else if((action=="image")&&(address=="show")){
+    else if((action=="image")&&(address=="display")){
        x=document.getElementById("image").style.display="inherit";
     }
     else if((action=="image")&&(address=="hide")){
@@ -112,7 +112,7 @@ function operation(){
       console.log("next image");
 
     }
-    else if((action=="image")&&(address=="prev")){
+    else if((action=="image")&&(address=="previous")){
         image_flag--;
         if(image_flag<=0){
             image_flag=17;
@@ -120,7 +120,7 @@ function operation(){
         x=document.getElementById("image");
         x.setAttribute("src","image/"+image_flag+".jpeg");
         //x.load();
-        console.log("prev image");
+        console.log("previous image");
 
     }
     //to change background
@@ -136,7 +136,7 @@ function operation(){
         }
         document.getElementById("bdy").style.backgroundColor=theme_bg[theme_flag];
         //here i have to hard code every id
-        for(tf=1;tf<=18;tf++){
+        for(tf=1;tf<=19;tf++){
             document.getElementById("x"+tf).style.color=theme_fg[theme_flag];
         }
         console.log("theme change");
