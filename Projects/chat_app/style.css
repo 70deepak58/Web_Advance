@@ -1,13 +1,24 @@
 #ipt{
     position: fixed;
-    bottom: 30px;
+    bottom: 5px;
 }
 #btn{
 position: fixed;
-bottom: 30px;
+bottom: 5px;
 left: 190px;
 }
 p{
     font-size: 25px;
     
 }
+#btn2{
+    position: fixed;
+    bottom: 5px;
+    left: 250px;
+    }
+
+#btn3{
+    position: fixed;
+    bottom: 5px;
+    left: 300px;
+    }
