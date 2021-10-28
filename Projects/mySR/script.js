@@ -8,6 +8,7 @@ let y="";
 function test(){
     y=document.getElementById("txt");
     text=y.value;
+    text=text.toLowerCase();
     n=text.length;
     pick();
     intv=setInterval(pick,1000);
