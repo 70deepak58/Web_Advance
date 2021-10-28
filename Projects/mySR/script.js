@@ -10,7 +10,7 @@ function test(){
     text=y.value;
     n=text.length;
     pick();
-    intv=setInterval(pick,500);
+    intv=setInterval(pick,1000);
     //pick();
 
 }
