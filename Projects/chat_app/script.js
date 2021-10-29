@@ -76,8 +76,12 @@ function text_to_speech_for_user(){
         var transcript = event.results[0][0].transcript;
         //var confidence = event.results[0][0].confidence;
         transcript=transcript.toLowerCase();
-        l=transcript[0];
-        replydo();
+       // l=transcript[0];
+       // replydo();
+
+var x=document.getElementById("ipt");
+    x.value=transcript;
+create ();
         console.log(transcript);
     };
 
