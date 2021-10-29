@@ -1,8 +1,7 @@
-function chalte_rho(){
-
 let speechRecognition = new webkitSpeechRecognition();
 let final_transcript = "";
 let interim_result="";
+let word="";
 speechRecognition.continuous = true;
 speechRecognition.interimResults = true;
 speechRecognition.lang = "en-US";
@@ -17,7 +16,9 @@ speechRecognition.onstart = function () {
 }
 speechRecognition.onend = () => {
     console.log("end");
-    chalte_rho();
+    text_to_speech_for_system();
+    word="";
+    speechRecognition.start();
 };
 speechRecognition.onresult = (event) => {
 
@@ -26,30 +27,32 @@ speechRecognition.onresult = (event) => {
     for (let i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             final_transcript= event.results[i][0].transcript;
+            word=final_transcript
         } else {
             interim_transcript += event.results[i][0].transcript;
         }
     }
 
-    //uncomment
-    //final_transcript= event.results[0][0].transcript;
-    //final_transcript= event.results[1][0].transcript;
-   // question_audio = final_transcript.toLowerCase();
     console.log(final_transcript);
     document.getElementById("container").innerHTML=final_transcript;
 };
 
-
-
 document.querySelector("#start").onclick = () => {
     speechRecognition.start();
   };
-  
-
-    speechRecognition.start();
-  
   document.querySelector("#stop").onclick = () => {
     speechRecognition.stop();
   };
 
-}
+  function text_to_speech_for_system(){
+    let speech=new SpeechSynthesisUtterance();
+    speech.lang="en-US";
+    speech.text=word;
+    speech.volume=1;
+    speech.rate=1;
+    speech.pitch=1;
+    window.speechSynthesis.speak(speech);
+    
+    }
+    
+
