@@ -52,6 +52,5 @@ document.querySelector("#start").onclick = () => {
     window.speechSynthesis.speak(speech);
     
     }
-//let screenLock = await navigator.wakeLock.request('screen');
     
 
