@@ -40,9 +40,7 @@ speechRecognition.onresult = (event) => {
 document.querySelector("#start").onclick = () => {
     speechRecognition.start();
   };
-  document.querySelector("#stop").onclick = () => {
-    speechRecognition.stop();
-  };
+
 
   function text_to_speech_for_system(){
     let speech=new SpeechSynthesisUtterance();
@@ -54,6 +52,6 @@ document.querySelector("#start").onclick = () => {
     window.speechSynthesis.speak(speech);
     
     }
-let screenLock = await navigator.wakeLock.request('screen');
+//let screenLock = await navigator.wakeLock.request('screen');
     
 
