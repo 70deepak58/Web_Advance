@@ -3,7 +3,7 @@ let question_flag="";
 let question="";
 let turn_audio=0;
 let dict_reply={"a":"apple","b":"boy","c":"cat","d":"dog","e":"elephant","f":"frog","g":"goat","h":"hen","i":"ice-cream","j":"jackpot","k":"key",
-                 "l":"lion","m":"mango","n":"nose","o":"onion","P":"printer","q":"queen","r":"rose","s":"sea","t":"toy","u":"uniform","v":"van",
+                 "l":"lion","m":"mango","n":"nose","o":"onion","p":"printer","q":"queen","r":"rose","s":"sea","t":"toy","u":"uniform","v":"van",
                  "w":"watch","x":"x-ray","y":"yak","z":"zoo"
 };              
 var l="";
