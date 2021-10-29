@@ -11,7 +11,7 @@ speechRecognition.onspeechend = function () {
     console.log("stop");
 }
 speechRecognition.onstart = function () {
-    question_audio = "";
+   // question_audio = "";
     console.log("start");
 }
 speechRecognition.onend = () => {
