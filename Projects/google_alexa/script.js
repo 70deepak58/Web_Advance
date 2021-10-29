@@ -53,6 +53,10 @@ document.querySelector("#start").onclick = () => {
     
     }
 //Change
-
-let screenLock = await navigator.wakeLock.request('screen');
+let screenLock;
+navigator.wakeLock.request('screen')
+   .then(lock => { 
+     screenLock = lock; 
+});
+//let screenLock = await navigator.wakeLock.request('screen');
 
