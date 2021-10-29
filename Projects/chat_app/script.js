@@ -22,6 +22,7 @@ function replydo(){
     turn++;
     turn_audio++;
     l="";
+window.scrollBy(0, 100);
 
 }
 //user turn
