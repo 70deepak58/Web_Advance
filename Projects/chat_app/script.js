@@ -7,7 +7,9 @@ let dict_reply={"a":"apple","b":"boy","c":"cat","d":"dog","e":"elephant","f":"fr
                  "w":"watch","x":"x-ray","y":"yak","z":"zoo"
 };              
 var l="";
-let final_transcript = "";
+var question_audio="";
+var transcript="";
+
 //system turn
 function replydo(){
     const par=document.createElement("p");
@@ -65,32 +67,51 @@ window.speechSynthesis.speak(speech);
 
 function text_to_speech_for_user(){
     let speechRecognition = new webkitSpeechRecognition();
-    
-  
+    let final_transcript = "";
     //speechRecognition.continuous = true;
     speechRecognition.interimResults = true;
-    speechRecognition.lang="en-US";
+    speechRecognition.lang ="en-US";
 
+    speechRecognition.onspeechend = function() {
+        // when user is done speaking
+        speechRecognition.stop();
+       // l=question_audio[0];
+        //replydo();
+        console.log("stop");
 
-    speechRecognition.onresult = function(event) {
-        var transcript = event.results[0][0].transcript;
+    }
+    speechRecognition.onstart = function() {
+      question_audio="";
+      console.log("start");
+    }
+    speechRecognition.onend = () => {
+      // Hide the Status Element
+      var x=document.getElementById("ipt");
+      x.value=transcript;
+      create();
+    console.log("end");
+    transcript="";
+    };
+   speechRecognition.onresult = function(event) {
+        transcript = event.results[0][0].transcript;
         //var confidence = event.results[0][0].confidence;
         transcript=transcript.toLowerCase();
-       // l=transcript[0];
-       // replydo();
-
-var x=document.getElementById("ipt");
-    x.value=transcript;
-create ();
+        //l=transcript[0];
+        //replydo();
+        
         console.log(transcript);
     };
 
+
+    ///jdfjh
     document.querySelector("#btn2").onclick = () => {
         speechRecognition.start();
+        //console.log("start");
       };
+     
       document.querySelector("#btn3").onclick = () => {
         speechRecognition.stop();
+        //console.log("stop");
       };
-      final_transcript="";
 
 }
