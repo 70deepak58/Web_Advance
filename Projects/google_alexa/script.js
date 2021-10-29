@@ -1,3 +1,5 @@
+function chalte_rho(){
+
 let speechRecognition = new webkitSpeechRecognition();
 let final_transcript = "";
 let interim_result="";
@@ -15,6 +17,7 @@ speechRecognition.onstart = function () {
 }
 speechRecognition.onend = () => {
     console.log("end");
+    chalte_rho();
 };
 speechRecognition.onresult = (event) => {
 
@@ -41,7 +44,12 @@ speechRecognition.onresult = (event) => {
 document.querySelector("#start").onclick = () => {
     speechRecognition.start();
   };
+  
+
+    speechRecognition.start();
+  
   document.querySelector("#stop").onclick = () => {
     speechRecognition.stop();
   };
 
+}
