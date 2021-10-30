@@ -1,9 +1,12 @@
-let wakeLock=null;
+let sl;
 function start(){
-wakeLock=await navigator.wakeLock.request('screen');
+navigator.wakeLock.request('screen').then(lock=>{
+    sl=lock;
+});
 }
 function stop(){
-wakeLock.release().then(()=>{
-    wakeLock=null;
-});
+// wakeLock.release().then(()=>{
+//     wakeLock=null;
+//await lock.release();
+// });
 }
