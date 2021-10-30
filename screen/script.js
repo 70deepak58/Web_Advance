@@ -9,4 +9,7 @@ function stop(){
 //     wakeLock=null;
 //await lock.release();
 // });
+sl.release().then(()=>{
+    sl=null;
+});
 }
