@@ -29,7 +29,10 @@ var project_dict={
     "portfolio":"http://70deepak58.github.io/Web_Advance/Projects/Portfolio/index.html",
     "gun":"http://70deepak58.github.io/Web_Advance/Projects/gun_soot_auto/index.html",
     "calculator":"http://70deepak58.github.io/Web_Advance/Projects/calculator/simple/index.html",
-    "theme":"http://70deepak58.github.io/Web_Advance/Projects/Theme/index.html"
+    "theme":"http://70deepak58.github.io/Web_Advance/Projects/Theme/index.html",
+    "tom":"http://70deepak58.github.io/Web_Advance/Projects/talkingTom/index.html",
+    "chat":"http://70deepak58.github.io/Web_Advance/Projects/chat_app/index.html",
+    "scan":"http://70deepak58.github.io/Web_Advance/scan.html"
 };
 
             //action 
