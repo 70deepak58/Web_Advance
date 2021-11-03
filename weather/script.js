@@ -15,12 +15,12 @@ if (navigator.geolocation) {
 	lat = position.coords.latitude;
 
 	// API ID
-	const api = "97baf735e8c4975254d381652f3b1125";
+	const api = "6d055e39ee237af35ca066f35474e9df";
 
 	// API URL
 	const base =
 `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` +
-`lon=${lon}&appid=6d055e39ee237af35ca066f35474e9df`;
+`lon=${lon}&appid=97baf735e8c4975254d381652f3b1125`;
 
 	// Calling the API
 	fetch(base)
