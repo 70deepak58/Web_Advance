@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  align-items: center
+}
+.segment {
+  margin-left: 50px;
+  padding-left: 50px;
+  border-left: 1px solid #000;
+  order: 1;
+}
