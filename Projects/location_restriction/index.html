@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>regarding location</h1>
+    <p id="loc">not opened location</p>
+    <script src="script.js"></script>
+    
+
+        <p>Click the button to get your coordinates.</p>
+        
+        <button onclick="getLocation()">Try It</button>
+        
+        <p id="demo"></p>
+        
+        <script>
+            let lat=0;
+            let longi=0;
+            console.log(typeof(lat));
+        var x = document.getElementById("demo");
+        
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude;
+          //testing api
+          lat=position.coords.latitude;
+          longi=position.coords.longitude;
+          if((lat>21.6&&lat<26.3)&&(longi>74.9&&longi<82.5)){
+document.getElementById('loc').innerHTML="Madhya Pradesh";
+console.log("MP");
+          }
+
+          if((lat>21.25&&lat<27.13)&&(longi>85.5&&longi<89.5)){
+document.getElementById('loc').innerHTML="Bengal";
+console.log("Bengal");
+          }
+      console.log("hyhsyhd");
+        }
+        </script>
+        
+</body>
+</html>
