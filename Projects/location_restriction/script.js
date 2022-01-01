@@ -57,7 +57,7 @@ x.innerHTML = "Geolocation is not supported by this browser.";
 setInterval(looping,1000);
 function looping(){
     getLocation();
-    console.log("dshgfhg");
+    //console.log("dshgfhg");
 }
 
 function showPosition(position) {
@@ -107,9 +107,18 @@ function positioning(){
 }
 
 function take_loc(){
- 
     ilat=document.getElementById('latit').value;
     ilongi=document.getElementById('logit').value;
+    document.getElementById("demoi").innerHTML="Latitude: " + ilat + 
+"<br>Longitude: " + ilongi;
+document.getElementById("locii").innerHTML="Not Known";
     console.log("taken location successfully");
     console.log(ilat,ilongi);
+}
+function take_live_loc(){
+    ilat=lat;
+    ilongi=longi;
+document.getElementById("demoi").innerHTML="Latitude: " + lat + 
+"<br>Longitude: " + longi;
+document.getElementById("locii").innerHTML=state;
 }
