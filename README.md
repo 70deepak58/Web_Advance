@@ -10,4 +10,4 @@
 <br/>**Tic Tac Toe using ai **[demo](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/index.html) [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/TicTacToe)
 
 <br/>**Portfolio ** [link](http://70deepak58.github.io/Web_Advance/Projects/Portfolio/index.html)
-<h1 style="color:red">Thank you for visiting<br/>
+<h1 style="color:red;">Thank you for visiting<br/>
