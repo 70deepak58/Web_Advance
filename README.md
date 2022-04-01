@@ -10,14 +10,10 @@ This Web Assistant is similar to Google Assistant. I created this only using van
 I created this snake ladder game and there is multiple board option. Click [here](http://70deepak58.github.io/Web_Advance/Projects/snake_ladder_both/index.html) to enjoy and source code is  [here](https://github.com/70deepak58/Web_Advance/tree/master/Projects/snake_ladder_both)
 [2 player](http://70deepak58.github.io/Web_Advance/snake_ladder_2player/index.html)
 [1 player](http://70deepak58.github.io/Web_Advance/Ludo_Advance/snake_ladder_both/index.html)
-
 <br/>
 ### Tic Tac Toe
-Tic Tac Toe using ai [demo](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/index.html) 
-[code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/TicTacToe) for 
-[2 player](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/tic_tac_toe.html) and for
-[1 player](http://70deepak58.github.io/Web_Advance/tic_tac_toe_ai.html)
-
+Tic Tac Toe using ai [demo](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/index.html) [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/TicTacToe) for [ 2 player](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/tic_tac_toe.html) and for [ 1 player](http://70deepak58.github.io/Web_Advance/tic_tac_toe_ai.html)
+<br/>
 ### Univershal Scanner
 I created univershal scanner. For demo click  [here](http://70deepak58.github.io/Web_Advance/scan.html) and scan 
 <br/>
@@ -28,7 +24,7 @@ Alarm clock [demo](http://70deepak58.github.io/Web_Advance/Projects/clock/index.
 Multi lingual web  [demo](http://70deepak58.github.io/Web_Advance/Projects/language/index.html) [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/language)
 <br/>
 ### Automatic Sooting Gun
-Multi lingual web  [demo](http://70deepak58.github.io/Web_Advance/Projects/gun_soot_auto/index.html) [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/gun_soot_auto)
+Hits random appearing target  [demo](http://70deepak58.github.io/Web_Advance/Projects/gun_soot_auto/index.html) [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/gun_soot_auto)
 <br/>
 ### Chrome Diano Game
 Multi lingual web  [demo](http://70deepak58.github.io/Web_Advance/Projects/diano/index.html) [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/diano)
