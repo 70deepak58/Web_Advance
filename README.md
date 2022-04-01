@@ -13,8 +13,9 @@ I created this snake ladder game and there is multiple board option. Click [here
 
 <br/>
 ### Tic Tac Toe
-Tic Tac Toe using ai [demo](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/index.html) [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/TicTacToe)
-[2 player](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/tic_tac_toe.html)
+Tic Tac Toe using ai [demo](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/index.html) 
+[code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/TicTacToe) for 
+[2 player](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/tic_tac_toe.html) and for
 [1 player](http://70deepak58.github.io/Web_Advance/tic_tac_toe_ai.html)
 
 ### Univershal Scanner
@@ -38,7 +39,4 @@ basic operatons can be performed  [demo](http://70deepak58.github.io/Web_Advance
 
 
 <h1>Thank you for visiting</h1>
-http://70deepak58.github.io/Web_Advance/Ludo_Advance/snake_ladder_both/index.html
-  http://70deepak58.github.io/Web_Advance/snake_ladder_2player/index.html
-http://70deepak58.github.io/Web_Advance/tic_tac_toe_ai.html
-http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/tic_tac_toe.html
+
