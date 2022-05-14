@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt">
+    <button onclick="go()" id="clk">ok</button>
+    <a href="https//www.google.com"><img src="1.png" alt=""></a>
+    <div id="doe"></div>
+    <a href="https//www.google.com"><div id="tes"></div></a>
+    <img src="1.png" alt="">
+   
+    <style>
+        #tes{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+        #doe{
+            position: sticky;
+            width: 30px;
+            height: 30px;
+            color: red;
+            left: 300px;
+            top: 300px;
+            background-color: blue;
+        }
+        #ipt{
+            position: sticky;
+            top: 0px;
+            left: 0px;
+        }
+        #clk{
+            position: sticky;
+            top: 0px;
+            left: 200px;
+        }
+    </style>
+    <script>
+        var xcur=100,ycur=100;
+        var xScroll=0,yScroll=0;
+        flag=-1;
+    function go(){
+        
+       // console.log("dhfuhsuhyedui");
+        var a;
+        a=document.getElementById("ipt").value;
+        //document.getElementById("ipt").value="";
+        console.log(a);
+        if(a=="cursor"){
+            flag=1;
+        }
+        else if(a=="scroll"){
+            flag=2;
+        }
+        else if(a=="click"){
+            flag=3;
+        }
+        // else{
+        //     flag=-1;
+        // }
+       
+
+
+
+
+
+
+
+        if(flag==1){
+            cursor(a);
+        }
+        else if(flag==2){
+            scroll(a);
+        }
+        else if(flag==3){
+            cli(xcur,ycur);
+        }
+    }
+    function cursor(a){
+        if(a=="up"){
+            ycur-=20;
+            document.getElementById("doe").style.top=ycur+"px";
+        }
+        else if(a=="down"){
+            ycur+=20;
+            document.getElementById("doe").style.top=ycur+"px";
+        }
+        else if(a=="left"){
+            xcur-=20;
+            document.getElementById("doe").style.left=xcur+"px";
+        }
+        else if(a=="right"){
+            xcur+=20;
+            document.getElementById("doe").style.left=xcur+"px";
+        }
+        //console.log(x,y);
+    }
+
+
+    function scroll(a){
+        if(a=="up"){
+            yScroll-=20;
+            ycur-=20;
+            document.getElementById("doe").style.top=ycur+"px"; 
+        }
+        else if(a=="down"){
+            yScroll+=20;
+            ycur+=20;
+            document.getElementById("doe").style.top=ycur+"px";
+        }
+        else if(a=="left"){
+            xScroll-=20;
+            xcur-=20;
+            document.getElementById("doe").style.left=xcur+"px";
+        }
+        else if(a=="right"){
+            xScroll+=20;
+            xcur+=20;
+            document.getElementById("doe").style.left=xcur+"px";
+        }
+        window.scrollTo(xScroll, yScroll);
+        //console.log(x,y);
+    }
+
+    function cli(x,y){
+        document.elementFromPoint(x,y).click();
+    }
+
+
+
+
+
+
+    function printMousePos(event) {
+  console.log(event.clientX,event.clientY);
+
+}
+
+document.addEventListener("click", printMousePos);
+    </script>
+</body>
+</html>
