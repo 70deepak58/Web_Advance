@@ -1,0 +1,40 @@
+#tes{
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+}
+#doe{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    color: red;
+    left: 300px;
+    top: 300px;
+    background-color: blue;
+}
+#ipt{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+#clk{
+    position:  fixed;
+    top: 0px;
+    left: 200px;
+}
+
+
+#spee{
+    position:  fixed;
+    top: 0px;
+    left: 250px;
+}
+#container{
+    position: fixed;
+    right: 5px;
+    bottom: 40px;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(151, 151, 202);
+    z-index: -1;
+}
