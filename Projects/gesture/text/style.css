@@ -13,12 +13,12 @@
     background-color: blue;
 }
 #ipt{
-    position: sticky;
+    position: fixed;
     top: 0px;
     left: 0px;
 }
 #clk{
-    position: sticky;
+    position: fixed;
     top: 0px;
     left: 200px;
 }
