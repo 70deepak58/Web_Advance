@@ -14,6 +14,7 @@
     <canvas class="output_canvas" width="1280px" height="720px"></canvas>
   </div>
   <div id="tak"></div>
+  <div id="location"></div>
 
 <style>
   #tak{
@@ -21,11 +22,22 @@
     height: 150px;
     background-color: black;
   }
+
+  #location{
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    right: 5px;
+    color: green;
+}
+
 </style>
 
 
 
   <script type="module">
+    var loca="";
     const videoElement = document.getElementsByClassName('input_video')[0];
     const canvasElement = document.getElementsByClassName('output_canvas')[0];
     const canvasCtx = canvasElement.getContext('2d');
@@ -82,6 +94,20 @@
         console.log("up");
         document.getElementById("tak").style.backgroundColor="blue";
       }
+      if(hand[20].y>hand[18].y){
+        // console.log("down");
+        // document.getElementById("tak").style.backgroundColor="red";
+        navigator.vibrate(1000);
+      }
+      if(hand[12].y>hand[10].y){
+        // console.log("down");
+        // document.getElementById("tak").style.backgroundColor="red";
+        loca=document.getElementById("location");
+        getLocation();
+        console.log("location");
+      }
+
+      //dhfjhd edy ruyehgfewhjh fydjhfhnd gfjedyh fjkdh
 
     }
   }
@@ -111,15 +137,31 @@
       width: 1280,
       height: 720
     });
-
-
-
-
-
-
-
-  
     camera.start();
+
+
+
+
+
+
+
+
+    //location
+//const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    loca.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  loca.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+//end location
     </script>
 </body>
 </html>
