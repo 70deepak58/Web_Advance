@@ -36,8 +36,8 @@
 #image{
     width: 100px;
     height: 100px;
-    position: absolute;
-    top: 50px;
+    position: fixed;
+    bottom: 50px;
     right: 50px;
 }
 
@@ -50,6 +50,7 @@
     var music_flag=1;
     var image_flag=1;
     var x;
+    var rf1=1,rf2=1,rf3=1,rf4=1,lf1=1,lf2=1,lf3=1,lf4=1;
     const videoElement = document.getElementsByClassName('input_video')[0];
     const canvasElement = document.getElementsByClassName('output_canvas')[0];
     const canvasCtx = canvasElement.getContext('2d');
@@ -74,7 +75,7 @@
 
       //connector and dot 
       drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
-          {color: isRightHand ? '#00FF00' : '#FF0000'}),
+          {color: isRightHand ? '#00FF00' : '#FF0000'});
       drawLandmarks(canvasCtx, landmarks, {
         color: isRightHand ? '#00FF00' : '#FF0000',
         fillColor: isRightHand ? '#FF0000' : '#00FF00',
@@ -95,20 +96,19 @@
       if(isRightHand == true){
 
         //start right
-        if(hand[8].y<hand[6].y){
+        if((hand[8].y<hand[6].y) && rf1){
+          rf1=0;
         console.log("down");
         document.getElementById("tak").style.backgroundColor="rgb("+Math.floor(Math.random() * 256)+","+Math.floor(Math.random() * 256)+","+Math.floor(Math.random() * 256)+")";
       }
-      else{
-        console.log("up");
-        document.getElementById("tak").style.backgroundColor="blue";
-      }
-      if(hand[20].y>hand[18].y){
-        // console.log("down");
+      if((hand[20].y>hand[18].y) && rf2){
+        rf2=0;
+        console.log("vibrate");
         // document.getElementById("tak").style.backgroundColor="red";
         navigator.vibrate(1000);
       }
-      if(hand[12].y>hand[10].y){
+      if((hand[12].y>hand[10].y) && rf3){
+        rf3=0;
         // console.log("down");
         // document.getElementById("tak").style.backgroundColor="red";
         loca=document.getElementById("location");
@@ -116,7 +116,8 @@
         console.log("location");
       }
 
-      if(hand[16].y<hand[14].y){
+      if((hand[16].y<hand[14].y) && rf4){
+        rf4=0;
         image_flag++;
         if(image_flag>=18){
             image_flag=1;
@@ -127,24 +128,35 @@
       console.log("next image");
       }
       //end right
+          if((hand[8].y>hand[6].y)){
+          rf1=1;}
+          if((hand[20].y>hand[18].y)){
+          rf2=1;}
+          if((hand[12].y>hand[10].y)){
+          rf3=1;}
+          if((hand[16].y>hand[14].y)){
+          rf4=1;}
    
       }
       else{
         //other hand
         //middle finger
-        if(hand[12].y<hand[10].y){
+        if((hand[12].y<hand[10].y) && lf1){
+          lf1=0;
           x=document.getElementById("music");
         x.play();
         console.log("music");
       }
       //ring finger
-      if(hand[16].y<hand[14].y){
+      if((hand[16].y<hand[14].y) && lf2){
+        lf2=0;
         x=document.getElementById("music");
         x.pause();
         console.log("music stop");
       }
       //index finger
-      if(hand[8].y<hand[6].y){
+      if((hand[8].y<hand[6].y) && lf3){
+        lf3=0;
         music_flag++;
         if(music_flag>=4){
             music_flag=1;
@@ -157,7 +169,8 @@
        console.log("music next");
       }
       //pinky finger
-      if(hand[20].y<hand[18].y){
+      if((hand[20].y<hand[18].y) && lf4){
+        lf4=0;
         music_flag--;
         if(music_flag<=-0){
             music_flag=3;
@@ -172,6 +185,14 @@
 
 
       //end of other hand
+          if((hand[8].y>hand[6].y)){
+          lf1=1;}
+          if((hand[20].y>hand[18].y)){
+          lf2=1;}
+          if((hand[12].y>hand[10].y)){
+          lf3=1;}
+          if((hand[16].y>hand[14].y)){
+          lf4=1;}
       }
 
   
