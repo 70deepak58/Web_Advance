@@ -13,8 +13,15 @@
     <video class="input_video"></video>
     <canvas class="output_canvas" width="1280px" height="720px"></canvas>
   </div>
+  <div id="tak"></div>
 
-
+<style>
+  #tak{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+  }
+</style>
 
 
 
@@ -28,13 +35,61 @@
       canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
       canvasCtx.drawImage(
           results.image, 0, 0, canvasElement.width, canvasElement.height);
-      if (results.multiHandLandmarks) {
-        for (const landmarks of results.multiHandLandmarks) {
-          drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
-                         {color: '#00FF00', lineWidth: 5});
-          drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 2});
-        }
+      // if (results.multiHandLandmarks) {
+      //   for (const landmarks of results.multiHandLandmarks) {
+      //     drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
+      //                    {color: '#00FF00', lineWidth: 5});
+      //     drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 2});
+      //   }
+      // }
+      if (results.multiHandLandmarks && results.multiHandedness) {
+    for (let index = 0; index < results.multiHandLandmarks.length; index++) {
+      const classification = results.multiHandedness[index];
+      const isRightHand = classification.label === 'Right';
+      const landmarks = results.multiHandLandmarks[index];
+
+      //connector and dot 
+      drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
+          {color: isRightHand ? '#00FF00' : '#FF0000'}),
+      drawLandmarks(canvasCtx, landmarks, {
+        color: isRightHand ? '#00FF00' : '#FF0000',
+        fillColor: isRightHand ? '#FF0000' : '#00FF00',
+        radius: (x) => {
+          return lerp(x.from.z, -0.15, .1, 10, 1);
+        }       
+      });
+
+      if(isRightHand == true){
+        //console.log("sghdhsgdgsygdysdgydgshhdyt");
+        //canvasCtx3.fillText("Sağ el hareket ettirildi.",400,70);
       }
+      else{
+       // console.log("yhfyhtdyhtghjb n md 8uyfiuh mbnrffi uom ");
+        ///canvasCtx3.fillText("Sol el hareket ettirildi.",10,70);
+      }
+
+//test2 hdgfghsd n ehedg hjsddnb dsndh ujhew dh gesyh
+
+      const hand = results.multiHandLandmarks[0]; 
+      // const x = hand[4].x - hand[8].x;
+      // const y = hand[4].y - hand[8].y;
+      // const z = hand[8].z;
+      if(hand[8].y<hand[6].y){
+        console.log("down");
+        document.getElementById("tak").style.backgroundColor="red";
+      }
+      else{
+        console.log("up");
+        document.getElementById("tak").style.backgroundColor="blue";
+      }
+
+    }
+  }
+
+
+
+
+      ////
       canvasCtx.restore();
     }
     
@@ -56,6 +111,14 @@
       width: 1280,
       height: 720
     });
+
+
+
+
+
+
+
+  
     camera.start();
     </script>
 </body>
