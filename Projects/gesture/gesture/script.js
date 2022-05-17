@@ -78,9 +78,11 @@ for (let index = 0; index < results.multiHandLandmarks.length; index++) {
 
   if((hand[20].y<hand[18].y) && rf4==1){
     rf4=0;
-    console.log("vibrate");
+    //console.log("vibrate");
     // document.getElementById("tak").style.backgroundColor="red";
     navigator.vibrate(1000);
+    console.log("open new page");
+    window.open('http://70deepak58.github.io/Web_Advance/Projects/ai_auto/index.html');
   }
   
 
