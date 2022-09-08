@@ -3,8 +3,12 @@
 ## projects
 ** Repository ** [links](https://github.com/70deepak58/Web_Advance/tree/master/Projects) ** of Projects **
 <br/>
+
+### Gesture Control System<br/>
+In this project I have used mediapipe library in javascript where user can control different events like playing music, changing image, providing location based on gesture of hand. I created this only using vanilla javascript. I created this only using vanilla javascript. To view live [click](https://70deepak58.github.io/Web_Advance/Projects/gesture/gesture/index.html) here and for source code [click](https://github.com/70deepak58/Web_Advance/tree/master/Projects/gesture/gesture) here
+<br/>
 ### Web Assistance<br/>
-This Web Assistant is similar to Google Assistant. I created this only using vanilla javascript. To view live [click](http://70deepak58.github.io/Web_Advance/Projects/ai_auto/index.html) here and for source code [click](https://github.com/70deepak58/Web_Advance/tree/master/Projects/ai_auto) here
+This Web Assistant is similar to Google Assistant. To view live [click](http://70deepak58.github.io/Web_Advance/Projects/ai_auto/index.html) here and for source code [click](https://github.com/70deepak58/Web_Advance/tree/master/Projects/ai_auto) here
 <br/>
 ### Snake and Ladder Game
 I created this snake ladder game and there is multiple board option. Click [here](http://70deepak58.github.io/Web_Advance/Projects/snake_ladder_both/index.html) to enjoy and source code is  [here](https://github.com/70deepak58/Web_Advance/tree/master/Projects/snake_ladder_both)
@@ -12,7 +16,7 @@ I created this snake ladder game and there is multiple board option. Click [here
 [1 player](http://70deepak58.github.io/Web_Advance/Ludo_Advance/snake_ladder_both/index.html)
 <br/>
 ### Tic Tac Toe
-Tic Tac Toe using ai [demo](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/index.html) [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/TicTacToe) for [ 2 player](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/tic_tac_toe.html) and for [ 1 player](http://70deepak58.github.io/Web_Advance/tic_tac_toe_ai.html)
+Tic Tac Toe using ai demo [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/TicTacToe) for [ 2 player](http://70deepak58.github.io/Web_Advance/Projects/TicTacToe/tic_tac_toe.html) and for [ 1 player](http://70deepak58.github.io/Web_Advance/tic_tac_toe_ai.html)
 <br/>
 ### Univershal Scanner
 I created univershal scanner. For demo click  [here](http://70deepak58.github.io/Web_Advance/scan.html) and scan 
