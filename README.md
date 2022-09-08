@@ -5,10 +5,10 @@
 <br/>
 
 ### Gesture Control System<br/>
-In this project I have used mediapipe library in javascript where user can control different events like playing music, changing image, providing location based on gesture of hand. I created this only using vanilla javascript. I created this only using vanilla javascript. To view live [click](https://70deepak58.github.io/Web_Advance/Projects/gesture/gesture/index.html) here and for source code [click](https://github.com/70deepak58/Web_Advance/tree/master/Projects/gesture/gesture) here
+In this project I have used mediapipe library in javascript where user can control different events like playing music, changing image, providing location based on gesture of hand. To view live [click](https://70deepak58.github.io/Web_Advance/Projects/gesture/gesture/index.html) here and for source code [click](https://github.com/70deepak58/Web_Advance/tree/master/Projects/gesture/gesture) here
 <br/>
 ### Web Assistance<br/>
-This Web Assistant is similar to Google Assistant. To view live [click](http://70deepak58.github.io/Web_Advance/Projects/ai_auto/index.html) here and for source code [click](https://github.com/70deepak58/Web_Advance/tree/master/Projects/ai_auto) here
+In this project I have created web assistant which is similar to google assistance where users can access different features like changing theme, calling, mailing etc by using both  text and voice commands. I created this only using vanilla javascript. To view live [click](http://70deepak58.github.io/Web_Advance/Projects/ai_auto/index.html) here and for source code [click](https://github.com/70deepak58/Web_Advance/tree/master/Projects/ai_auto) here
 <br/>
 ### Snake and Ladder Game
 I created this snake ladder game and there is multiple board option. Click [here](http://70deepak58.github.io/Web_Advance/Projects/snake_ladder_both/index.html) to enjoy and source code is  [here](https://github.com/70deepak58/Web_Advance/tree/master/Projects/snake_ladder_both)
