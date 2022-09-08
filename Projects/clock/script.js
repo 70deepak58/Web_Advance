@@ -14,6 +14,7 @@ let minutes;
 let hourAlarm=4;
 let minAlarm=30;
 
+
 function rev(){
     const d=new Date();
     seconds=d.getSeconds();
@@ -64,7 +65,9 @@ function rev(){
         document.getElementById("theme").style.backgroundColor="rgb(59, 23, 23)";
     }
 }
+rev();
 setInterval(rev,1000);
+
 function music_time(){
     var x=document.getElementById("srced");
    x.play();
