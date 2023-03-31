@@ -1,5 +1,5 @@
 console.log("hello ssgdhsgdh");
-var x=560,y=300;
+var x=560,y=300, d=0;;
 
 /*
 let gyroscope = new Gyroscope({ frequency: 60 });
@@ -21,6 +21,13 @@ sensor.onreading = () => {
     console.log("Angular velocity around the X-axis " + sensor.x);
     console.log("Angular velocity around the Y-axis " + sensor.y);
     console.log("Angular velocity around the Z-axis " + sensor.z);
+	if(sensor.x>0){
+		d=d+2;
+	}
+	else{
+		d=d-2;
+	}
+	document.getElementById("target").style.top=y+d+"px";
 };
 
 sensor.onerror = event => console.log(event.error.name, event.error.message);
