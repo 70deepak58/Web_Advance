@@ -12,10 +12,10 @@ sensor.onreading = () => {
     console.log("Angular velocity around the Y-axis " + sensor.y);
     console.log("Angular velocity around the Z-axis " + sensor.z);
 	if(sensor.y>0){
-		d=d+1;
+		d=d+5;
 	}
 	else{
-		d=d-1;
+		d=d-5;
 	}
 	document.getElementById("target").style.top=y+d+"px";
 document.getElementById("p4").innerHTML=y+d;
