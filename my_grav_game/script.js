@@ -34,10 +34,10 @@ sensor.onreading = () => {
 	
 	//for x
 	if(sensor.x> 0.5){
-		cx=cx+5;
+		cx=cx-5;		
 	}
 	else if(sensor.x< -0.5){
-		cx=cx-5;
+		cx=cx+5;
 	}
 	document.getElementById("gun").style.left=gx+cx+"px";
 	
