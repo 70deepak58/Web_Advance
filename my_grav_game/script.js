@@ -41,13 +41,14 @@ sensor.onreading = () => {
 	}
 	document.getElementById("gun").style.left=gx+cx+"px";
 	
-	
+	/*
 	if(Math.abs(tx-gx)<10  && Math.abs(ty-gy)<10){
 		pts=pts+1;
 		document.getElementById("pts").innerHTML=pts;
 		tar_update();
 		
 	}
+	*/
 };
 
 sensor.onerror = event => console.log(event.error.name, event.error.message);
