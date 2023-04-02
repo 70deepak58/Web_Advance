@@ -6,8 +6,8 @@ function tar_update(){
     tx=60*Math.floor(10*Math.random());
     ty=35*Math.floor(10*Math.random());
 //target
-    document.getElementById("tgt").style.left=tx+"px";
-    document.getElementById("tgt").style.top=ty+"px";
+    //document.getElementById("tgt").style.left=tx+"px";
+    //document.getElementById("tgt").style.top=ty+"px";
 }
 
 
