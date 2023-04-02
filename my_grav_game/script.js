@@ -40,7 +40,8 @@ sensor.onreading = () => {
 		cx=cx+5;
 	}
 	document.getElementById("gun").style.left=gx+cx+"px";
-	if(Math.abs(tx-gx)<10  && Math.abs(ty-gy)<10){
+	
+	if(Math.abs(tx-gx-cx)<10  && Math.abs(ty-gy-cy)<10){
 		pts=pts+1;
 		document.getElementById("pts").innerHTML=pts;
 		tx=60*Math.floor(10*Math.random());
@@ -48,7 +49,7 @@ sensor.onreading = () => {
 		document.getElementById("tgt").style.top=ty+"px";
 		document.getElementById("tgt").style.left=tx+"px";
 	}
-	
+	document.getElementById("dummy").innerHTML=tx+"a"+gx+cx+"a"+ty+"a"+gy+cy;
 	/*
 	if(Math.abs(tx-gx-cx)<10  && Math.abs(ty-gy-cy)<10){
 		pts=pts+1;
