@@ -1,7 +1,7 @@
 console.log("hello ssgdhsgdh");
 var x=560,y=300, d=0,c=0,p=0;
 var tx,ty;
-
+/*
 update_tar(){
 	
 	ty=window.innerHeight*Math.floor(10*Math.random());
@@ -12,7 +12,7 @@ update_tar(){
     document.getElementById("tar").style.top=ty+"px";
 }
 
-
+*/
 
 let sensor = new GravitySensor({ frequency: 60 });
 sensor.start();
@@ -24,6 +24,7 @@ sensor.onreading = () => {
     console.log("Angular velocity around the X-axis " + sensor.x);
     console.log("Angular velocity around the Y-axis " + sensor.y);
     console.log("Angular velocity around the Z-axis " + sensor.z);
+	/*
 	if(sensor.y>0.5){
 		d=d+5;
 		document.getElementById("obj").style.top=y+d+"px";
@@ -54,7 +55,15 @@ sensor.onreading = () => {
 		update_tar();
 		document.getElementById("pts").innerHTML=p;
 	}
-	
+	*/
+	if(sensor.y>0){
+		d=d+5;
+	}
+	else{
+		d=d-5;
+	}
+    document.getElementById("obj").style.top=y+d+"px";
+    ssdocument.getElementById("p4").innerHTML=y+d;
 };
 
 sensor.onerror = event => console.log(event.error.name, event.error.message);
