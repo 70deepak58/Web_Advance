@@ -50,7 +50,7 @@ sensor.onreading = () => {
 	}
 	
 	/*
-	if(Math.abs(tx-gx)<10  && Math.abs(ty-gy)<10){
+	if(Math.abs(tx-gx-cx)<10  && Math.abs(ty-gy-cy)<10){
 		pts=pts+1;
 		document.getElementById("pts").innerHTML=pts;
 		tar_update();
