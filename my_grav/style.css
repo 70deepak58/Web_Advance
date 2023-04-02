@@ -1,8 +1,16 @@
-div{
+#obj {
     position: absolute;
     width: 40px;
     height: 40px;
     background-color: red;
+    left: 560px;
+    top: 300px;
+}
+#tar {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: blue;
     left: 560px;
     top: 300px;
 }
