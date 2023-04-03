@@ -52,8 +52,8 @@ sensor.onreading = () => {
 		var x=document.getElementById("msc");
         x.play();
 		document.getElementById("pts").innerHTML=pts;
-		tx=(900)*Math.floor(10*Math.random());
-        ty=(900)*Math.floor(10*Math.random());
+		tx=Math.floor(900*Math.random());
+        ty=Math.floor(1000*Math.random());
 		document.getElementById("tgt").style.top=ty+"px";
 		document.getElementById("tgt").style.left=tx+"px";
 	}
