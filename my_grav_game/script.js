@@ -47,7 +47,7 @@ sensor.onreading = () => {
 	//document.getElementById("gun").style.left=gx+cx+"px";
 	document.getElementById("gun").style.left=gx+"px";
 	
-	if(Math.abs(tx-gx)<10  && Math.abs(ty-gy)<10){
+	if(Math.abs(tx-gx)<80  && Math.abs(ty-gy)<80){
 		pts=pts+1;
 		document.getElementById("pts").innerHTML=pts;
 		tx=60*Math.floor(10*Math.random());
