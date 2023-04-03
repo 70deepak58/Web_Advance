@@ -47,11 +47,13 @@ sensor.onreading = () => {
 	//document.getElementById("gun").style.left=gx+cx+"px";
 	document.getElementById("gun").style.left=gx+"px";
 	
-	if(Math.abs(tx-gx)<80  && Math.abs(ty-gy)<80){
+	if(Math.abs(tx-gx)<40  && Math.abs(ty-gy)<40){
 		pts=pts+1;
+		var x=document.getElementById("msc");
+        x.play();
 		document.getElementById("pts").innerHTML=pts;
-		tx=60*Math.floor(10*Math.random());
-        ty=35*Math.floor(10*Math.random());
+		tx=(window.innerWidth)*Math.floor(10*Math.random());
+        ty=(window.innerHeight)*Math.floor(10*Math.random());
 		document.getElementById("tgt").style.top=ty+"px";
 		document.getElementById("tgt").style.left=tx+"px";
 	}
