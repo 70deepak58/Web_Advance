@@ -1,12 +1,13 @@
 console.log("hello ssgdhsgdh");
 //c1
-var gx=560,gy=300, cy=0 ,cx=0, pts=0,tx=860,ty=400, gx_max=(window.innerWidth-40), gy_max=window.innerHeight;
+var gx=560,gy=300, cy=0 ,cx=0, pts=0,tx=860,ty=400, gx_max=(window.innerWidth-45), gy_max=(window.innerHeight-45);
+var tx_max=gx_max,ty_max=gy_max;
 /*
 tar_update();
 function tar_update(){
     tx=60*Math.floor(10*Math.random());
     ty=35*Math.floor(10*Math.random());
-//target
+    //target
     //document.getElementById("tgt").style.left=tx+"px";
     //document.getElementById("tgt").style.top=ty+"px";
 }
@@ -20,9 +21,9 @@ sensor.onreading = () => {
 	document.getElementById("p1").innerHTML=sensor.x;
 	document.getElementById("p2").innerHTML=sensor.y;
 	document.getElementById("p3").innerHTML=sensor.z;
-    console.log("Angular velocity around the X-axis " + sensor.x);
-    console.log("Angular velocity around the Y-axis " + sensor.y);
-    console.log("Angular velocity around the Z-axis " + sensor.z);
+        console.log("Angular velocity around the X-axis " + sensor.x);
+        console.log("Angular velocity around the Y-axis " + sensor.y);
+        console.log("Angular velocity around the Z-axis " + sensor.z);
 	//for y
 	if(sensor.y> 0.5){
 		cy=cy+5;
@@ -34,7 +35,7 @@ sensor.onreading = () => {
 	}
 	//document.getElementById("gun").style.top=gy+cy+"px";
 	document.getElementById("gun").style.top=gy+"px";
-    document.getElementById("p4").innerHTML=gy+cy;
+        document.getElementById("p4").innerHTML=gy+cy;
 	
 	//for x
 	if(sensor.x> 0.5){
@@ -51,10 +52,10 @@ sensor.onreading = () => {
 	if(Math.abs(tx-gx)<40  && Math.abs(ty-gy)<40){
 		pts=pts+1;
 		var x=document.getElementById("msc");
-        x.play();
+                x.play();
 		document.getElementById("pts").innerHTML=pts;
-		tx=Math.floor((window.innerWidth)*Math.random());
-        ty=Math.floor((window.innerHeight)*Math.random());
+		tx=Math.floor(tx_max*Math.random());
+                ty=Math.floor(ty_max*Math.random());
 		document.getElementById("tgt").style.top=ty+"px";
 		document.getElementById("tgt").style.left=tx+"px";
 	}
