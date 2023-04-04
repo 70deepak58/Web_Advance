@@ -1,5 +1,6 @@
 console.log("hello ssgdhsgdh");
-var gx=560,gy=300, cy=0 ,cx=0, pts=0,tx=860,ty=400;
+//c1
+var gx=560,gy=300, cy=0 ,cx=0, pts=0,tx=860,ty=400, gx_max=window.innerWidth, gy_max=window.innerHeight;
 /*
 tar_update();
 function tar_update(){
@@ -57,7 +58,23 @@ sensor.onreading = () => {
 		document.getElementById("tgt").style.top=ty+"px";
 		document.getElementById("tgt").style.left=tx+"px";
 	}
-	document.getElementById("dummy").innerHTML=tx+"a"+gx+"mam"+ty+"a"+gy;
+	//c2
+	//document.getElementById("dummy").innerHTML=tx+"a"+gx+"mam"+ty+"a"+gy;
+	document.getElementById("dummy").innerHTML=tx+"a"+gx+"mam"+ty+"a"+gy+"bbb"+gx_max+"c"+gy_max;
+	if(gx<0){
+		gx=gx_max;
+	}
+	if(gy<0){
+		gy=gy_max;
+	}
+	if(gx>gx_max){
+		gx=0;
+	}
+	if(gy>gy_max){
+		gy=0;
+	}
+	document.getElementById("gun").style.top=gy+"px";
+	document.getElementById("gun").style.left=gx+"px";
 	/*
 	if(Math.abs(tx-gx-cx)<10  && Math.abs(ty-gy-cy)<10){
 		pts=pts+1;
