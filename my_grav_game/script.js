@@ -1,6 +1,6 @@
 console.log("hello ssgdhsgdh");
 //c1
-var gx=560,gy=300, cy=0 ,cx=0, pts=0,tx=860,ty=400, gx_max=window.innerWidth, gy_max=window.innerHeight;
+var gx=560,gy=300, cy=0 ,cx=0, pts=0,tx=860,ty=400, gx_max=(window.innerWidth-40), gy_max=window.innerHeight;
 /*
 tar_update();
 function tar_update(){
