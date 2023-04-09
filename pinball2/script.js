@@ -65,12 +65,12 @@ function update(){
 }
 
 
+function start_play(){
+
 //sensor code
-
-
 let sensor = new GravitySensor({ frequency: 60 });
 
-
+sensor.start();
 sensor.onreading = () => {
 	document.getElementById("p1").innerHTML=sensor.x;
 	document.getElementById("p2").innerHTML=sensor.y;
@@ -93,6 +93,7 @@ sensor.onreading = () => {
 			pX=0;
 		}
 	}
+	document.getElementById("aa").innerHTML="na";
 	document.getElementById("plate").style.left=pX+"px";
     document.getElementById("plate").style.top=pY+"px";
 	update();
@@ -101,9 +102,6 @@ sensor.onreading = () => {
 
 sensor.onerror = event => console.log(event.error.name, event.error.message);
 
-
-function start_play(){
-sensor.start();
 //setInterval(update,100);
 
 }
