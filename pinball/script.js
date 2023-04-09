@@ -51,7 +51,7 @@ if(fX<300){
 	flagX=flagX*(-1);
 }
 //commented due to checking gravity sensor working
-//setInterval(update,100);
+setInterval(update,100);
 
 
 
