@@ -3,8 +3,8 @@ console.log("ready");
 //This is before reflecton
 //document.getElementsByTagName("button").style.top=window.innerWidth-20+"px";
 var maxX=window.innerWidth , maxY=window.innerHeight;
-var iX=560,iY=300;
-var pX=560,pY=300;
+var iX=560,iY=600;
+var pX=560,pY=600;
 
 //(window.innerHeight)
 //This will be after reflection
@@ -80,14 +80,14 @@ sensor.onreading = () => {
     console.log("Angular velocity around the Z-axis " + sensor.z);
 
 	//for x
-	if(sensor.x> 0.5){
+	if(sensor.x< -0.5){
         pX=pX+5;
 		if(pX>(window.innerWidth-85)){
 			pX=(window.innerWidth-85);
 		}
 		
 	}
-	else if(sensor.x< -0.5){
+	else if(sensor.x> 0.5){
 		pX=pX-5;
 		if(pX<0){
 			pX=0;
