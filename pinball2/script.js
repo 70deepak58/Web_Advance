@@ -2,9 +2,11 @@ console.log("ready");
 //top left position of everything not center position 40 by 2 20 will be shift
 //This is before reflecton
 //document.getElementsByTagName("button").style.top=window.innerWidth-20+"px";
+//only variable for plate others are for ball
+var pX=560,pY=800;
 var maxX=window.innerWidth , maxY=window.innerHeight;
-var iX=560,iY=600;
-var pX=560,pY=600;
+var iX=560,iY=800;
+
 
 //(window.innerHeight)
 //This will be after reflection
@@ -22,7 +24,7 @@ if(fX<300){
 
 
 
-
+//setInterval(update,100);
 function update(){
 	//cX=cX+flagX*dX
 	//cY=(fY-iY)/(fX-iX)*(cX-fX)+fY;
@@ -60,13 +62,35 @@ function update(){
 		iX=cX;
 		iY=cY;
 	}
+	
+	//Mid reflection
+	//300 assumed
+	//plate 80 20
+	var midX=pX+40,midY=pY+10;
+	if((cX>midX-50) &&(cX<midX+50) && (cY>midY-20)&& (cY<midY+20)){
+		document.getElementById("aa").innerHTML=iX;
+		//botton condition
+		if(cY<iY){
+			fY=2*cY-iY;
+		    fX=iX
+		    iX=cX;
+		    iY=cY;
+		}
+		///top condition
+		else{
+			fY=2*cY-iY;
+		    fX=iX
+		    iX=cX;
+		    iY=cY;
+		}
+	}
 
 	
 }
 
 
 function start_play(){
-
+//setInterval(update,100);
 //sensor code
 let sensor = new GravitySensor({ frequency: 60 });
 
@@ -81,14 +105,14 @@ sensor.onreading = () => {
 
 	//for x
 	if(sensor.x< -0.5){
-        pX=pX+5;
+        pX=pX+6;
 		if(pX>(window.innerWidth-85)){
 			pX=(window.innerWidth-85);
 		}
 		
 	}
 	else if(sensor.x> 0.5){
-		pX=pX-5;
+		pX=pX-6;
 		if(pX<0){
 			pX=0;
 		}
