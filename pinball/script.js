@@ -24,7 +24,6 @@ var iX=(window.innerWidth)/2,iY=(window.innerHeight)-30;
     top: 300px;
     border-radius: 50%;
 }
-
 #plate{
 	position: absolute;
     width: 80px;
@@ -32,9 +31,7 @@ var iX=(window.innerWidth)/2,iY=(window.innerHeight)-30;
     background-color: blue;
     left: 540px;
     top: 340px;
-
 }
-
 */
 
 //(window.innerHeight)
@@ -50,7 +47,6 @@ console.log(fX,"hhh",fY);
 if(fX<300){
 	flagX=flagX*(-1);
 }
-//commented due to checking gravity sensor working
 setInterval(update,100);
 
 
