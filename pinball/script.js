@@ -50,7 +50,8 @@ console.log(fX,"hhh",fY);
 if(fX<300){
 	flagX=flagX*(-1);
 }
-setInterval(update,100);
+//commented due to checking gravity sensor working
+//setInterval(update,100);
 
 
 
