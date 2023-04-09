@@ -1,0 +1,21 @@
+#circle{
+	 position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+	left: 560px;
+    top: 300px;
+}
+
+#plate{
+	position: absolute;
+    width: 80px;
+    height: 20px;
+    background-color: blue;
+    left: 540px;
+    top: 340px;
+
+}
+
+
