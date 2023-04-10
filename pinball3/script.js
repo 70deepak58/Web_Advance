@@ -67,7 +67,7 @@ function update(){
 	//300 assumed
 	//plate 80 20
 	var midX=pX+40,midY=pY+10;
-	if((cX>midX-60) &&(cX<midX+50) && (cY>midY-20)&& (cY<midY+20)){
+	if((cX>midX-70) &&(cX<midX+50) && (cY>midY-20)&& (cY<midY+20)){
 		document.getElementById("aa").innerHTML=iX;
 		//botton condition
 		if(cY<iY){
