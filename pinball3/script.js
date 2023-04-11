@@ -105,14 +105,14 @@ sensor.onreading = () => {
 
 	//for x
 	if(sensor.x< -0.5){
-        pX=pX+1;
+        pX=pX+3;
 		if(pX>(window.innerWidth-85)){
 			pX=(window.innerWidth-85);
 		}
 		
 	}
 	else if(sensor.x> 0.5){
-		pX=pX-1;
+		pX=pX-3;
 		if(pX<0){
 			pX=0;
 		}
