@@ -16,7 +16,7 @@ var fX=Math.floor((window.innerWidth)*Math.random()),fY=Math.floor(300*Math.rand
 var cX=560,cY;
 
 var flagX=1,flagY=1;
-var dX=1,dY=1;
+var dX=5,dY=5;
 console.log(fX,"hhh",fY);
 if(fX<300){
 	flagX=flagX*(-1);
@@ -84,17 +84,25 @@ function update(){
 		    iY=cY;
 		}
 	}
+	
+	//This is to handle left right infinite loop
+	if(Math.abs(fY-iY)<4){
+		fY=Math.floor(300*Math.random());
+	}
 
 	
 }
 
+var turn=0;
 
 function start_play(){
 //setInterval(update,100);
 //sensor code
-let sensor = new GravitySensor({ frequency: 300 });
-
+let sensor = new GravitySensor({ frequency: 60 });
+if(turn==0){
+	
 sensor.start();
+}
 sensor.onreading = () => {
 	document.getElementById("p1").innerHTML=sensor.x;
 	document.getElementById("p2").innerHTML=sensor.y;
@@ -105,14 +113,14 @@ sensor.onreading = () => {
 
 	//for x
 	if(sensor.x< -0.5){
-        pX=pX+3;
+        pX=pX+6;
 		if(pX>(window.innerWidth-85)){
 			pX=(window.innerWidth-85);
 		}
 		
 	}
 	else if(sensor.x> 0.5){
-		pX=pX-3;
+		pX=pX-6;
 		if(pX<0){
 			pX=0;
 		}
@@ -127,5 +135,6 @@ sensor.onreading = () => {
 sensor.onerror = event => console.log(event.error.name, event.error.message);
 
 //setInterval(update,100);
+turn =turn +1;
 
 }
