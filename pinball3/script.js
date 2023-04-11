@@ -16,7 +16,7 @@ var fX=Math.floor((window.innerWidth)*Math.random()),fY=Math.floor(300*Math.rand
 var cX=560,cY;
 
 var flagX=1,flagY=1;
-var dX=1,dY=5;
+var dX=1,dY=1;
 console.log(fX,"hhh",fY);
 if(fX<300){
 	flagX=flagX*(-1);
@@ -67,7 +67,7 @@ function update(){
 	//300 assumed
 	//plate 80 20
 	var midX=pX+40,midY=pY+10;
-	if((cX>midX-70) &&(cX<midX+50) && (cY>midY-20)&& (cY<midY+20)){
+	if((cX>midX-60) &&(cX<midX+50) && (cY>midY-30)&& (cY<midY+20)){
 		document.getElementById("aa").innerHTML=iX;
 		//botton condition
 		if(cY<iY){
@@ -92,7 +92,7 @@ function update(){
 function start_play(){
 //setInterval(update,100);
 //sensor code
-let sensor = new GravitySensor({ frequency: 180 });
+let sensor = new GravitySensor({ frequency: 300 });
 
 sensor.start();
 sensor.onreading = () => {
@@ -117,7 +117,7 @@ sensor.onreading = () => {
 			pX=0;
 		}
 	}
-	document.getElementById("aa").innerHTML="note";
+	document.getElementById("aa").innerHTML="na";
 	document.getElementById("plate").style.left=pX+"px";
     document.getElementById("plate").style.top=pY+"px";
 	update();
