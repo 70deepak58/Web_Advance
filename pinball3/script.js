@@ -67,7 +67,7 @@ function update(){
 	//300 assumed
 	//plate 80 20
 	var midX=pX+40,midY=pY+10;
-	if((cX>midX-60) &&(cX<midX+50) && (cY>midY-30)&& (cY<midY+20)){
+	if((cX>midX-50) &&(cX<midX+50) && (cY>midY-40)&& (cY<midY+20)){
 		document.getElementById("aa").innerHTML=iX;
 		//botton condition
 		if(cY<iY){
@@ -84,25 +84,17 @@ function update(){
 		    iY=cY;
 		}
 	}
-	
-	//This is to handle left right infinite loop
-	if(Math.abs(fY-iY)<4){
-		fY=Math.floor(300*Math.random());
-	}
 
 	
 }
 
-var turn=0;
 
 function start_play(){
 //setInterval(update,100);
 //sensor code
 let sensor = new GravitySensor({ frequency: 60 });
-if(turn==0){
-	
+
 sensor.start();
-}
 sensor.onreading = () => {
 	document.getElementById("p1").innerHTML=sensor.x;
 	document.getElementById("p2").innerHTML=sensor.y;
@@ -135,6 +127,5 @@ sensor.onreading = () => {
 sensor.onerror = event => console.log(event.error.name, event.error.message);
 
 //setInterval(update,100);
-// turn =turn +1;
 
 }
