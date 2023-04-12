@@ -135,6 +135,6 @@ sensor.onreading = () => {
 sensor.onerror = event => console.log(event.error.name, event.error.message);
 
 //setInterval(update,100);
-turn =turn +1;
+// turn =turn +1;
 
 }
