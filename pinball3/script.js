@@ -6,6 +6,7 @@ console.log("ready");
 var pX=560,pY=800;
 var maxX=window.innerWidth , maxY=window.innerHeight;
 var iX=560,iY=800;
+var coll=0;
 
 
 //(window.innerHeight)
@@ -16,7 +17,7 @@ var fX=Math.floor((window.innerWidth)*Math.random()),fY=Math.floor(300*Math.rand
 var cX=560,cY;
 
 var flagX=1,flagY=1;
-var dX=5,dY=5;
+var dX=1,dY=1;
 console.log(fX,"hhh",fY);
 if(fX<300){
 	flagX=flagX*(-1);
@@ -35,7 +36,7 @@ function update(){
     document.getElementById("circle").style.top=cY+"px";
 	console.log(cX,"jj",cY);
 	//This handles left and right reflection
-	if((cX>(window.innerWidth-45)) ||(cX<0)){
+	if(((cX>(window.innerWidth-45)) ||(cX<0))&&(coll==0)){
 		flagX=flagX*(-1);
 		//reflection from axis parallel to y (fY+iY)/2=cY; mid point theorem
 		fY=2*cY-iY;
@@ -45,29 +46,41 @@ function update(){
 		iY=cY;
 		//finding value of fX using equation of straight line
 		//fX-iX=
+		coll=1;
 		
 	}
+	else{
+		coll=0;
+	}
 	//Top reflection
-	if(cY<0){
+	if((cY<0)&&(coll==0)){
 		fY=2*cY-iY;
 		fX=iX
 		iX=cX;
 		iY=cY;
+		coll=1;
+	}
+	else{
+		coll=0;
 	}
 	
 	//Bottom reflection
-	if(cY>(window.innerHeight-45)){
+	if((cY>(window.innerHeight-45))&&(coll==0)){
 		fY=2*cY-iY;
 		fX=iX
 		iX=cX;
 		iY=cY;
+		coll=1;
+	}
+	else{
+		coll=0;
 	}
 	
 	//Mid reflection
 	//300 assumed
 	//plate 80 20
 	var midX=pX+40,midY=pY+10;
-	if((cX>midX-50) &&(cX<midX+50) && (cY>midY-40)&& (cY<midY+20)){
+	if((cX>midX-50) &&(cX<midX+50) && (cY>midY-40)&& (cY<midY+20) &&(coll==0)){
 		document.getElementById("aa").innerHTML=iX;
 		//botton condition
 		if(cY<iY){
@@ -83,6 +96,10 @@ function update(){
 		    iX=cX;
 		    iY=cY;
 		}
+		coll=1;
+	}
+	else{
+		coll=0;
 	}
 
 	
@@ -105,14 +122,14 @@ sensor.onreading = () => {
 
 	//for x
 	if(sensor.x< -0.5){
-        pX=pX+6;
+        pX=pX+1.2;
 		if(pX>(window.innerWidth-85)){
 			pX=(window.innerWidth-85);
 		}
 		
 	}
 	else if(sensor.x> 0.5){
-		pX=pX-6;
+		pX=pX-1.2;
 		if(pX<0){
 			pX=0;
 		}
