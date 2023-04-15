@@ -109,7 +109,7 @@ function update(){
 function start_play(){
 //setInterval(update,100);
 //sensor code
-let sensor = new GravitySensor({ frequency: 60 });
+let sensor = new GravitySensor({ frequency: 300 });
 
 sensor.start();
 sensor.onreading = () => {
