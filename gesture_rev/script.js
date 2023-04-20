@@ -277,11 +277,11 @@ loca.innerHTML = "Latitude: " + position.coords.latitude +
 
 //dummy logic starts here you are great
 function my_red(){
-	 document.body.style.backgroundColor="red";
+	 document.getElementById("don1").style.backgroundColor="red";
 }
 function my_blue(){
-	 document.body.style.backgroundColor="blue";
+	 document.getElementById("don2").style.backgroundColor="blue";
 }
 function my_green(){
-	 document.body.style.backgroundColor="green";
+	 document.getElementById("don3").style.backgroundColor="green";
 }
