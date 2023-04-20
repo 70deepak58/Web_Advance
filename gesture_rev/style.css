@@ -1,0 +1,40 @@
+#tak{
+  width: 150px;
+  height: 150px;
+  background-color: black;
+}
+
+#location{
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  top: 200px;
+  right: 5px;
+  color: green;
+}
+#image{
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+.input_video{
+	display:none;
+}
+.output_canvas{
+  position:fixed;
+  left: 0px;
+  top: 0px;
+  z-index: -2;
+}
+#cursor{
+	 position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    left: 560px;
+    top: 300px;
+    border-radius: 50%;
+	z-index:2;
+}
