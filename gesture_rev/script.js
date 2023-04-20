@@ -8,6 +8,8 @@ var rf1=1,rf2=1,rf3=1,rf4=1,lf1=1,lf2=1,lf3=1,lf4=1;
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
+canvasElement.style.width=window.innerWidth;
+canvasElement.style.height=window.innerHeight;
 
 function onResults(results) {
   canvasCtx.save();
