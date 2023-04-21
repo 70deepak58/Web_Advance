@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My pinball game</title>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <video class="input_video"></video>
+    <canvas class="output_canvas" ></canvas>
+  </div>
+  <script src="script.js"></script>
+<p>Game is controlled by orientation of device (gravity controller)</p>
+    <p id="p1">1</p>
+	<p id="p2">2</p>
+	<p id="p3">3</p>
+<div id="circle"></div>
+<div id="plate"></div>
+<button onclick="start_play()">play</button>
+<div id="aa">init</div>
+</body>
+</html>
