@@ -84,7 +84,7 @@ for (let index = 0; index < results.multiHandLandmarks.length; index++) {
   if((hand[16].y<hand[14].y)){
 	  document.body.scrollTop=scr_x;
     document.documentElement.scrollTop=scr_x;
-	scr_x=scr_x-5;
+	scr_x=scr_x-15;
 	
 
   }
@@ -93,7 +93,7 @@ for (let index = 0; index < results.multiHandLandmarks.length; index++) {
   if((hand[20].y<hand[18].y)){
 	  document.body.scrollTop=scr_x;
     document.documentElement.scrollTop=scr_x;
-	scr_x=scr_x+5;
+	scr_x=scr_x+15;
 
   }
       
