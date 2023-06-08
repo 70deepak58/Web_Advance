@@ -203,6 +203,8 @@ function run(){
     
     var x=document.getElementById("chat");
     input_str=x.value;
+    //add tmp
+            input_str=input_str.trim();
     input_str=input_str.toLowerCase();
     token=input_str;
     console.log(input_str);
