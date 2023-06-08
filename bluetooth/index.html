@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <body>
+ <canvas id='c'></canvas>
+ <button id="x">h1</button>
+  <script>
+  
+  but =document.getElementById("x");
+  but.addEventListener('pointerup', function(event) {
+  
+  
+/* 
+  navigator.bluetooth.requestDevice({
+  acceptAllDevices: true,
+  optionalServices: ['battery_service'] 
+})
+.then(device => {  })
+.catch(error => { console.error(error); });
+
+*/
+navigator.bluetooth.requestDevice({ 
+/*
+ filters: [{
+    name: 'realme 5 Pro'
+  }],
+  optionalServices: ['battery_service']
+  */
+  acceptAllDevices: true,
+  optionalServices: ['battery_service'] 
+//filters: [{ services: ['battery_service'] }] 
+})
+.then(device => device.gatt.connect())
+.then(server => {
+  // Getting Battery Service…
+  return server.getPrimaryService('battery_service');
+})
+.then(service => {
+  // Getting Battery Level Characteristic…
+  return service.getCharacteristic('battery_level');
+})
+.then(characteristic => {
+  // Reading Battery Level…
+  return characteristic.readValue();
+})
+.then(value => {
+  console.log(`Battery percentage is ${value.getUint8(0)}`);
+})
+.catch(error => { console.error(error); });
+
+});
+</script>
+</body>
+</html>
