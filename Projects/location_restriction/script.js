@@ -114,6 +114,7 @@ function take_loc(){
 document.getElementById("locii").innerHTML="Not Known";
     console.log("taken location successfully");
     console.log(ilat,ilongi);
+    positioning();
 }
 function take_live_loc(){
     ilat=lat;
@@ -121,4 +122,5 @@ function take_live_loc(){
 document.getElementById("demoi").innerHTML="Latitude: " + lat + 
 "<br>Longitude: " + longi;
 document.getElementById("locii").innerHTML=state;
+positioning();
 }
