@@ -12,6 +12,9 @@ var theme_bg=["yellow","red","black","blue","black","orange","green"];
 var theme_fg=["red","blue","yellow","green","white","pink","violet"];
 var loca="";
 
+//
+var mute=0;
+
 var dict_open={"google":"https://www.google.com",
             "flipkart":"https://www.flipkart.com",
             "amazon":"https://www.amazon.in",
@@ -164,6 +167,12 @@ function operation(){
         console.log("location");
 
     }
+    else if(action=="mute"){
+                mute=1;
+    }
+    else if(action=="unmute"){
+                mute=0;
+    }          
     else{
         window.open("https://www.google.com/search?q="+token);
         console.log("google search");
@@ -257,7 +266,10 @@ speechRecognition.onend = () => {
     x=document.getElementById("chat");
     x.value=call_text;
     setTimeout(run,1000);
+            //
+            if(mute==0){
     setTimeout(poke,1000);
+            }
    // console.log(call_text);
 };
 speechRecognition.onresult = (event) => {
