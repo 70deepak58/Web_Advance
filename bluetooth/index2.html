@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSPrintManager</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+
+    <div style="text-align:center">
+        <h1>BIDI Bluetooth Comm from Javascript</h1>
+        <hr />
+        <div>
+            <label>
+                IP Address
+                <input id="btAddress" value="00.00.00.00.00.00" />
+            </label>
+            <label>
+                Port
+                <input id="btChannel" value="1" />
+            </label>
+            <br /><br />
+            <button type="button" onclick="doOpen();">
+                Open
+            </button>
+              
+            <button type="button" onclick="doClose();">
+                Close
+            </button>
+        </div>
+        <br /><br />
+        <div>
+            <label>
+                <strong>Data to Send</strong>
+                <input id="txtDataToSend" value="type here..." />
+            </label>            
+            <button onclick="doSendData();">Send...</button>
+        </div>
+        <hr />
+        <div>
+            <textarea id="txtDataReceived" readOnly style="background-color:#302a2a;color:#fff;font-family: 'Courier New', Courier, monospace;" cols="100" rows="10"></textarea>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <!--IMPORTANT: BE SURE YOU HONOR THIS JS LOAD ORDER-->
+    
+    <script src="JSPrintManager.js"></script>
+    
+    
+    
+
+    <script>
+
+        var _btComm = null;
+        var _dataToSend = '';
+        var _dataReceived = '';
+        var _this = this;
+
+        //JSPrintManager WebSocket settings
+        JSPM.JSPrintManager.auto_reconnect = true;
+        JSPM.JSPrintManager.start();
+        
+        //Check JSPM WebSocket status
+        function jspmWSStatus() {
+            if (JSPM.JSPrintManager.websocket_status == JSPM.WSStatus.Open)
+                return true;
+            else if (JSPM.JSPrintManager.websocket_status == JSPM.WSStatus.Closed) {
+                console.warn('JSPrintManager (JSPM) is not installed or not running! Download JSPM Client App from https://neodynamic.com/downloads/jspm');
+                return false;
+            }
+            else if (JSPM.JSPrintManager.websocket_status == JSPM.WSStatus.Blocked) {
+                alert('JSPM has blocked this website!');
+                return false;
+            }
+        }
+
+        //Sending data to port
+        function doSendData() {
+            if (!this._btComm) {
+                this._dataReceived += "BT Comm is not created!\r\n";
+                this.refreshDisplay();
+            } else {
+                this._dataToSend = $('#txtDataToSend').val();
+                if (this._dataToSend.length > 0) {
+                    this._btComm.send(this._dataToSend);
+                    this._dataReceived += "> " + this._dataToSend + "\r\n";
+                    this.refreshDisplay();
+                }
+            }
+        }
+
+        function doOpen() {
+            this._btComm = new JSPM.BTComm($('#btAddress').val(), parseInt($('#btChannel').val()));
+
+            this._btComm.onDataReceived = function (data) {
+                _this.dataReceived += "< " + data + "\r\n";
+                console.log("Data Received:" + data);
+                _this.refreshDisplay();
+            };
+
+            this._btComm.onError = function (data, is_critical) {
+                _this.dataReceived += "ERROR: " + data + "\r\n";
+                console.log("Error: " + data);
+                _this.refreshDisplay();
+            };
+
+            this._btComm.onClose = function (data) {
+                _this.dataReceived += "COMM CLOSED!" + "\r\n";
+                console.log("Closed: " + data);
+                _this.refreshDisplay();
+            };
+
+            this._btComm.open().then(_ => {
+                _this.dataReceived += "COMM OPEN!" + "\r\n";
+                _this.refreshDisplay();
+            });
+        }
+
+        function doClose() {
+            if (!this._btComm) {
+                this._dataReceived += "BT Comm is not open!\r\n";
+                this.refreshDisplay();
+            } else
+                this._btComm.close();
+        }
+
+        function refreshDisplay() {
+            $('#txtDataReceived').val(this._dataReceived);
+        }
+
+    </script>
+</body>
+
+</html>
+                                        
