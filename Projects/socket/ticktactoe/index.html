@@ -7,31 +7,31 @@
 
 <body>
     <h1>Tic Tac Toe game</h1>
-    <div id="a1" onclick="fu(this.id)">
+    <div id="a1" onclick="client_update(this.id)">
         -
     </div>
-    <div id="a2" onclick="fu(this.id)">
+    <div id="a2" onclick="client_update(this.id)">
         -
     </div>
-    <div id="a3" onclick="fu(this.id)">
+    <div id="a3" onclick="client_update(this.id)">
         -
     </div>
-    <div id="a4" onclick="fu(this.id)">
+    <div id="a4" onclick="client_update(this.id)">
         -
     </div>
-    <div id="a5" onclick="fu(this.id)">
+    <div id="a5" onclick="client_update(this.id)">
         -
     </div>
-    <div id="a6" onclick="fu(this.id)">
+    <div id="a6" onclick="client_update(this.id)">
         -
     </div>
-    <div id="a7" onclick="fu(this.id)">
+    <div id="a7" onclick="client_update(this.id)">
         -
     </div>
-    <div id="a8" onclick="fu(this.id)">
+    <div id="a8" onclick="client_update(this.id)">
         -
     </div>
-    <div id="a9" onclick="fu(this.id)">
+    <div id="a9" onclick="client_update(this.id)">
         -
     </div>
 
@@ -48,16 +48,16 @@
     </div>
     <div id="status">
         Start game now<br>
-        Player 1 have X<br>
-        Player 2 have O<br>
+        Player(you)  have <br>
+        Player(other)  have <br>
     </div>
     <div id="score">
         Player1:0<br>
         Player2:0
     </div>
-    <input type="text" id="p1_lname">
-    <input type="text" id="p2_lname">
-    <button onclick="name2()">play</button>
+    <input type="text" id="p1_name">
+    <input type="text" id="p2_name">
+    <button onclick="name_init_user()">play</button>
     <style>
         #heading {
             position: relative;
@@ -184,17 +184,16 @@
                 const text = await blob.text();
                 console.log(text)
                 // Handle the text data here
-                var p2_p1 = p2_name + p1_name;
-                var p1_p2 = p1_name + p2_name;
-                //if (text.length >= p2_p1.length && text.startsWith(p2_p1)) {
-                    
-                    c_id = 'a' + text[3];
+                var p2_p1 = p2_name +"#*#"+ p1_name+"#*#";
+                var p1_p2 = p1_name +"#*#"+ p2_name+"#*#";
+                if (text.length >= p2_p1.length && text.startsWith(p2_p1)) {
+                    c_id = 'a' + text[text.length-1];
                     console.log(c_id);
-                    fu2(c_id);
+                    document.getElementById("got").innerHTML =p1_name+" turn choice is "+p1;
+                    server_update(c_id);
                     console.log("match", p2_p1, p1_p2);
 
-               // }
-                // console.log('Received text message:', text);
+                }
             }
         });
 
@@ -202,54 +201,34 @@
             console.log('WebSocket connection closed');
         });
 
-
-
-        function name2() {
-            // p = window.prompt("enter name");
-            // if (p_name_id[1] == 1 && p1_name == "") {
-            //     p1_name = p;
-            //     // if(p1_name[0]=='1'){
-            //     //     i=0;
-            //     // }
-            //     // else{
-            //     //     i=1;
-            //     // }
-            //     document.getElementById("got").innerHTML = p + " turn choice is " + "X";
-            // }
-            // if (p_name_id[1] == 2 && p2_name == "") {
-            //     p2_name = p;
-            //     // if(p2_name[0]=='1'){
-            //     //     i=0;
-            //     // }
-            //     // else{
-            //     //     i=1;
-            //     // }
-            // }
-            var first = document.getElementById('p1_lname').value;
-            var second = document.getElementById('p2_lname').value;
+        function name_init_user() {
+            var first = document.getElementById('p1_name').value;
+            var second = document.getElementById('p2_name').value;
+            p1_name = first;
+            p2_name = second;
             console.log(first, second);
             if (first != "" && second != "") {
                 if (Number(first) > Number(second)) {
                     p1 = "X";
                     p2 = "O";
                     i = 0;
-                    p1_name = first;
-                    p2_name = second;
+                    // p1_name = first;
+                    // p2_name = second;
+                    document.getElementById("got").innerHTML =p1_name+" turn choice is "+p1;
 
                 }
                 else {
                     p1 = "O";
                     p2 = "X";
                     i = 1;
-                    p1_name = second;
-                    p2_name = first;
+                    // p1_name = second;
+                    // p2_name = first;
+                    document.getElementById("got").innerHTML =p2_name+" turn choice is "+p2;
 
                 }
                 console.log("set");
             }
-
-
-            // document.getElementById(p_name_id).innerHTML = p;
+            document.getElementById("status").innerHTML="Start game now<br>Player(you) "+p1_name+" have "+p1+"<br>Player(other) "+p2_name+" have "+p2+"<br>";
         }
 
 
@@ -270,6 +249,7 @@
             document.getElementById("p2").innerHTML = "Player 2 enter your name";
             document.getElementById("got").innerHTML = "Here is status";
             document.getElementById("score").innerHTML = "Player1:" + p1_point + "\nPlayer2:" + p2_point;
+            name_init_user();
 
 
         }
@@ -314,162 +294,89 @@
                 p2_point++;
                 ExIt = 2;
             }
-
-
-
-
         }
 
-        function update(i) {
-            // if (i % 2 == 0) {
-                document.getElementById("got").innerHTML = p1_name + " turn choice is " + i;
-            // }
-            // else {
-            //     document.getElementById("got").innerHTML = p2_name + " turn choice is " + p2;
-            // }
+        function update(x) {
+            document.getElementById("got").innerHTML =x;
         }
 
-        function fu(c_id) {
-            // console.log("deepak", t)
-
-            // if (arr[t] == " ") {
-
-            // }
+        function client_update(c_id) {
+            console.log(c_id);
             t = c_id[1] - 1;
             if (arr[t] == " ") {
                 if (i % 2 == 0) {
-
-                    update(p1);
-                    ws.send(p1_name + p2_name + c_id);
+                    ws.send(p1_name +"#*#"+ p2_name+"#*#" + c_id);
                     arr[t] = p1;
                     document.getElementById(c_id).innerHTML = arr[t];
-                    // t = c_id[2] - 1;
-
-
                     won();
-
                     console.log(i);
                     console.log(t);
                     console.log(arr[i]);
                     console.log(arr);
                     i++;
-                    // if (ExIt != 0) {
-                    //     //flush_all();
-                    //     setTimeout(flush_all, 3000);
-                    // }
-
-
+                    update(p2_name+" turn choice is "+p2);
+                    if (ExIt != 0) {
+                        //flush_all();
+                        setTimeout(flush_all, 3000);
+                    }
                 }
-                else{
+                else {
                     console.log("wait for your turn");
                 }
-                // else {
-                //     arr[t] = p2;
-                //     won();
-                //     if (ExIt != 0) {
-                //         //flush_all();
-                //         setTimeout(flush_all, 3000);
-                //     }
-                // }
-                // t = c_id[2] - 1;
-                // document.getElementById(c_id).innerHTML = arr[t];
-
-
-                // i++;
-
             }
             else {
                 console.log("already selected");
-                // window.prompt("already selected");
             }
 
 
 
             //reset everything on draw
-            // var l;
-            // var full = 1;
-            // for (l = 0; l < 9; l++) {
-            //     if (arr[l] == " ") {
-            //         full = 0;
-            //         break;
-            //     }
-            // }
-            // if (full == 1) {
-            //     window.prompt("DRAW!!");
-            //     flush_all();
-            // }
-
-
+            var l;
+            var full = 1;
+            for (l = 0; l < 9; l++) {
+                if (arr[l] == " ") {
+                    full = 0;
+                    break;
+                }
+            }
+            if (full == 1) {
+                window.prompt("DRAW!!");
+                flush_all();
+            }
         }
 
-        function fu2() {
-            // console.log("deepak", t)
-            // t = c_id[1] - 1;
-            // if (arr[t] == " ") {
-            // update(i);
-            // }
-
-            // if (arr[t] == " ") {
-
-
+        function server_update() {
             if (i % 2 == 1) {
                 t = c_id[1] - 1;
-              
-                // ws.send(p1_name + p2_name + c_id);
-                // t = c_id[2] - 1;
                 arr[t] = p2;
                 document.getElementById(c_id).innerHTML = arr[t];
-
-
                 won();
                 console.log(i);
                 console.log(t);
                 console.log(arr[i]);
                 console.log(arr);
                 i++;
-                update(p2);
-                // if (ExIt != 0) {
-                //     //flush_all();
-                //     setTimeout(flush_all, 3000);
-                // }
+                update(p1_name+" turn choice is "+p1);
+                if (ExIt != 0) {
+                    //flush_all();
+                    setTimeout(flush_all, 3000);
+                }
 
 
             }
-            // else {
-            //     arr[t] = p2;
-            //     won();
-            //     if (ExIt != 0) {
-            //         //flush_all();
-            //         setTimeout(flush_all, 3000);
-            //     }
-            // }
-            // t = c_id[2] - 1;
-            // document.getElementById(c_id).innerHTML = arr[t];
-
-
-
-            // i++;
-
-            // }
-            // else {
-            //     window.prompt("already selected");
-            // }
-
-
-
             //reset everything on draw
-            // var l;
-            // var full = 1;
-            // for (l = 0; l < 9; l++) {
-            //     if (arr[l] == " ") {
-            //         full = 0;
-            //         break;
-            //     }
-            // }
-            // if (full == 1) {
-            //     window.prompt("DRAW!!");
-            //     flush_all();
-            // }
+            var l;
+            var full = 1;
+            for (l = 0; l < 9; l++) {
+                if (arr[l] == " ") {
+                    full = 0;
+                    break;
+                }
+            }
+            if (full == 1) {
+                window.prompt("DRAW!!");
+                flush_all();
+            }
         }
     </script>
 </body>
