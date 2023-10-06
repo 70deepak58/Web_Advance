@@ -52,8 +52,8 @@ var local_remote_switch_flag=0;
       ws.addEventListener('message', async (event) => {
           const message = event.data;
           console.log(message);
-          const text=message;
-          const blob = event.data;
+          const text=event.data;
+        //   const blob = event.data;
         //   if (blob instanceof Blob) {
         //       const text = await blob.text();
               console.log(text)
