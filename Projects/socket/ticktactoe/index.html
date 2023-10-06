@@ -179,9 +179,10 @@
         ws.addEventListener('message', async (event) => {
             const message = event.data;
             console.log(message);
+            const text=message;
             const blob = event.data;
-            if (blob instanceof Blob) {
-                const text = await blob.text();
+            // if (blob instanceof Blob) {
+            //     const text = await blob.text();
                 console.log(text)
                 // Handle the text data here
                 var p2_p1 = p2_name +"#*#"+ p1_name+"#*#";
@@ -194,7 +195,7 @@
                     console.log("match", p2_p1, p1_p2);
 
                 }
-            }
+            // }
         });
 
         ws.addEventListener('close', (event) => {
