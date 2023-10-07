@@ -1,0 +1,43 @@
+#ipt{
+    position: fixed;
+    bottom: 5px;
+    left: 0px;
+}
+#btn{
+position: fixed;
+bottom: 5px;
+left: 190px;
+}
+p{
+    font-size: 25px;
+    
+}
+#btn2{
+    position: fixed;
+    bottom: 5px;
+    left: 250px;
+    }
+
+#btn3{
+    position: fixed;
+    bottom: 5px;
+    left: 300px;
+    }
+
+#local_device{
+    position: fixed;
+    bottom: 30px;
+    left :0px;
+}
+
+#remote_device{
+    position: fixed;
+    bottom: 30px;
+    left:190px;
+}
+
+#btn4{
+    position: fixed;
+    bottom: 30px;
+    left:380px;
+}
