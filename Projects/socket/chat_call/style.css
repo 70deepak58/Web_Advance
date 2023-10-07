@@ -28,16 +28,18 @@ p{
     position: fixed;
     bottom: 30px;
     left :0px;
+    width:80px;
 }
 
 #remote_device{
     position: fixed;
     bottom: 30px;
-    left:190px;
+    left:100px;
+    width:80px;
 }
 
 #btn4{
     position: fixed;
     bottom: 30px;
-    left:380px;
+    left:200px;
 }
