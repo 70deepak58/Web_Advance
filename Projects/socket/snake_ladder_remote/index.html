@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="style.css"  rel="stylesheet">
+
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="snake_img">
+        </div>
+        
+        
+        <div id=dice onclick="dice_roll_auto()"></div>
+        <div id="btn1" >P1 CLICK</div> 
+        <div id="P1">P1 SCORE: 0</div>
+        <div id="P2">P2 SCORE: 0</div>
+        <div id="Goti_P1">P1</div>
+        <div id="Goti_P2">P2</div>
+        <div id="status">Playing</div>
+        <div id="plus" onclick="snake_img_selectTo(this.id)">+</div>
+        <div id="s_b_i_chg">CHANGE</div>
+        <div id="minus" onclick="snake_img_selectTo(this.id)">-</div>
+
+        <audio id="myAudio_ludo">
+            <source src="ludo.mp3" type="audio/mp3">
+        </audio>
+
+        <audio id="myAudio_snake">
+            <source src="snake.wav" type="audio/wav">
+        </audio>
+
+        <audio id="myAudio_ladder">
+            <source src="ladder.wav" type="audio/wav">
+        </audio>
+        <audio id="myAudio_dice">
+            <source src="dice.wav" type="audio/wav">
+        </audio>
+        <audio id="myAudio_win">
+            <source src="win.wav" type="audio/wav">
+        </audio>
+        <audio id="myAudio_loose">
+            <source src="loose.wav" type="audio/wav">
+        </audio>
+
+
+        <input type="text" id="p1_name">
+        <input type="text" id="p2_name">
+        <button onclick="name_init_user()">connect</button>
+    </body>
+</html>

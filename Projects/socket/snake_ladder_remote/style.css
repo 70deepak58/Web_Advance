@@ -1,0 +1,79 @@
+#dice{
+    width: 300px;
+    height: 300px;
+    /* background-color: rgb(252, 123, 2); */
+    background-size: 20 30;
+    background-image: url("1.png");
+    background-repeat: no-repeat;
+}
+#dice1{
+    width: 100px;
+    height: 100px;
+}
+#snake_img{
+    width:900px;
+    height: 900px;
+   background-image: url("snakes1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#P1{
+    display: inline;
+    padding-left: 25px;
+}
+#P2{
+    padding-left: 25px;
+    display: inline;
+}
+#Goti_P1{
+    position: absolute;
+display: inline-block;
+background-color: red;
+border-radius: 50%;
+width: 80px;
+height: 80px;
+text-align: center;
+z-index: 2;
+top: 800px;
+left:0px;
+}
+#Goti_P2{
+    position: absolute;
+display: inline-block;
+background-color: green;
+border-radius: 50%;
+width: 90px;
+height: 90px;
+text-align: center;
+z-index: 1;
+top: 800px;
+left: 0px;}
+#status{
+display: inline-block;
+padding-left: 30px;
+}
+#btn1{
+    display: inline-block;
+    
+}
+#plus,#minus,#s_b_i_chg{
+    position: relative;
+    bottom: 100px;
+    left:320px;
+    background-color: rgb(42, 99, 165);
+    display:inline-block;
+    text-align: center;
+    font-size: 30px;
+}
+#minus,#plus{
+    width: 25px;
+    background-color: rgb(19, 228, 47);
+}
+
+
+#p1_name{
+width: 80px;
+}
+#p2_name{
+    width: 80px;
+}
