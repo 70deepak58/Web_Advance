@@ -301,6 +301,12 @@ function runswitch(){
     remote_device_no=document.getElementById('remote_device').value;
     local_remote_switch_flag=local_remote_switch_flag+1;
     local_remote_switch_flag=local_remote_switch_flag%2;
+    if(local_remote_switch_flag==1){
+        document.getElementById("btnremote").style.backgroundColor="pink";
+    }
+    else{
+        document.getElementById("btnremote").style.backgroundColor="white";
+    }
 }
 
 
@@ -345,6 +351,7 @@ speechRecognition.onend = () => {
     x=document.getElementById("chat");
     x.value=call_text;
     setTimeout(run,1000);
+    document.getElementById("start").style.backgroundColor="white";
             //
             if(mute==0){
     setTimeout(poke,1000);
@@ -366,6 +373,7 @@ speechRecognition.onresult = (event) => {
 document.querySelector("#start").onclick = () => {
     // if(local_remote_switch_flag==0){
         speechRecognition.start();
+        document.getElementById("start").style.backgroundColor="pink";
     // }
   };
   document.querySelector("#stop").onclick = () => {
