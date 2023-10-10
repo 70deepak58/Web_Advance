@@ -164,23 +164,22 @@ function abc(){
         //for x
         inputDir = {x: 0, y: 1} // Start the game
         moveSound.play();
-        if(sensor.x< -0.5){
-            console.log("ArrowLeft");
-            inputDir.x = -1;
-            inputDir.y = 0;
-            
-        }
-        else if(sensor.x> 0.5){
+        if(sensor.x< -0.9){
             console.log("ArrowRight");
             inputDir.x = 1;
             inputDir.y = 0;
         }
-        else if(sensor.y> 0.5){
+        else if(sensor.x> 0.9){
+            console.log("ArrowLeft");
+            inputDir.x = -1;
+            inputDir.y = 0;
+        }
+        else if(sensor.y> 0.9){
             console.log("ArrowDown");
             inputDir.x = 0;
             inputDir.y = 1;
     
-        }else{
+        }else if(sensor.y< -0.9){
             console.log("ArrowUp");
             inputDir.x = 0;
             inputDir.y = -1;
