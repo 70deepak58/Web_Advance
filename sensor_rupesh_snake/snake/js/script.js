@@ -168,17 +168,18 @@ function abc(){
             inputDir.x = 1;
             inputDir.y = 0;
         }
-        else if(sensor.x> 0.9){
+        if(sensor.x> 0.9){
             console.log("ArrowLeft");
             inputDir.x = -1;
             inputDir.y = 0;
         }
-        else if(sensor.y> 0.9){
+        if(sensor.y> 0.9){
             console.log("ArrowDown");
             inputDir.x = 0;
             inputDir.y = 1;
     
-        }else if(sensor.y< -0.9){
+        }
+        if(sensor.y< -0.9){
             console.log("ArrowUp");
             inputDir.x = 0;
             inputDir.y = -1;
