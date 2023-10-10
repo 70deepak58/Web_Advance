@@ -272,6 +272,7 @@ function run(){
     if(local_remote_switch_flag==0){
         var x=document.getElementById("chat");
         input_str=x.value;
+        input_str=input_str.replace(/^\s+|\s+$/gm,'');
         //add tmp
             //    input_str=input_str.trim();
         input_str=input_str.toLowerCase();
@@ -286,6 +287,7 @@ function run(){
     else{
         var x=document.getElementById("chat");
         input_str=x.value;
+        input_str=input_str.replace(/^\s+|\s+$/gm,'');
         local_device_no=document.getElementById('local_device').value;
         remote_device_no=document.getElementById('remote_device').value;
         console.log(local_device_no+"#*#"+remote_device_no+"#*#"+input_str);
