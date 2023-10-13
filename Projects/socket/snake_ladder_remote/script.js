@@ -851,6 +851,7 @@ function name_init_user(){
        console.log("set");
    }
    local_remote_switch_flag=1;
+    document.getElementById("btnremote").style.backgroundColor="pink";
 }
 
 
