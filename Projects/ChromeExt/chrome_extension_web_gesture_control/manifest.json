@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "chrome gesture control",
+  "version": "1.0",
+  "description": "An extension that controls chrome webpage based on hand gesture",
+  "permissions": ["activeTab", "storage", "http://*/*", "https://*/*", "videoCapture"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["d_style.css"], 
+      "js": ["d_script.js"]  
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}
