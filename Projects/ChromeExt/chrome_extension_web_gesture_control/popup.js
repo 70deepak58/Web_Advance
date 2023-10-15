@@ -27,7 +27,7 @@ dinst.addEventListener("click", () => {
     var divElement = document.createElement("div");
     divElement.id = "videoContainer";
     document.body.appendChild(divElement);
-    loadScript('https://cdn.jsdelivr.net/gh/70deepak58/Web_Advance/popup.js', function() {
+    loadScript('https://cdn.jsdelivr.net/gh/70deepak58/Web_Advance/Projects/ChromeExt/popup.js', function() {
       cnt++;
       console.log('Script 49 has been loaded.');
     });
