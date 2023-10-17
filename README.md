@@ -4,7 +4,7 @@
 ** Repository ** [links](https://github.com/70deepak58/Web_Advance/tree/master/Projects) ** of Projects **
 <br/>
 
-### Gesture Control System<br/>
+### Gesture Media Control System<br/>
 In this project I have used mediapipe library in javascript where user can control different events like playing music, changing image, providing location based on gesture of hand. To view live [click](https://70deepak58.github.io/Web_Advance/Projects/gesture/gesture/index.html) here and for source code [click](https://github.com/70deepak58/Web_Advance/tree/master/Projects/gesture/gesture) here
 <br/>
 ### Web Assistance<br/>
@@ -35,8 +35,27 @@ Multi lingual web  [demo](http://70deepak58.github.io/Web_Advance/Projects/diano
 <br/>
 ### Simple Calculator
 basic operatons can be performed  [demo](http://70deepak58.github.io/Web_Advance/Projects/calculator/simple/index.html) [code](https://github.com/70deepak58/Web_Advance/tree/master/Projects/calculator/simple)
+<br/>
+
+### Snake and frog game advanced<br/>
+Play game in pc by using arrow key.To view live [click](https://70deepak58.github.io/Web_Advance/rupesh_snake/snake/index.html) here.
+<br/>
+### Gyro snake and frog game beginer<br/>
+Assume red div tag as snake controlled by gyro sensor and blue div tag as frog appearing randomly.To view live [click](https://70deepak58.github.io/Web_Advance/my_grav_game/index.html) here.
+<br/>
+### Gyro snake and frog game advanced<br/>
+To view live [click](https://70deepak58.github.io/Web_Advance/sensor_rupesh_snake/snake/index.html) here.
+<br/>
+### Pinball Game<br/>
+Click on play button and device having gyro sensor.To view live [click](https://70deepak58.github.io/Web_Advance/pinball2/index.html) here.
+<br/>
+### Web Gesture Contron<br/>
+Web page events like zoom, scroll, click, cursor controlled by hand gesture.To view live [click](https://70deepak58.github.io/Web_Advance/gesture_controller/gesture_rev4/index.html) here.
+<br/>
+
+
+
 
 
 
 <h1>Thank you for visiting</h1>
-
